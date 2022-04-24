@@ -1,0 +1,183 @@
+[
+{
+	"uri": "/vi/",
+	"title": "CI/CD trên EKS",
+	"tags": [],
+	"description": "",
+	"content": "CI/CD trên EKS với CodePipeline và GitHub   Amazon Elastic Kubernetes Service (Amazon EKS) là một dịch vụ container orchestration được quản lý bởi AWS giúp chúng ta để tạo, quản lý, khởi chạy và thay đổi quy mô các ứng dụng Kubernetes trong môi trường AWS hoặc cả môi trường on-premise.\n  AWS CodePipeline là dịch vụ phân phối liên tục giúp bạn tự động hóa các deployment pipeline giúp cho việc cập nhật phiên bản mới của ứng dụng hoặc hạ tầng một cách ổn định. CodePipeline tự động hóa việc xây dựng, thử nghiệm và triển khai các giai đoạn của quá trình deploy của bạn mỗi khi có sự thay đổi mã, dựa trên mô hình deploy mà bạn xác định. Bạn có thể tích hợp AWS CodePipeline với các dịch vụ của bên thứ ba như GitHub hoặc với plugin tùy chỉnh của riêng bạn. Với AWS CodePipeline, bạn chỉ phải trả tiền cho những gì bạn sử dụng. Bạn không phải trả tiền trước hay thực hiện cam kết dài hạn.\n  Trong bài thực hành này, chúng ta sẽ tạo một EKS Cluster và tiến hành triển khai một pipeline để tự động deploy lên môi trường production mỗi khi có thay đổi về code bằng dịch vụ AWS CodePipeline.\n  "
+},
+{
+	"uri": "/vi/1-introduce/",
+	"title": "Giới thiệu",
+	"tags": [],
+	"description": "",
+	"content": "Tổng quan   Kubernetes (K8s) là một nền tảng nguồn mở, có thể mở rộng để quản lý các ứng dụng được đóng gói và các service, giúp thuận lợi trong việc cấu hình và tự động hoá việc triển khai ứng dụng\n  Trong bài lab này, chúng ta sẽ tạo một Kubernetes Cluster đơn giản trên AWS EKS (Elastic Kubernetes Service). Sau đó, mình sẽ triển khai trang web trên cluster và sử dụng AWS CodePipeLine để triển khai tự động.\n  Nội dung  Giới thiệu Các bước chuẩn bị Tạo EKS cluster Tạo Code Pipeline Dọn dẹp tài nguyên  "
+},
+{
+	"uri": "/vi/3-createekscluster/3.1-createcluster/",
+	"title": "Tạo EKS Cluster",
+	"tags": [],
+	"description": "",
+	"content": "Tạo EKS Cluster  Để tạo EKS cluster, trước tiên chúng ta sẽ phải tạo SSH key để có thể access vào EC2 Node trong Cluster khi cần thiết:  aws ec2 create-key-pair --key-name k8s-demo --query 'KeyMaterial' --output text\u0026gt; k8s-demo.pem\rTrong giao diện AWS Console   Tìm EC2 Chọn EC2  Trong giao diện EC2   Chọn Key Pair Xem Key Pair vừa tạo  Để tạo EKS Cluster và các EC2 Node chúng ta sử dụng command sau:  eksctl create cluster --name k8s-demo --region ap-southeast-1 --nodegroup-name k8s-demo --nodes 2 --ssh-access --ssh-public-key k8s-demo --managed\r Khi bạn chạy command này, thì eksctl sẽ sử dụng AWS CloudFormation để tạo các infrastructure cần thiết và setup Master Node (Control Plane).  Giao diện sau khi tạo EKS Cluster  "
+},
+{
+	"uri": "/vi/2-prerequiste/2.4-configurerole/2.4.1-createiamrole/",
+	"title": "Tạo IAM role",
+	"tags": [],
+	"description": "",
+	"content": "Tạo IAM role  Trong Workspace AWS Cloud9   Chọn AWS Cloud9 Chọn Go To Your Dashboard  Trong giao diện AWS Console   Tìm IAM Chọn IAM  Trong giao diện IAM   Chọn Role Chọn Create role  Trong bước Select trusted entity   Chọn AWS service Chọn EC2 Chọn Next  Trong bước Add permission   Tìm AdministratorAccess Chọn AdministratorAccess Chọn Next  Trong bước Name, review and create   Nhập Role name:eksworkshop-admin  Chọn Create role  Tạo role thành công  "
+},
+{
+	"uri": "/vi/2-prerequiste/2.1-iamuser/",
+	"title": "Tạo IAM User",
+	"tags": [],
+	"description": "",
+	"content": "Tạo IAM User  Truy cập vào trang AWS Console   Tìm IAM Chọn IAM  Trong giao diện IAM   Chọn User Chọn Add users  Trong bước Add user   Nhập User name, nhập aws-eks Chọn Access key - Programmatic access Chọn Password - AWS Management Console access Chọn Custom password Chọn Show password Bỏ chọn User must create a new password at next sign-in Chọn Next:Permissions  Trong bước tiếp theo của Add user   Chọn Attach existing policies directly Chọn AdministratorAccess Chọn Next:Tags  Trong bước Add tags   Nhập Key: Name Nhập Value: Admin user  Kiểm tra lại và chọn Create user  Sau khi Add user thành công   Xem thông tin user đã tạo Chọn Download.csv để tải thông tin về Access key ID và Serect access key Sau đó, chọn Close  Xem thông tin tạo user thành công  "
+},
+{
+	"uri": "/vi/4-createcicd/4.1-creates3bucket/",
+	"title": "Tạo S3 bucket",
+	"tags": [],
+	"description": "",
+	"content": "Tạo S3 bucket  Tạo Bucket này cho CodeBuild lưu artifact (tạo ra tập tin build.json sau mỗi lần build). Chúng ta sử dụng lệnh sau:  ACCOUNT_ID=$(aws sts get-caller-identity | jq -r '.Account')\raws s3 mb s3://eks-${ACCOUNT_ID}-codepipeline-artifacts\rTrong giao diện AWS Console   Tìm S3 Chọn S3  Trong giao diện S3   Chọn S3 Chọn Bucket Xem bucket artifact đã tạo  "
+},
+{
+	"uri": "/vi/2-prerequiste/",
+	"title": "Các bước chuẩn bị",
+	"tags": [],
+	"description": "",
+	"content": "Tổng quan  Để chuẩn bị cho bài lab, chúng ta sử dụng AWS Cloud9 để làm workspace và sẽ cần cài đặt một số công cụ để quản trị hệ thống trên EKS bao gồm kubectl và eksctl.  Nội dung  Tạo IAM User Tạo Workspace Cài đặt Kubernetes Tool Cấu hình Role Cài đặt eksctl Tool  "
+},
+{
+	"uri": "/vi/2-prerequiste/2.4-configurerole/2.4.2-attachiamrole/",
+	"title": "Gán IAM role",
+	"tags": [],
+	"description": "",
+	"content": "Gán IAM role vào Cloud9  Trong giao diện AWS Cloud9   Chọn biểu tượng R Chọn Manage EC2 Instance  Trong giao diện EC2   Chọn Instance Chọn aws-cloud9 instance  Trong giao diện Instance   Chọn Actions Chọn Security Chọn Modify IAM role  Gán role thành công  "
+},
+{
+	"uri": "/vi/3-createekscluster/3.2-checkcluster/",
+	"title": "Kiểm tra EKS Cluster",
+	"tags": [],
+	"description": "",
+	"content": "Kiểm tra EKS Cluster  Trong giao diện AWS Console   Tìm CloudFormation Chọn CloudFormation  Trong giao diện CloudFormation   Chọn Stack Xem các stack đã tạo  Chạy câu lệnh để kiểm tra các nodes được tạo  kubectl get nodes\rTrong giao diện AWS Console   Tìm EKS Chọn EKS  Trong giao diện EKS   Chọn Cluster Xem cluster đã tạo  Trong giao diện AWS Console   Tìm EC2 Chọn EC2  Trong giao diện EC2   Chọn Instances Xem các instance đã tạo  "
+},
+{
+	"uri": "/vi/2-prerequiste/2.2-createworkspace/",
+	"title": "Tạo Cloud9 Workspace",
+	"tags": [],
+	"description": "",
+	"content": "Tạo Cloud9 Workspace  Truy cập vào AWS Console   Tìm Cloud9 Chọn Cloud9  Trong giao diện Cloud9   Chọn Create environment  Trong bước Name environment   Nhập Name: eksworkshop Chọn Next step   Trong bước Configure settings   Chọn Create a new EC2 instance for environment (direct access) Chọn Instance type, chọn t3.small (2 GiB RAM + 1 vCPU) Chọn Platform, chọn Amazon Linux 2 (recommended)  Chọn Next step  Kiểm tra lại và chọn Create environment  Giao diện sao khi tạo môi trường  Trong giao diện môi trường vừa khởi tạo   Chọn Window Chọn new Terminal  Chạy đoạn script sau đây để tăng dung lượng Cloud9 Workspace lên 30 GB.   Copy đoạn lệnh sau và paste vào giao diện terminal trên workspace của bạn. Sau khi thực thi các lệnh xong, Cloud 9 Workspace sẽ restart lại.  pip3 install --user --upgrade boto3\rexport instance_id=$(curl -s http://169.254.169.254/latest/meta-data/instance-id)\rpython -c \u0026quot;import boto3\rimport os\rfrom botocore.exceptions import ClientError ec2 = boto3.client('ec2')\rvolume_info = ec2.describe_volumes(\rFilters=[\r{\r'Name': 'attachment.instance-id',\r'Values': [\ros.getenv('instance_id')\r]\r}\r]\r)\rvolume_id = volume_info['Volumes'][0]['VolumeId']\rtry:\rresize = ec2.modify_volume( VolumeId=volume_id, Size=30\r)\rprint(resize)\rexcept ClientError as e:\rif e.response['Error']['Code'] == 'InvalidParameterValue':\rprint('ERROR MESSAGE: {}'.format(e))\u0026quot;\rif [ $? -eq 0 ]; then\rsudo reboot\rfi\r Giao diện khi chạy lệnh  Hoàn thành khởi tạo Cloud9 Workspace  "
+},
+{
+	"uri": "/vi/4-createcicd/4.2-codepipelineservicerole/",
+	"title": "Tạo service role cho dịch vụ CodePipeline",
+	"tags": [],
+	"description": "",
+	"content": "Tạo service role cho dịch vụ CodePipeline   CodePileline cần phải có IAM roles để build docker, push image và tương tác với EKS cluster bằng command kubectl.\n  Chúng ta sẽ tải các file policy json, tạo các role eks-CodePipelineServiceRole và thêm inline policy từ terminal như sau:\n  wget https://raw.githubusercontent.com/minhtri2582/server-samples/master/aws-journey/cpAssumeRolePolicyDocument.json\raws iam create-role --role-name eks-CodePipelineServiceRole --assume-role-policy-document file://cpAssumeRolePolicyDocument.json\rwget https://raw.githubusercontent.com/minhtri2582/server-samples/master/aws-journey/cpPolicyDocument.json\raws iam put-role-policy --role-name eks-CodePipelineServiceRole --policy-name codepipeline-access --policy-document file://cpPolicyDocument.json\r"
+},
+{
+	"uri": "/vi/2-prerequiste/2.3-kubernetestools/",
+	"title": "Cài đặt Kubernetes Tool",
+	"tags": [],
+	"description": "",
+	"content": "Cài đặt Kubernetes Tool  Copy và Paste đoạn lệnh dưới đây vào Terminal của Cloud9 Workspace để cài đặt kubectl.  sudo curl --silent --location -o /usr/local/bin/kubectl \\\rhttps://amazon-eks.s3.us-west-2.amazonaws.com/1.17.11/2020-09-18/bin/linux/amd64/kubectl\rsudo chmod +x /usr/local/bin/kubectl\rCopy và Paste đoạn lệnh dưới đây vào Terminal của Cloud9 Workspace để cập nhật awscli.  sudo pip install --upgrade awscli \u0026amp;\u0026amp; hash -r\rCopy và Paste đoạn lệnh dưới đây vào Terminal của Cloud9 Workspace để cài đặt các công cụ hỗ trợ xử lý text trên dòng lệnh.  sudo yum -y install jq gettext bash-completion moreutils\rTa xem jq giống như sed cho dữ liệu JSON - bạn có thể sử dụng nó để cắt và lọc cũng như ánh xạ và chuyển đổi dữ liệu có cấu trúc với cùng một cách dễ dàng giống như sed, awk, grep.  echo 'yq() {\rdocker run --rm -i -v \u0026quot;${PWD}\u0026quot;:/workdir mikefarah/yq \u0026quot;$@\u0026quot;\r}' | tee -a ~/.bashrc \u0026amp;\u0026amp; source ~/.bashrc\rKiểm tra các công cụ đã được cài đặt bằng cách chạy lệnh dưới đây.  for command in kubectl jq envsubst aws\rdo\rwhich $command \u0026amp;\u0026gt;/dev/null \u0026amp;\u0026amp; echo \u0026quot;$command in path\u0026quot; || echo \u0026quot;$command NOT FOUND\u0026quot;\rdone\rBật tính năng tự động hoàn tất cho công cụ kubectl bằng cách chạy lệnh dưới đây:  kubectl completion bash \u0026gt;\u0026gt; ~/.bash_completion\r. /etc/profile.d/bash_completion.sh\r. ~/.bash_completion\rThiết lập phiên bản 2.2.0 khi sử dụng AWS Load Balancer Controller  echo 'export LBC_VERSION=\u0026quot;v2.2.0\u0026quot;' \u0026gt;\u0026gt; ~/.bash_profile\r. ~/.bash_profile\r"
+},
+{
+	"uri": "/vi/2-prerequiste/2.4-configurerole/2.4.3-updateconfigureiam/",
+	"title": "Cập nhật cấu hình Cloud9",
+	"tags": [],
+	"description": "",
+	"content": "Cập nhật cấu hình Cloud9 Cloud9 sẽ quản lý thông tin chứng thực IAM một cách tự động. Cấu hình mặc định này hiện tại không tương thích với chứng thực EKS thông qua IAM, chúng ta sẽ cần phải vô hiệu hóa tính năng này và sử dụng IAM Role.\n\r Trong giao diện AWS Cloud9   Chọn AWS Cloud9 Chọn Preferences  Trong giao diện AWS Cloud9   Chọn AWS SETTINGS Bỏ chọn AWS managed temporary credentials  Để đảm bảo các thông tin chứng thực tạm không được lưu lại trong Cloud9, chúng ta sẽ xóa tất cả những thông tin chứng thực đang tồn tại bằng câu lệnh dưới đây.  rm -vf ${HOME}/.aws/credentials\rTiếp theo chúng ta sẽ cấu hình aws cli sử dụng Region hiện tại.  export ACCOUNT_ID=$(aws sts get-caller-identity --output text --query Account)\rexport AWS_REGION=$(curl -s 169.254.169.254/latest/dynamic/instance-identity/document | jq -r '.region')\rexport AZS=($(aws ec2 describe-availability-zones --query 'AvailabilityZones[].ZoneName' --output text --region $AWS_REGION))\rKiểm tra xem AWS_REGION đã được thiết lập đúng Region hiện tại chưa.  test -n \u0026quot;$AWS_REGION\u0026quot; \u0026amp;\u0026amp; echo AWS_REGION is \u0026quot;$AWS_REGION\u0026quot; || echo AWS_REGION is not set\rTiếp theo chúng ta sẽ lưu các thông tin cấu hình vào bash_profile  echo \u0026quot;export ACCOUNT_ID=${ACCOUNT_ID}\u0026quot; | tee -a ~/.bash_profile\recho \u0026quot;export AWS_REGION=${AWS_REGION}\u0026quot; | tee -a ~/.bash_profile\recho \u0026quot;export AZS=(${AZS[@]})\u0026quot; | tee -a ~/.bash_profile\raws configure set default.region ${AWS_REGION}\raws configure get default.region\rKiểm tra IAM Role   Chúng ta sẽ sử dụng câu lệnh để kiểm tra Cloud9 IDE đang sử dụng IAM Role có chính xác không.  aws sts get-caller-identity --query Arn | grep eksworkshop-admin -q \u0026amp;\u0026amp; echo \u0026quot;IAM role valid\u0026quot; || echo \u0026quot;IAM role NOT valid\u0026quot;\r"
+},
+{
+	"uri": "/vi/3-createekscluster/3.3-deploywebsite/",
+	"title": "Triển khai ứng dụng",
+	"tags": [],
+	"description": "",
+	"content": "Triển khai ứng dụng lên EKS cluster  Deploy một static Website vào EKS Cluster mình vừa tạo. Để deploy, đầu tiên chúng ta sẽ chạy command sau:  kubectl create deployment mywebsite --image=minhtri2582/aws-guide-web\rĐể có thể truy cập Website từ bên ngoài EKS cluster, chúng ta sẽ phải deploy một LoadBalancer Service vào cluster bằng command sau:  kubectl expose deployments/mywebsite --type=LoadBalancer --port=80\rĐể xem thông tin về LoadBalancer trên, mình sẽ chạy command sau:  kubectl get svc\rCopy link trong EXTERNAL-IP vào trình duyệt sẽ truy cập được website  Truy cập vào website  "
+},
+{
+	"uri": "/vi/3-createekscluster/",
+	"title": "Tạo EKS cluster",
+	"tags": [],
+	"description": "",
+	"content": "Tổng quan  Trong phần này, chúng ta sẽ thực hiện tạo EKS cluster sau đó triển khai ứng dụng web cơ bản lên cluster này.  Nội dung  Tạo IAM User Tạo Workspace Cài đặt Kubernetes Tool Cấu hình Role Cài đặt eksctl Tool  "
+},
+{
+	"uri": "/vi/4-createcicd/4.3-codebuildservicerole/",
+	"title": "Tạo service role cho dịch vụ CodeBuild",
+	"tags": [],
+	"description": "",
+	"content": "Tạo service role cho dịch vụ CodeBuild  CodeBuild cần phải có IAM roles để build docker, push image và tương tác với EKS cluster bằng command kubectl.   Hãy tải các file policy json, tạo các role eks-CodePipelineServiceRole và thêm inline policy từ terminal Cloud9 như sau:  wget https://raw.githubusercontent.com/minhtri2582/server-samples/master/aws-journey/cbAssumeRolePolicyDocument.json\raws iam create-role --role-name eks-CodeBuildServiceRole --assume-role-policy-document file://cbAssumeRolePolicyDocument.json\rwget https://raw.githubusercontent.com/minhtri2582/server-samples/master/aws-journey/cbPolicyDocument.json\raws iam put-role-policy --role-name eks-CodeBuildServiceRole --policy-name codebuild-access --policy-document file://cbPolicyDocument.json\rChúng ta kiểm tra role đã tạo, ta thực hiện:    Truy cập vào trang AWS Console\n  Tìm IAM\n  Chọn IAM\n  Trong giao diện IAM   Chọn Role Tìm eks-Code Xem 2 Role vừa tạo  "
+},
+{
+	"uri": "/vi/2-prerequiste/2.4-configurerole/",
+	"title": "Cấu hình IAM role",
+	"tags": [],
+	"description": "",
+	"content": "Tổng quan  Trong bước này, chúng ta sẽ thực hiện tạo và gán IAM role cho AWS Cloud9 để Cloud9 workspace của chúng ta có đủ quyền để tạo EKS Cluster.  Nội dung  Cấu hình IAM role Gán Role Cập nhật cấu hình Role  "
+},
+{
+	"uri": "/vi/4-createcicd/4.4-rbac/",
+	"title": "Cấu hình RBAC",
+	"tags": [],
+	"description": "",
+	"content": "Cấu hình RBAC  Để CodeBuild có thể tương tác với EKS, chúng ta sẽ chỉnh sửa configMap aws-auth   Từ terminal Cloud9 mà bạn đã kết nối EKS cluster, lấy bản sao configMap aws-auth bằng command:  kubectl get configmaps aws-auth -n kube-system -o yaml \u0026gt; aws-auth.yaml\rMở tập tin aws-auth.yaml vừa tạo ở trên, sẽ có nội dung như sau:  apiVersion: v1\rdata:\rmapRoles: |\r- groups:\r- system:bootstrappers\r- system:nodes\rrolearn: arn:aws:iam::435147975610:role/eksctl-k8s-demo-nodegroup-k8s-dem-NodeInstanceRole-189W51QXXFKU6\rusername: system:node:{{EC2PrivateDNSName}}\rkind: ConfigMap\rmetadata:\rcreationTimestamp: \u0026quot;2022-03-13T12:28:45Z\u0026quot;\rname: aws-auth\rnamespace: kube-system\rresourceVersion: \u0026quot;1416\u0026quot;\ruid: 8e6402d2-383d-40f9-a0ba-8d6003ae5e4f\rSửa file aws-auth.yaml này, thêm một item trong mảng data.mapRoles:  - groups:\r- system:masters\rrolearn: arn:aws:iam::{$AWS_ACCOUNT_ID}}:role/eks-CodeBuildServiceRole\rusername: codebuild-eks\rTập tin aws-auth.yaml sau khi thêm role eks-CodeBuildServiceRole có dạng như sau:  Xóa dòng metadata.creationTimestamp và metadata.resourceVersion\n\rapiVersion: v1\rdata:\rmapRoles: |\r- groups:\r- system:bootstrappers\r- system:nodes\rrolearn: arn:aws:iam::435147975610:role/eksctl-k8s-demo-nodegroup-k8s-dem-NodeInstanceRole-189W51QXXFKU6\rusername: system:node:{{EC2PrivateDNSName}}\r- groups:\r- system:masters\rrolearn: arn:aws:iam::435147975610:role/eks-CodeBuildServiceRole\rusername: codebuild-eks\rkind: ConfigMap\rmetadata:\rname: aws-auth\rnamespace: kube-system\ruid: 8e6402d2-383d-40f9-a0ba-8d6003ae5e4f\rApply tập tin aws-auth.yaml đã thay đổi từ terminal:  "
+},
+{
+	"uri": "/vi/4-createcicd/",
+	"title": "Tạo CI/CD",
+	"tags": [],
+	"description": "",
+	"content": "Tổng quan  Trong các bước tiếp theo, chúng ta sẽ tạo một Deployment Pipeline bằng AWS CodePipeline và tích hợp với công cụ third party là GitHub. Khi chúng ta thay đổi code trên GitHub, Pipeline của chúng ta sẽ được kích hoạt và deploy phiên bản ứng dụng mới lên ứng dụng web chúng ta đã chạy trên EKS Cluster.  Nội dung  Tạo S3 bucket Tạo CodePipeline Service Role Tạo Code Buid Service Role Cho phép role eks-CodeBuildServiceRole quyền trong RBAC của EKS cluster Forke source code Tạo CodePipeline Kiểm tra CI/CD  "
+},
+{
+	"uri": "/vi/2-prerequiste/2.5-installeksctl/",
+	"title": "Cài đặt eksctl",
+	"tags": [],
+	"description": "",
+	"content": "Cài đặt eksctl  Trong phần này chúng ta sẽ thực hiện cài đặt công cụ eksctl vào Cloud9 Workspace.   Chạy câu lệnh để tải về công cụ eksctl.  curl --silent --location \u0026quot;https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz\u0026quot; | tar xz -C /tmp\rsudo mv -v /tmp/eksctl /usr/local/bin\rKiểm tra eksctl hoạt động hay không bằng câu lệnh dưới đây.  eksctl version\rKích hoạt tính năng bash-completion của eksctl  eksctl completion bash \u0026gt;\u0026gt; ~/.bash_completion\r. /etc/profile.d/bash_completion.sh\r. ~/.bash_completion\r"
+},
+{
+	"uri": "/vi/5-cleanup/",
+	"title": "Dọn dẹp tài nguyên",
+	"tags": [],
+	"description": "",
+	"content": "Xóa stack bằng AWS CloudFormation console   Mở bảng điều khiển AWS CloudFormation\n  Trong trang Stack của AWS CloudFormation, chọn Stack mà bạn muốn xóa\n  Chọn Delete\n  Chọn Delete stack\n  Xóa Repository   Mở trang Amazon ECR console\n  Trên thanh điều hướng, chọn Region chứa repository cần xóa\n  Chọn Repository\n  Trong trang Repository, chọn Private\n  Chọn Repository cần xóa và chọn Delete\n  Xác minh xóa Repository và chọn Delete\n  Xóa EKSCluster   Mở trang Amazon EKS console\n  Chọn cluster cần xóa và chọn Delete\n  Xác minh xóa cluster và chọn Delete\n  Xóa môi trường AWS Cloud9 bằng AWS Cloud9 console  Chọn AWS Cloud9 và chọn Go TO Your Dashboard Chọn môi trường cần xóa và chọn Delete Xác thực xóa môi trường bằng cách điền Delete và chọn Delete. Môi trường sẽ được xóa sau vài phútphút.  "
+},
+{
+	"uri": "/vi/4-createcicd/4.5-forksourcecode/",
+	"title": "Fork Source Code",
+	"tags": [],
+	"description": "",
+	"content": "Thực hiện fork Source Code  Mở link GitHub   Chọn Fork  Trong giao diện fork   Kiểm tra Repository name Nhập Description, nhập fork aws-guide-resume-template Chọn Create fork  Giao diện sau khi tạo fork  Trong giao diện Github   Chọn vào ảnh đại diện gốc phải Chọn Settings  Trên thanh điều hướng, chọn \u0026lt;\u0026gt; Developer settings  Trong giao diện Developer settings   Chọn Personal access tokens Chọn Generate new token  Trong giao diện tạo personal access token   Nhập Note: aws-guide-eks Chọn repo  Chọn Generate token  Sao chép Personal access token  "
+},
+{
+	"uri": "/vi/4-createcicd/4.6-createcodepipeline/",
+	"title": "Tạo một pipeline",
+	"tags": [],
+	"description": "",
+	"content": "Tạo một CI/CD pipeline với CodePipeline  Chúng ta sẽ tạo CodePipeline sử dụng công cụ AWS CloudFormation.   Chọn Download CloudFormation template file  Trong giao diện AWS Console   Tìm CloudFormation Chọn CloudFormation  Trong giao diện CloudFormation   Chọn Stacks Chọn Create stack Chọn With new resources (standard)  Trong giao diện Create stack   Chọn Template is ready Chọn Upload a template file Chọn Choose file Chọn CloudFormation template file đã tải về Chọn Next  Phần Stack name, nhập Eks-stack  Tiếp theo, điền thông tin các mục sau:   User name, nhập tên Github Account Nhập Access token đã tạo Nhập tên Repository Nhập Branch Nhập tên EksCluster Nhập EksDeployment Nhập EksNamespace Chọn Next  Kéo xuống cuối trang và chọn Next  Kéo xuống cuối trang và chọn Create stack  Trong giao diện AWS Console   Tìm CodePipeline Chọn CodePipeline  Xem quá trình CI/CD  Quá trình CI/CD hoàn thành  "
+},
+{
+	"uri": "/vi/4-createcicd/4.7-checkcicd/",
+	"title": "Kiểm tra CI/CD",
+	"tags": [],
+	"description": "",
+	"content": "Kiểm tra CI/CD pipeline  Vào GitHub của bạn https://github.com/{GITHUB_ACCOUNT}/aws-guide-resume-template   Chọn repository đã fork Mở file index.htlm, chọn icon chỉnh sửa Chỉnh sửa code Sau đó, chọn Commit changes  Sau khi push code, CodePipeline sẽ được trigger để thực thi CodeBuild.   Vào trang quản trị CodePipeline sẽ thấy trạng thái của pipeline là In Progress Pipele của có 2 stage:  Source Pull source từ GitHub Đóng gói source cho stage build Build Tạo Docker image từ source Đẩy image lên ECR repository Triển khai cập nhật ứng dụng lên EKS cluster    Triển khai cập nhật ứng dụng lên EKS cluster Chờ khoảng 5-10 phút để quá trình build hoàn thành và chuyển sang trạng thái Success.   Vào website URL xem thay đổi. Lúc này title của website đã chuyển thành Test CodePipeline  "
+},
+{
+	"uri": "/vi/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/vi/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
