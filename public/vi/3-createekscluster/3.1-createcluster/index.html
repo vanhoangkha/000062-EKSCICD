@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.69.0" />
+    <meta name="generator" content="Hugo 0.92.2" />
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Tạo EKS Cluster :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1650812079" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1650812079" rel="stylesheet">
-    <link href="/css/hybrid.css?1650812079" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1650812079" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1650812079" rel="stylesheet">
-    <link href="/css/auto-complete.css?1650812079" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1650812079" rel="stylesheet">
-    <link href="/css/theme.css?1650812079" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1650812079" rel="stylesheet">
+    <link href="/css/nucleus.css?1650929255" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1650929255" rel="stylesheet">
+    <link href="/css/hybrid.css?1650929255" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1650929255" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1650929255" rel="stylesheet">
+    <link href="/css/auto-complete.css?1650929255" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1650929255" rel="stylesheet">
+    <link href="/css/theme.css?1650929255" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1650929255" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1650812079" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1650929255" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1650812079"></script>
+    <script src="/js/jquery-3.3.1.min.js?1650929255"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1650812079"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1650812079"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1650929255"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1650929255"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1650812079"></script>
+<script type="text/javascript" src="/js/search.js?1650929255"></script>
 
     
   </div>
@@ -414,7 +414,7 @@
   
     
     <li data-nav-id="/vi/3-createekscluster/3.1-createcluster/" title="Tạo EKS Cluster" class="dd-item 
-        
+        parent
         active
         
         ">
@@ -948,7 +948,7 @@
 <ol>
 <li>Để tạo EKS cluster, trước tiên chúng ta sẽ phải tạo SSH key để có thể access vào EC2 Node trong Cluster khi cần thiết:</li>
 </ol>
-<pre><code>aws ec2 create-key-pair --key-name k8s-demo --query 'KeyMaterial' --output text&gt; k8s-demo.pem
+<pre tabindex="0"><code>aws ec2 create-key-pair --key-name k8s-demo --query 'KeyMaterial' --output text&gt; k8s-demo.pem
 </code></pre><p><img src="/images/4-Createekscluster/0001-createekscluster.png" alt="Create EKS Cluster"></p>
 <ol start="2">
 <li>Trong giao diện <strong>AWS Console</strong></li>
@@ -969,7 +969,7 @@
 <ol start="4">
 <li>Để tạo EKS Cluster và các EC2 Node chúng ta sử dụng command sau:</li>
 </ol>
-<pre><code>eksctl create cluster --name k8s-demo --region ap-southeast-1 --nodegroup-name k8s-demo --nodes 2 --ssh-access --ssh-public-key k8s-demo --managed
+<pre tabindex="0"><code>eksctl create cluster --name k8s-demo --region ap-southeast-1 --nodegroup-name k8s-demo --nodes 2 --ssh-access --ssh-public-key k8s-demo --managed
 </code></pre><ul>
 <li>Khi bạn chạy command này, thì eksctl sẽ sử dụng AWS CloudFormation để tạo các infrastructure cần thiết và setup Master Node (Control Plane).</li>
 </ul>
@@ -1419,19 +1419,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1650812079"></script>
-    <script src="/js/perfect-scrollbar.min.js?1650812079"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1650812079"></script>
-    <script src="/js/jquery.sticky.js?1650812079"></script>
-    <script src="/js/featherlight.min.js?1650812079"></script>
-    <script src="/js/highlight.pack.js?1650812079"></script>
+    <script src="/js/clipboard.min.js?1650929255"></script>
+    <script src="/js/perfect-scrollbar.min.js?1650929255"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1650929255"></script>
+    <script src="/js/jquery.sticky.js?1650929255"></script>
+    <script src="/js/featherlight.min.js?1650929255"></script>
+    <script src="/js/highlight.pack.js?1650929255"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1650812079"></script>
-    <script src="/js/learn.js?1650812079"></script>
-    <script src="/js/hugo-learn.js?1650812079"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1650929255"></script>
+    <script src="/js/learn.js?1650929255"></script>
+    <script src="/js/hugo-learn.js?1650929255"></script>
 
-    <link href="/mermaid/mermaid.css?1650812079" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1650812079"></script>
+    <link href="/mermaid/mermaid.css?1650929255" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1650929255"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

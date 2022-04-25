@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.69.0" />
+    <meta name="generator" content="Hugo 0.92.2" />
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Fork Source Code :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1650812079" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1650812079" rel="stylesheet">
-    <link href="/css/hybrid.css?1650812079" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1650812079" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1650812079" rel="stylesheet">
-    <link href="/css/auto-complete.css?1650812079" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1650812079" rel="stylesheet">
-    <link href="/css/theme.css?1650812079" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1650812079" rel="stylesheet">
+    <link href="/css/nucleus.css?1650929255" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1650929255" rel="stylesheet">
+    <link href="/css/hybrid.css?1650929255" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1650929255" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1650929255" rel="stylesheet">
+    <link href="/css/auto-complete.css?1650929255" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1650929255" rel="stylesheet">
+    <link href="/css/theme.css?1650929255" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1650929255" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1650812079" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1650929255" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1650812079"></script>
+    <script src="/js/jquery-3.3.1.min.js?1650929255"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1650812079"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1650812079"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1650929255"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1650929255"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1650812079"></script>
+<script type="text/javascript" src="/js/search.js?1650929255"></script>
 
     
   </div>
@@ -648,7 +648,7 @@
   
     
     <li data-nav-id="/vi/4-createcicd/4.5-forksourcecode/" title="Fork Source Code" class="dd-item 
-        
+        parent
         active
         
         ">
@@ -946,61 +946,76 @@
 
 	<h4 id="thực-hiện-fork-source-code">Thực hiện fork Source Code</h4>
 <ol>
-<li>Mở link <a href="https://github.com/duocntg1/aws-guide-resume-template">GitHub</a></li>
+<li>Truy cập vào trang <a href="https://github.com/">Github cá nhân</a></li>
+</ol>
+<p><img src="/images/8-Forksourcecode/0001-forksourcecode.png" alt="Fork Source Code"></p>
+<ol start="2">
+<li>Truy cập vào repository cần fork tại <a href="https://github.com/First-Cloud-Journey/000062-EKSCICD">First-Cloud-Journey/000062-EKSCICD</a></li>
+</ol>
+<p><img src="/images/8-Forksourcecode/0002-forksourcecode.png" alt="Fork Source Code"></p>
+<ol start="3">
+<li>Trong giao diện <strong>Repository</strong></li>
 </ol>
 <ul>
 <li>Chọn <strong>Fork</strong></li>
 </ul>
-<p><img src="/images/8-Forksourcecode/0001-forksourcecode.png" alt="Fork Source Code"></p>
-<ol start="2">
-<li>Trong giao diện fork</li>
-</ol>
-<ul>
-<li>Kiểm tra <strong>Repository name</strong></li>
-<li>Nhập <strong>Description</strong>, nhập <code>fork aws-guide-resume-template</code></li>
-<li>Chọn <strong>Create fork</strong></li>
-</ul>
-<p><img src="/images/8-Forksourcecode/0002-forksourcecode.png" alt="Fork Source Code"></p>
-<ol start="3">
-<li>Giao diện sau khi tạo fork</li>
-</ol>
 <p><img src="/images/8-Forksourcecode/0003-forksourcecode.png" alt="Fork Source Code"></p>
 <ol start="4">
-<li>Trong giao diện <strong>Github</strong></li>
+<li>Thực hiện các bước để <strong>Create a new fork</strong></li>
 </ol>
 <ul>
-<li>Chọn vào ảnh đại diện gốc phải</li>
-<li>Chọn <strong>Settings</strong></li>
+<li><strong>Repository name</strong>, nhập <code>000062-EKSCICD</code></li>
+<li>Chọn <strong>Create fork</strong></li>
 </ul>
 <p><img src="/images/8-Forksourcecode/0004-forksourcecode.png" alt="Fork Source Code"></p>
 <ol start="5">
-<li>Trên thanh điều hướng, chọn <strong>&lt;&gt; Developer settings</strong></li>
+<li>Giao diện sau khi fork source code</li>
 </ol>
 <p><img src="/images/8-Forksourcecode/0005-forksourcecode.png" alt="Fork Source Code"></p>
 <ol start="6">
+<li>Trong giao diện <strong>Repository</strong></li>
+</ol>
+<ul>
+<li>Chọn vào <strong>avatar</strong> của <strong>Github</strong></li>
+<li>Chọn <strong>Settings</strong></li>
+</ul>
+<p><img src="/images/8-Forksourcecode/0006-forksourcecode.png" alt="Fork Source Code"></p>
+<ol start="7">
+<li>Trong giao diện <strong>Settings</strong></li>
+</ol>
+<ul>
+<li>Chọn <strong>&lt;&gt;Developer settings</strong></li>
+</ul>
+<p><img src="/images/8-Forksourcecode/0007-forksourcecode.png" alt="Fork Source Code"></p>
+<ol start="8">
 <li>Trong giao diện <strong>Developer settings</strong></li>
 </ol>
 <ul>
 <li>Chọn <strong>Personal access tokens</strong></li>
 <li>Chọn <strong>Generate new token</strong></li>
 </ul>
-<p><img src="/images/8-Forksourcecode/0006-forksourcecode.png" alt="Fork Source Code"></p>
-<ol start="7">
-<li>Trong giao diện tạo <strong>personal access token</strong></li>
-</ol>
-<ul>
-<li>Nhập <strong>Note</strong>: <code>aws-guide-eks</code></li>
-<li>Chọn <strong>repo</strong></li>
-</ul>
-<p><img src="/images/8-Forksourcecode/0007-forksourcecode.png" alt="Fork Source Code"></p>
-<ol start="8">
-<li>Chọn <strong>Generate token</strong></li>
-</ol>
 <p><img src="/images/8-Forksourcecode/0008-forksourcecode.png" alt="Fork Source Code"></p>
 <ol start="9">
-<li>Sao chép <strong>Personal access token</strong></li>
+<li>Trong giao diện <strong>New personal access token</strong></li>
 </ol>
+<ul>
+<li><strong>Note</strong>, nhập <code>awsfcj/000062</code></li>
+<li><strong>Expiration</strong>, chọn 30 ngày</li>
+<li>Phần <strong>Select scopes</strong> chọn <strong>repo</strong></li>
+</ul>
 <p><img src="/images/8-Forksourcecode/0009-forksourcecode.png" alt="Fork Source Code"></p>
+<ol start="10">
+<li>Chọn <strong>Generate token</strong></li>
+</ol>
+<p><img src="/images/8-Forksourcecode/00010-forksourcecode.png" alt="Fork Source Code"></p>
+<ol start="11">
+<li>Sau khi tạo token xong thì sao chép lại để sử dụng các bước tiếp theo</li>
+</ol>
+<p><img src="/images/8-Forksourcecode/00011-forksourcecode.png" alt="Fork Source Code"></p>
+<ol start="12">
+<li>Hoàn thành quá trình fork source và tạo <strong>personal access tokens</strong></li>
+</ol>
+<p><img src="/images/8-Forksourcecode/00012-forksourcecode.png" alt="Fork Source Code"></p>
 
 
 
@@ -1445,19 +1460,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1650812079"></script>
-    <script src="/js/perfect-scrollbar.min.js?1650812079"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1650812079"></script>
-    <script src="/js/jquery.sticky.js?1650812079"></script>
-    <script src="/js/featherlight.min.js?1650812079"></script>
-    <script src="/js/highlight.pack.js?1650812079"></script>
+    <script src="/js/clipboard.min.js?1650929255"></script>
+    <script src="/js/perfect-scrollbar.min.js?1650929255"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1650929255"></script>
+    <script src="/js/jquery.sticky.js?1650929255"></script>
+    <script src="/js/featherlight.min.js?1650929255"></script>
+    <script src="/js/highlight.pack.js?1650929255"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1650812079"></script>
-    <script src="/js/learn.js?1650812079"></script>
-    <script src="/js/hugo-learn.js?1650812079"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1650929255"></script>
+    <script src="/js/learn.js?1650929255"></script>
+    <script src="/js/hugo-learn.js?1650929255"></script>
 
-    <link href="/mermaid/mermaid.css?1650812079" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1650812079"></script>
+    <link href="/mermaid/mermaid.css?1650929255" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1650929255"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

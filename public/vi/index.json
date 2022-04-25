@@ -151,7 +151,7 @@
 	"title": "Fork Source Code",
 	"tags": [],
 	"description": "",
-	"content": "Thực hiện fork Source Code  Mở link GitHub   Chọn Fork  Trong giao diện fork   Kiểm tra Repository name Nhập Description, nhập fork aws-guide-resume-template Chọn Create fork  Giao diện sau khi tạo fork  Trong giao diện Github   Chọn vào ảnh đại diện gốc phải Chọn Settings  Trên thanh điều hướng, chọn \u0026lt;\u0026gt; Developer settings  Trong giao diện Developer settings   Chọn Personal access tokens Chọn Generate new token  Trong giao diện tạo personal access token   Nhập Note: aws-guide-eks Chọn repo  Chọn Generate token  Sao chép Personal access token  "
+	"content": "Thực hiện fork Source Code  Truy cập vào trang Github cá nhân  Truy cập vào repository cần fork tại First-Cloud-Journey/000062-EKSCICD  Trong giao diện Repository   Chọn Fork  Thực hiện các bước để Create a new fork   Repository name, nhập 000062-EKSCICD Chọn Create fork  Giao diện sau khi fork source code  Trong giao diện Repository   Chọn vào avatar của Github Chọn Settings  Trong giao diện Settings   Chọn \u0026lt;\u0026gt;Developer settings  Trong giao diện Developer settings   Chọn Personal access tokens Chọn Generate new token  Trong giao diện New personal access token   Note, nhập awsfcj/000062 Expiration, chọn 30 ngày Phần Select scopes chọn repo  Chọn Generate token  Sau khi tạo token xong thì sao chép lại để sử dụng các bước tiếp theo  Hoàn thành quá trình fork source và tạo personal access tokens  "
 },
 {
 	"uri": "/vi/4-createcicd/4.6-createcodepipeline/",

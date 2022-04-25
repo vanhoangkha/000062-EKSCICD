@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.69.0" />
+    <meta name="generator" content="Hugo 0.92.2" />
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Triển khai ứng dụng :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1650812079" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1650812079" rel="stylesheet">
-    <link href="/css/hybrid.css?1650812079" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1650812079" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1650812079" rel="stylesheet">
-    <link href="/css/auto-complete.css?1650812079" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1650812079" rel="stylesheet">
-    <link href="/css/theme.css?1650812079" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1650812079" rel="stylesheet">
+    <link href="/css/nucleus.css?1650929255" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1650929255" rel="stylesheet">
+    <link href="/css/hybrid.css?1650929255" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1650929255" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1650929255" rel="stylesheet">
+    <link href="/css/auto-complete.css?1650929255" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1650929255" rel="stylesheet">
+    <link href="/css/theme.css?1650929255" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1650929255" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1650812079" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1650929255" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1650812079"></script>
+    <script src="/js/jquery-3.3.1.min.js?1650929255"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1650812079"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1650812079"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1650929255"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1650929255"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1650812079"></script>
+<script type="text/javascript" src="/js/search.js?1650929255"></script>
 
     
   </div>
@@ -470,7 +470,7 @@
   
     
     <li data-nav-id="/vi/3-createekscluster/3.3-deploywebsite/" title="Triển khai ứng dụng" class="dd-item 
-        
+        parent
         active
         
         ">
@@ -948,17 +948,17 @@
 <ol>
 <li>Deploy một static Website vào EKS Cluster mình vừa tạo. Để deploy, đầu tiên chúng ta sẽ chạy command sau:</li>
 </ol>
-<pre><code>kubectl create deployment mywebsite --image=minhtri2582/aws-guide-web
+<pre tabindex="0"><code>kubectl create deployment mywebsite --image=minhtri2582/aws-guide-web
 </code></pre><p><img src="/images/6-Deploywebsite/0001-deploywebsite.png" alt="Deploywebsite"></p>
 <ol start="2">
 <li>Để có thể truy cập Website từ bên ngoài EKS cluster, chúng ta sẽ phải deploy một LoadBalancer Service vào cluster bằng command sau:</li>
 </ol>
-<pre><code>kubectl expose deployments/mywebsite --type=LoadBalancer --port=80
+<pre tabindex="0"><code>kubectl expose deployments/mywebsite --type=LoadBalancer --port=80
 </code></pre><p><img src="/images/6-Deploywebsite/0002-deploywebsite.png" alt="Deploywebsite"></p>
 <ol start="3">
 <li>Để xem thông tin về LoadBalancer trên, mình sẽ chạy command sau:</li>
 </ol>
-<pre><code>kubectl get svc
+<pre tabindex="0"><code>kubectl get svc
 </code></pre><p><img src="/images/6-Deploywebsite/0003-deploywebsite.png" alt="Deploywebsite"></p>
 <ol start="4">
 <li>Copy link trong <strong>EXTERNAL-IP</strong> vào trình duyệt sẽ truy cập được website</li>
@@ -1412,19 +1412,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1650812079"></script>
-    <script src="/js/perfect-scrollbar.min.js?1650812079"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1650812079"></script>
-    <script src="/js/jquery.sticky.js?1650812079"></script>
-    <script src="/js/featherlight.min.js?1650812079"></script>
-    <script src="/js/highlight.pack.js?1650812079"></script>
+    <script src="/js/clipboard.min.js?1650929255"></script>
+    <script src="/js/perfect-scrollbar.min.js?1650929255"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1650929255"></script>
+    <script src="/js/jquery.sticky.js?1650929255"></script>
+    <script src="/js/featherlight.min.js?1650929255"></script>
+    <script src="/js/highlight.pack.js?1650929255"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1650812079"></script>
-    <script src="/js/learn.js?1650812079"></script>
-    <script src="/js/hugo-learn.js?1650812079"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1650929255"></script>
+    <script src="/js/learn.js?1650929255"></script>
+    <script src="/js/hugo-learn.js?1650929255"></script>
 
-    <link href="/mermaid/mermaid.css?1650812079" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1650812079"></script>
+    <link href="/mermaid/mermaid.css?1650929255" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1650929255"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

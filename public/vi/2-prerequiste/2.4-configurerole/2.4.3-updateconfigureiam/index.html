@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.69.0" />
+    <meta name="generator" content="Hugo 0.92.2" />
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Cập nhật cấu hình Cloud9 :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1650812079" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1650812079" rel="stylesheet">
-    <link href="/css/hybrid.css?1650812079" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1650812079" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1650812079" rel="stylesheet">
-    <link href="/css/auto-complete.css?1650812079" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1650812079" rel="stylesheet">
-    <link href="/css/theme.css?1650812079" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1650812079" rel="stylesheet">
+    <link href="/css/nucleus.css?1650929255" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1650929255" rel="stylesheet">
+    <link href="/css/hybrid.css?1650929255" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1650929255" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1650929255" rel="stylesheet">
+    <link href="/css/auto-complete.css?1650929255" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1650929255" rel="stylesheet">
+    <link href="/css/theme.css?1650929255" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1650929255" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1650812079" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1650929255" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1650812079"></script>
+    <script src="/js/jquery-3.3.1.min.js?1650929255"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1650812079"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1650812079"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1650929255"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1650929255"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1650812079"></script>
+<script type="text/javascript" src="/js/search.js?1650929255"></script>
 
     
   </div>
@@ -311,7 +311,7 @@
   
     
     <li data-nav-id="/vi/2-prerequiste/2.4-configurerole/2.4.3-updateconfigureiam/" title="Cập nhật cấu hình Cloud9" class="dd-item 
-        
+        parent
         active
         
         ">
@@ -974,12 +974,12 @@
 <ol start="3">
 <li>Để đảm bảo các thông tin chứng thực tạm không được lưu lại trong Cloud9, chúng ta sẽ xóa tất cả những thông tin chứng thực đang tồn tại bằng câu lệnh dưới đây.</li>
 </ol>
-<pre><code>rm -vf ${HOME}/.aws/credentials
+<pre tabindex="0"><code>rm -vf ${HOME}/.aws/credentials
 </code></pre><p><img src="/images/2-Prerequiste/2.4-Configurerole/2.4.3-Updateconfigureiam/0003-updateconfigureiam.png" alt="Update configure role"></p>
 <ol start="4">
 <li>Tiếp theo chúng ta sẽ cấu hình aws cli sử dụng Region hiện tại.</li>
 </ol>
-<pre><code>export ACCOUNT_ID=$(aws sts get-caller-identity --output text --query Account)
+<pre tabindex="0"><code>export ACCOUNT_ID=$(aws sts get-caller-identity --output text --query Account)
 export AWS_REGION=$(curl -s 169.254.169.254/latest/dynamic/instance-identity/document | jq -r '.region')
 export AZS=($(aws ec2 describe-availability-zones --query 'AvailabilityZones[].ZoneName' --output text --region $AWS_REGION))
 
@@ -987,13 +987,13 @@ export AZS=($(aws ec2 describe-availability-zones --query 'AvailabilityZones[].Z
 <ol start="5">
 <li>Kiểm tra xem AWS_REGION đã được thiết lập đúng Region hiện tại chưa.</li>
 </ol>
-<pre><code>test -n &quot;$AWS_REGION&quot; &amp;&amp; echo AWS_REGION is &quot;$AWS_REGION&quot; || echo AWS_REGION is not set
+<pre tabindex="0"><code>test -n &quot;$AWS_REGION&quot; &amp;&amp; echo AWS_REGION is &quot;$AWS_REGION&quot; || echo AWS_REGION is not set
 
 </code></pre><p><img src="/images/2-Prerequiste/2.4-Configurerole/2.4.3-Updateconfigureiam/0005-updateconfigureiam.png" alt="Update configure role"></p>
 <ol start="6">
 <li>Tiếp theo chúng ta sẽ lưu các thông tin cấu hình vào bash_profile</li>
 </ol>
-<pre><code>echo &quot;export ACCOUNT_ID=${ACCOUNT_ID}&quot; | tee -a ~/.bash_profile
+<pre tabindex="0"><code>echo &quot;export ACCOUNT_ID=${ACCOUNT_ID}&quot; | tee -a ~/.bash_profile
 echo &quot;export AWS_REGION=${AWS_REGION}&quot; | tee -a ~/.bash_profile
 echo &quot;export AZS=(${AZS[@]})&quot; | tee -a ~/.bash_profile
 aws configure set default.region ${AWS_REGION}
@@ -1006,7 +1006,7 @@ aws configure get default.region
 <ul>
 <li>Chúng ta sẽ sử dụng câu lệnh để kiểm tra Cloud9 IDE đang sử dụng IAM Role có chính xác không.</li>
 </ul>
-<pre><code>aws sts get-caller-identity --query Arn | grep eksworkshop-admin -q &amp;&amp; echo &quot;IAM role valid&quot; || echo &quot;IAM role NOT valid&quot;
+<pre tabindex="0"><code>aws sts get-caller-identity --query Arn | grep eksworkshop-admin -q &amp;&amp; echo &quot;IAM role valid&quot; || echo &quot;IAM role NOT valid&quot;
 
 </code></pre><p><img src="/images/2-Prerequiste/2.4-Configurerole/2.4.3-Updateconfigureiam/0007-updateconfigureiam.png" alt="Update configure role"></p>
 
@@ -1457,19 +1457,19 @@ aws configure get default.region
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1650812079"></script>
-    <script src="/js/perfect-scrollbar.min.js?1650812079"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1650812079"></script>
-    <script src="/js/jquery.sticky.js?1650812079"></script>
-    <script src="/js/featherlight.min.js?1650812079"></script>
-    <script src="/js/highlight.pack.js?1650812079"></script>
+    <script src="/js/clipboard.min.js?1650929255"></script>
+    <script src="/js/perfect-scrollbar.min.js?1650929255"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1650929255"></script>
+    <script src="/js/jquery.sticky.js?1650929255"></script>
+    <script src="/js/featherlight.min.js?1650929255"></script>
+    <script src="/js/highlight.pack.js?1650929255"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1650812079"></script>
-    <script src="/js/learn.js?1650812079"></script>
-    <script src="/js/hugo-learn.js?1650812079"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1650929255"></script>
+    <script src="/js/learn.js?1650929255"></script>
+    <script src="/js/hugo-learn.js?1650929255"></script>
 
-    <link href="/mermaid/mermaid.css?1650812079" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1650812079"></script>
+    <link href="/mermaid/mermaid.css?1650929255" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1650929255"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

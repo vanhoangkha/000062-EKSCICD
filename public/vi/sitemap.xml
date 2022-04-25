@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>/vi/</loc>
     <xhtml:link
@@ -14,9 +13,7 @@
                 hreflang="vi"
                 href="/vi/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/vi/1-introduce/</loc>
     <xhtml:link
                 rel="alternate"
@@ -28,9 +25,7 @@
                 hreflang="vi"
                 href="/vi/1-introduce/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/vi/3-createekscluster/3.1-createcluster/</loc>
     <xhtml:link
                 rel="alternate"
@@ -42,9 +37,7 @@
                 hreflang="vi"
                 href="/vi/3-createekscluster/3.1-createcluster/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/vi/2-prerequiste/2.4-configurerole/2.4.1-createiamrole/</loc>
     <xhtml:link
                 rel="alternate"
@@ -56,9 +49,7 @@
                 hreflang="vi"
                 href="/vi/2-prerequiste/2.4-configurerole/2.4.1-createiamrole/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/vi/2-prerequiste/2.1-iamuser/</loc>
     <xhtml:link
                 rel="alternate"
@@ -70,9 +61,7 @@
                 hreflang="vi"
                 href="/vi/2-prerequiste/2.1-iamuser/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/vi/4-createcicd/4.1-creates3bucket/</loc>
     <xhtml:link
                 rel="alternate"
@@ -84,9 +73,7 @@
                 hreflang="vi"
                 href="/vi/4-createcicd/4.1-creates3bucket/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/vi/2-prerequiste/</loc>
     <xhtml:link
                 rel="alternate"
@@ -98,9 +85,7 @@
                 hreflang="vi"
                 href="/vi/2-prerequiste/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/vi/2-prerequiste/2.4-configurerole/2.4.2-attachiamrole/</loc>
     <xhtml:link
                 rel="alternate"
@@ -112,9 +97,7 @@
                 hreflang="vi"
                 href="/vi/2-prerequiste/2.4-configurerole/2.4.2-attachiamrole/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/vi/3-createekscluster/3.2-checkcluster/</loc>
     <xhtml:link
                 rel="alternate"
@@ -126,9 +109,7 @@
                 hreflang="vi"
                 href="/vi/3-createekscluster/3.2-checkcluster/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/vi/2-prerequiste/2.2-createworkspace/</loc>
     <xhtml:link
                 rel="alternate"
@@ -140,9 +121,7 @@
                 hreflang="vi"
                 href="/vi/2-prerequiste/2.2-createworkspace/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/vi/4-createcicd/4.2-codepipelineservicerole/</loc>
     <xhtml:link
                 rel="alternate"
@@ -154,9 +133,7 @@
                 hreflang="vi"
                 href="/vi/4-createcicd/4.2-codepipelineservicerole/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/vi/2-prerequiste/2.3-kubernetestools/</loc>
     <xhtml:link
                 rel="alternate"
@@ -168,9 +145,7 @@
                 hreflang="vi"
                 href="/vi/2-prerequiste/2.3-kubernetestools/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/vi/2-prerequiste/2.4-configurerole/2.4.3-updateconfigureiam/</loc>
     <xhtml:link
                 rel="alternate"
@@ -182,9 +157,7 @@
                 hreflang="vi"
                 href="/vi/2-prerequiste/2.4-configurerole/2.4.3-updateconfigureiam/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/vi/3-createekscluster/3.3-deploywebsite/</loc>
     <xhtml:link
                 rel="alternate"
@@ -196,9 +169,7 @@
                 hreflang="vi"
                 href="/vi/3-createekscluster/3.3-deploywebsite/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/vi/3-createekscluster/</loc>
     <xhtml:link
                 rel="alternate"
@@ -210,9 +181,7 @@
                 hreflang="vi"
                 href="/vi/3-createekscluster/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/vi/4-createcicd/4.3-codebuildservicerole/</loc>
     <xhtml:link
                 rel="alternate"
@@ -224,9 +193,7 @@
                 hreflang="vi"
                 href="/vi/4-createcicd/4.3-codebuildservicerole/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/vi/2-prerequiste/2.4-configurerole/</loc>
     <xhtml:link
                 rel="alternate"
@@ -238,9 +205,7 @@
                 hreflang="vi"
                 href="/vi/2-prerequiste/2.4-configurerole/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/vi/4-createcicd/4.4-rbac/</loc>
     <xhtml:link
                 rel="alternate"
@@ -252,9 +217,7 @@
                 hreflang="vi"
                 href="/vi/4-createcicd/4.4-rbac/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/vi/4-createcicd/</loc>
     <xhtml:link
                 rel="alternate"
@@ -266,9 +229,7 @@
                 hreflang="vi"
                 href="/vi/4-createcicd/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/vi/2-prerequiste/2.5-installeksctl/</loc>
     <xhtml:link
                 rel="alternate"
@@ -280,9 +241,7 @@
                 hreflang="vi"
                 href="/vi/2-prerequiste/2.5-installeksctl/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/vi/5-cleanup/</loc>
     <xhtml:link
                 rel="alternate"
@@ -294,9 +253,7 @@
                 hreflang="vi"
                 href="/vi/5-cleanup/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/vi/4-createcicd/4.5-forksourcecode/</loc>
     <xhtml:link
                 rel="alternate"
@@ -308,9 +265,7 @@
                 hreflang="vi"
                 href="/vi/4-createcicd/4.5-forksourcecode/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/vi/4-createcicd/4.6-createcodepipeline/</loc>
     <xhtml:link
                 rel="alternate"
@@ -322,9 +277,7 @@
                 hreflang="vi"
                 href="/vi/4-createcicd/4.6-createcodepipeline/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/vi/4-createcicd/4.7-checkcicd/</loc>
     <xhtml:link
                 rel="alternate"
@@ -336,9 +289,7 @@
                 hreflang="vi"
                 href="/vi/4-createcicd/4.7-checkcicd/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/vi/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -350,9 +301,7 @@
                 hreflang="vi"
                 href="/vi/categories/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/vi/tags/</loc>
     <xhtml:link
                 rel="alternate"
@@ -365,5 +314,4 @@
                 href="/vi/tags/"
                 />
   </url>
-  
 </urlset>

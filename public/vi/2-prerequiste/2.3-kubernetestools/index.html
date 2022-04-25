@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.69.0" />
+    <meta name="generator" content="Hugo 0.92.2" />
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Cài đặt Kubernetes Tool :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1650812079" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1650812079" rel="stylesheet">
-    <link href="/css/hybrid.css?1650812079" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1650812079" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1650812079" rel="stylesheet">
-    <link href="/css/auto-complete.css?1650812079" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1650812079" rel="stylesheet">
-    <link href="/css/theme.css?1650812079" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1650812079" rel="stylesheet">
+    <link href="/css/nucleus.css?1650929255" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1650929255" rel="stylesheet">
+    <link href="/css/hybrid.css?1650929255" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1650929255" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1650929255" rel="stylesheet">
+    <link href="/css/auto-complete.css?1650929255" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1650929255" rel="stylesheet">
+    <link href="/css/theme.css?1650929255" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1650929255" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1650812079" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1650929255" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1650812079"></script>
+    <script src="/js/jquery-3.3.1.min.js?1650929255"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1650812079"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1650812079"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1650929255"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1650929255"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1650812079"></script>
+<script type="text/javascript" src="/js/search.js?1650929255"></script>
 
     
   </div>
@@ -196,7 +196,7 @@
   
     
     <li data-nav-id="/vi/2-prerequiste/2.3-kubernetestools/" title="Cài đặt Kubernetes Tool" class="dd-item 
-        
+        parent
         active
         
         ">
@@ -948,7 +948,7 @@
 <ol>
 <li>Copy và Paste đoạn lệnh dưới đây vào <strong>Terminal của Cloud9 Workspace</strong> để cài đặt <strong>kubectl</strong>.</li>
 </ol>
-<pre><code>sudo curl --silent --location -o /usr/local/bin/kubectl \
+<pre tabindex="0"><code>sudo curl --silent --location -o /usr/local/bin/kubectl \
    https://amazon-eks.s3.us-west-2.amazonaws.com/1.17.11/2020-09-18/bin/linux/amd64/kubectl
 
 sudo chmod +x /usr/local/bin/kubectl
@@ -956,18 +956,18 @@ sudo chmod +x /usr/local/bin/kubectl
 <ol start="2">
 <li>Copy và Paste đoạn lệnh dưới đây vào <strong>Terminal của Cloud9 Workspace</strong> để cập nhật <strong>awscli</strong>.</li>
 </ol>
-<pre><code>sudo pip install --upgrade awscli &amp;&amp; hash -r
+<pre tabindex="0"><code>sudo pip install --upgrade awscli &amp;&amp; hash -r
 </code></pre><p><img src="/images/2-Prerequiste/2.3-Kubernetestools/0002-kubernetestools.png" alt="Install Kubernetes Tool"></p>
 <ol start="3">
 <li>Copy và Paste đoạn lệnh dưới đây vào <strong>Terminal của Cloud9 Workspace</strong> để cài đặt các công cụ hỗ trợ xử lý text trên dòng lệnh.</li>
 </ol>
-<pre><code>sudo yum -y install jq gettext bash-completion moreutils
+<pre tabindex="0"><code>sudo yum -y install jq gettext bash-completion moreutils
 
 </code></pre><p><img src="/images/2-Prerequiste/2.3-Kubernetestools/0003-kubernetestools.png" alt="Install Kubernetes Tool"></p>
 <ol start="4">
 <li>Ta xem <strong>jq</strong> giống như sed cho dữ liệu JSON - bạn có thể sử dụng nó để cắt và lọc cũng như ánh xạ và chuyển đổi dữ liệu có cấu trúc với cùng một cách dễ dàng giống như sed, awk, grep.</li>
 </ol>
-<pre><code>echo 'yq() {
+<pre tabindex="0"><code>echo 'yq() {
   docker run --rm -i -v &quot;${PWD}&quot;:/workdir mikefarah/yq &quot;$@&quot;
 }' | tee -a ~/.bashrc &amp;&amp; source ~/.bashrc
 
@@ -975,7 +975,7 @@ sudo chmod +x /usr/local/bin/kubectl
 <ol start="5">
 <li>Kiểm tra các công cụ đã được cài đặt bằng cách chạy lệnh dưới đây.</li>
 </ol>
-<pre><code>for command in kubectl jq envsubst aws
+<pre tabindex="0"><code>for command in kubectl jq envsubst aws
   do
     which $command &amp;&gt;/dev/null &amp;&amp; echo &quot;$command in path&quot; || echo &quot;$command NOT FOUND&quot;
   done
@@ -984,14 +984,14 @@ sudo chmod +x /usr/local/bin/kubectl
 <ol start="6">
 <li>Bật tính năng tự động hoàn tất cho công cụ kubectl bằng cách chạy lệnh dưới đây:</li>
 </ol>
-<pre><code>kubectl completion bash &gt;&gt;  ~/.bash_completion
+<pre tabindex="0"><code>kubectl completion bash &gt;&gt;  ~/.bash_completion
 . /etc/profile.d/bash_completion.sh
 . ~/.bash_completion
 </code></pre><p><img src="/images/2-Prerequiste/2.3-Kubernetestools/0006-kubernetestools.png" alt="Install Kubernetes Tool"></p>
 <ol start="7">
 <li>Thiết lập phiên bản 2.2.0 khi sử dụng AWS Load Balancer Controller</li>
 </ol>
-<pre><code>echo 'export LBC_VERSION=&quot;v2.2.0&quot;' &gt;&gt;  ~/.bash_profile
+<pre tabindex="0"><code>echo 'export LBC_VERSION=&quot;v2.2.0&quot;' &gt;&gt;  ~/.bash_profile
 .  ~/.bash_profile
 
 </code></pre><p><img src="/images/2-Prerequiste/2.3-Kubernetestools/0007-kubernetestools.png" alt="Install Kubernetes Tool"></p>
@@ -1439,19 +1439,19 @@ sudo chmod +x /usr/local/bin/kubectl
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1650812079"></script>
-    <script src="/js/perfect-scrollbar.min.js?1650812079"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1650812079"></script>
-    <script src="/js/jquery.sticky.js?1650812079"></script>
-    <script src="/js/featherlight.min.js?1650812079"></script>
-    <script src="/js/highlight.pack.js?1650812079"></script>
+    <script src="/js/clipboard.min.js?1650929255"></script>
+    <script src="/js/perfect-scrollbar.min.js?1650929255"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1650929255"></script>
+    <script src="/js/jquery.sticky.js?1650929255"></script>
+    <script src="/js/featherlight.min.js?1650929255"></script>
+    <script src="/js/highlight.pack.js?1650929255"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1650812079"></script>
-    <script src="/js/learn.js?1650812079"></script>
-    <script src="/js/hugo-learn.js?1650812079"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1650929255"></script>
+    <script src="/js/learn.js?1650929255"></script>
+    <script src="/js/hugo-learn.js?1650929255"></script>
 
-    <link href="/mermaid/mermaid.css?1650812079" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1650812079"></script>
+    <link href="/mermaid/mermaid.css?1650929255" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1650929255"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
