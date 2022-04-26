@@ -2,6 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/3-createekscluster/3.1-createcluster/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/3-createekscluster/3.1-createcluster/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/3-createekscluster/3.1-createcluster/"
+                />
+  </url><url>
+    <loc>/2-prerequiste/2.4-configurerole/2.4.1-createiamrole/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/2-prerequiste/2.4-configurerole/2.4.1-createiamrole/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/2-prerequiste/2.4-configurerole/2.4.1-createiamrole/"
+                />
+  </url><url>
+    <loc>/2-prerequiste/2.1-iamuser/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/2-prerequiste/2.1-iamuser/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/2-prerequiste/2.1-iamuser/"
+                />
+  </url><url>
+    <loc>/4-createcicd/4.1-creates3bucket/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/4-createcicd/4.1-creates3bucket/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/4-createcicd/4.1-creates3bucket/"
+                />
+  </url><url>
     <loc>/1-introduce/</loc>
     <xhtml:link
                 rel="alternate"
@@ -26,28 +74,16 @@
                 href="/"
                 />
   </url><url>
-    <loc>/2-prerequiste/</loc>
+    <loc>/2-prerequiste/2.4-configurerole/2.4.2-attachiamrole/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/2-prerequiste/"
+                href="/vi/2-prerequiste/2.4-configurerole/2.4.2-attachiamrole/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/2-prerequiste/"
-                />
-  </url><url>
-    <loc>/2-prerequiste/2.1-iamuser/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="/vi/2-prerequiste/2.1-iamuser/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/2-prerequiste/2.1-iamuser/"
+                href="/2-prerequiste/2.4-configurerole/2.4.2-attachiamrole/"
                 />
   </url><url>
     <loc>/2-prerequiste/2.2-createworkspace/</loc>
@@ -62,6 +98,42 @@
                 href="/2-prerequiste/2.2-createworkspace/"
                 />
   </url><url>
+    <loc>/2-prerequiste/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/2-prerequiste/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/2-prerequiste/"
+                />
+  </url><url>
+    <loc>/3-createekscluster/3.2-checkcluster/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/3-createekscluster/3.2-checkcluster/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/3-createekscluster/3.2-checkcluster/"
+                />
+  </url><url>
+    <loc>/3-createekscluster/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/3-createekscluster/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/3-createekscluster/"
+                />
+  </url><url>
     <loc>/2-prerequiste/2.3-kubernetestools/</loc>
     <xhtml:link
                 rel="alternate"
@@ -72,30 +144,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="/2-prerequiste/2.3-kubernetestools/"
-                />
-  </url><url>
-    <loc>/2-prerequiste/2.4-configurerole/2.4.1-createiamrole/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="/vi/2-prerequiste/2.4-configurerole/2.4.1-createiamrole/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/2-prerequiste/2.4-configurerole/2.4.1-createiamrole/"
-                />
-  </url><url>
-    <loc>/2-prerequiste/2.4-configurerole/2.4.2-attachiamrole/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="/vi/2-prerequiste/2.4-configurerole/2.4.2-attachiamrole/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/2-prerequiste/2.4-configurerole/2.4.2-attachiamrole/"
                 />
   </url><url>
     <loc>/2-prerequiste/2.4-configurerole/2.4.3-updateconfigureiam/</loc>
@@ -134,34 +182,7 @@
                 href="/2-prerequiste/2.5-installeksctl/"
                 />
   </url><url>
-    <loc>/3-createekscluster/3.1-createcluster/</loc>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="/vi/3-createekscluster/3.1-createcluster/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/3-createekscluster/3.1-createcluster/"
-                />
-  </url><url>
-    <loc>/3-createekscluster/3.2-checkcluster/</loc>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="/vi/3-createekscluster/3.2-checkcluster/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/3-createekscluster/3.2-checkcluster/"
-                />
-  </url><url>
     <loc>/3-createekscluster/3.3-deploywebsite/</loc>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -171,32 +192,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="/3-createekscluster/3.3-deploywebsite/"
-                />
-  </url><url>
-    <loc>/3-createekscluster/</loc>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="/vi/3-createekscluster/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/3-createekscluster/"
-                />
-  </url><url>
-    <loc>/4-createcicd/4.1-creates3bucket/</loc>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="/vi/4-createcicd/4.1-creates3bucket/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/4-createcicd/4.1-creates3bucket/"
                 />
   </url><url>
     <loc>/4-createcicd/4.2-codepipelineservicerole/</loc>

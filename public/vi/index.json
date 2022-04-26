@@ -95,7 +95,7 @@
 	"title": "Triển khai ứng dụng",
 	"tags": [],
 	"description": "",
-	"content": "Triển khai ứng dụng lên EKS cluster  Deploy một static Website vào EKS Cluster mình vừa tạo. Để deploy, đầu tiên chúng ta sẽ chạy command sau:  kubectl create deployment mywebsite --image=minhtri2582/aws-guide-web\rĐể có thể truy cập Website từ bên ngoài EKS cluster, chúng ta sẽ phải deploy một LoadBalancer Service vào cluster bằng command sau:  kubectl expose deployments/mywebsite --type=LoadBalancer --port=80\rĐể xem thông tin về LoadBalancer trên, mình sẽ chạy command sau:  kubectl get svc\rCopy link trong EXTERNAL-IP vào trình duyệt sẽ truy cập được website  Truy cập vào website  "
+	"content": "Triển khai ứng dụng lên EKS cluster  Deploy một static Website vào EKS Cluster mình vừa tạo. Để deploy, đầu tiên chúng ta sẽ chạy command sau:  kubectl create deployment fcj-workshop --image=awsfcj/000062\rawsfcj/00062 là image được build sẵn để sử dụng trong bài lab này\n\rĐể có thể truy cập Website từ bên ngoài EKS cluster, chúng ta sẽ phải deploy một LoadBalancer Service vào cluster bằng command sau:  kubectl expose deployments/mywebsite --type=LoadBalancer --port=80\rĐể xem thông tin về LoadBalancer trên, mình sẽ chạy command sau:  kubectl get svc\rCopy link trong EXTERNAL-IP vào trình duyệt sẽ truy cập được website  Truy cập vào website  "
 },
 {
 	"uri": "/vi/3-createekscluster/",

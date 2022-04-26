@@ -1,10 +1,38 @@
 [
 {
+	"uri": "/3-createekscluster/3.1-createcluster/",
+	"title": "Create EKS Cluster",
+	"tags": [],
+	"description": "",
+	"content": "Create EKS Cluster  To create an EKS cluster, we will first have to generate an SSH key to be able to access the EC2 Node in the Cluster as needed:  aws ec2 create-key-pair --key-name k8s-demo --query 'KeyMaterial' --output text\u0026gt; k8s-demo.pem\rIn the AWS Console interface   Find EC2 Select EC2  In the EC2 interface   Select Key Pair See Key Pair just created  To create EKS Cluster and EC2 Nodes we use the following command:  eksctl create cluster --name k8s-demo --region ap-southeast-1 --nodegroup-name k8s-demo --nodes 2 --ssh-access --ssh-public-key k8s-demo --managed\r When you run this command, eksctl will use AWS CloudFormation to create the necessary infrastructure and setup the Master Node (Control Plane).  Interface after creating EKS Cluster  "
+},
+{
+	"uri": "/2-prerequiste/2.4-configurerole/2.4.1-createiamrole/",
+	"title": "Create IAM role",
+	"tags": [],
+	"description": "",
+	"content": "Create IAM role  In Workspace AWS Cloud9   Select AWS Cloud9 Select Go To Your Dashboard  In the AWS Console interface   Find IAM Select IAM  In the IAM interface   Select Role Select Create role  In Select trusted entity step   Select AWS service Select EC2 Select Next  In Add permission step   Find AdministratorAccess Select AdministratorAccess Select Next  In step Name, review and create   Enter Role name:eksworkshop-admin  Select Create role  Create a successful role  "
+},
+{
+	"uri": "/2-prerequiste/2.1-iamuser/",
+	"title": "Create IAM User",
+	"tags": [],
+	"description": "",
+	"content": "Create IAM User  Go to the AWS Console page   Find IAM Select IAM  In the IAM interface   Select User Select Add users  In Add user step   Enter User name, enter aws-eks Select Access key - Programmatic access Select Password - AWS Management Console access Select Custom password Select Show password Uncheck User must create a new password at next sign-in Select Next:Permissions  In the next step of Add user   Select Attach existing policies directly Select AdministratorAccess Select Next:Tags  In Add tags step   Enter Key: Name Enter Value: Admin user  Check again and select Create user  After Add user is successful   View created user information Select Download.csv to download information about Access key ID and Secure access key Then select Close  View successful user creation information  "
+},
+{
+	"uri": "/4-createcicd/4.1-creates3bucket/",
+	"title": "Create S3 bucket",
+	"tags": [],
+	"description": "",
+	"content": "Create S3 bucket  Create this Bucket for CodeBuild to save artifact (generate build.json file after each build). We use the following command:  ACCOUNT_ID=$(aws sts get-caller-identity | jq -r '.Account')\raws s3 mb s3://eks-${ACCOUNT_ID}-codepipeline-artifacts\rIn the [AWS Console] interface(https://aws.amazon.com/console/)   Find S3 Select S3  In the S3 interface   Select S3 Select Bucket View created bucket artifact  "
+},
+{
 	"uri": "/1-introduce/",
 	"title": "Introduction",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "Overview Kubernetes (K8s) is an open source, extensible platform for managing packaged applications and services, facilitating configuration and automating application deployment.\n In this lab, we will create a simple Kubernetes Cluster on AWS EKS (Elastic Kubernetes Service). Then, I will deploy the site on the cluster and use AWS CodePipeLine for automated deployment.  Content  Introduction Preparation steps Create EKS cluster Create Code Pipeline Resource Cleanup  "
 },
 {
 	"uri": "/",
@@ -14,98 +42,70 @@
 	"content": ""
 },
 {
+	"uri": "/2-prerequiste/2.4-configurerole/2.4.2-attachiamrole/",
+	"title": "Assign IAM role",
+	"tags": [],
+	"description": "",
+	"content": "Attach IAM role to Cloud9  In AWS Cloud9 interface   Select the R icon Select Manage EC2 Instance  In the EC2 interface   Select Instance Select aws-cloud9 instance  In the Instance interface   Select Actions Select Security Select Modify IAM role  Successful role attachment  "
+},
+{
+	"uri": "/2-prerequiste/2.2-createworkspace/",
+	"title": "Create Cloud9 Workspace",
+	"tags": [],
+	"description": "",
+	"content": "Create Cloud9 Workspace  Go to AWS Console   Find Cloud9 Select Cloud9  In the Cloud9 interface   Select Create environment  In Name environment step   Enter Name: eksworkshop Select Next step   In Configure settings step   Select Create a new EC2 instance for environment (direct access) Select Instance type, select t3.small (2 GiB RAM + 1 vCPU) Select Platform, select Amazon Linux 2 (recommended)  Select Next step  Check again and select Create environment  Star interface when creating environment  In the environment interface just initialized   Select Window Select new Terminal  Run the following script to increase Cloud9 Workspace capacity to 30 GB.   Copy the following command and paste it into the terminal interface on your workspace. After executing the commands, Cloud 9 Workspace will restart.  pip3 install --user --upgrade boto3\rexport instance_id=$(curl -s http://169.254.169.254/latest/meta-data/instance-id)\rpython -c \u0026quot;import boto3\rimport os\rfrom botocore.exceptions import ClientError\rec2 = boto3.client('ec2')\rvolume_info = ec2.describe_volumes(\rFilters=[\r{\r'Name': 'attachment.instance-id',\r'Values': [\ros.getenv('instance_id')\r]\r}\r]\r)\rvolume_id = volume_info['Volumes'][0]['VolumeId']\rtry:\rresize = ec2.modify_volume(\rVolumeId=volume_id,\rSize=30\r)\rprint(resize)\rexcept ClientError as e:\rif e.response['Error']['Code'] == 'InvalidParameterValue':\rprint('ERROR MESSAGE: {}'.format(e))\u0026quot;\rif [ $? -eq 0 ]; then\rsudo reboot\rfi\r Interface when running commands  Complete initialization Cloud9 Workspace  "
+},
+{
 	"uri": "/2-prerequiste/",
 	"title": "Preparation ",
 	"tags": [],
 	"description": "",
-	"content": ""
-},
-{
-	"uri": "/2-prerequiste/2.1-iamuser/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "/2-prerequiste/2.2-createworkspace/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "/2-prerequiste/2.3-kubernetestools/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "/2-prerequiste/2.4-configurerole/2.4.1-createiamrole/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "/2-prerequiste/2.4-configurerole/2.4.2-attachiamrole/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "/2-prerequiste/2.4-configurerole/2.4.3-updateconfigureiam/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "/2-prerequiste/2.4-configurerole/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "/2-prerequiste/2.5-installeksctl/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "/3-createekscluster/3.1-createcluster/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
+	"content": "Overview  To prepare for the lab, we will use AWS Cloud9 as a workspace and will need to install some tools for system administration on EKS including kubectl and eksctl .  Content  Create IAM User Create Workspace Install Kubernetes Tool Role Configuration Install eksctl Tool  "
 },
 {
 	"uri": "/3-createekscluster/3.2-checkcluster/",
-	"title": "",
+	"title": "Test EKS Cluster",
 	"tags": [],
 	"description": "",
-	"content": ""
-},
-{
-	"uri": "/3-createekscluster/3.3-deploywebsite/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
+	"content": "Check EKS Cluster  In the [AWS Console] interface(https://aws.amazon.com/console/)   Find CloudFormation Select CloudFormation  In the CloudFormation interface   Select Stack View created stacks  Run the command to check the nodes created  kubectl get nodes\rIn the [AWS Console] interface(https://aws.amazon.com/console/)   Find EKS Select EKS  In the EKS interface   Select Cluster View the created cluster  In the [AWS Console] interface(https://aws.amazon.com/console/)   Find EC2 Select EC2  In the EC2 interface   Select Instances View created instances  "
 },
 {
 	"uri": "/3-createekscluster/",
-	"title": "",
+	"title": "Create EKS cluster",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "Overview  In this section, we will create an EKS cluster and then deploy the basic web application to this cluster.  Content  Create IAM User Create Workspace Install Kubernetes Tool Role Configuration Install eksctl Tool  "
 },
 {
-	"uri": "/4-createcicd/4.1-creates3bucket/",
+	"uri": "/2-prerequiste/2.3-kubernetestools/",
+	"title": "Installing Kubernetes Tool",
+	"tags": [],
+	"description": "",
+	"content": "Install Kubernetes Tool  Copy and Paste the command below into Terminal of Cloud9 Workspace to install kubectl.  sudo curl --silent --location -o /usr/local/bin/kubectl \\\rhttps://amazon-eks.s3.us-west-2.amazonaws.com/1.17.11/2020-09-18/bin/linux/amd64/kubectl\rsudo chmod +x /usr/local/bin/kubectl\rCopy and Paste the command below into Terminal of Cloud9 Workspace to update awscli.  sudo pip install --upgrade awscli \u0026amp;\u0026amp; hash -r\rCopy and Paste the command below into Terminal of Cloud9 Workspace to install tools that support text processing on the command line.  sudo yum -y install jq gettext bash-completion moreutils\rWe consider jq like sed for JSON data - you can use it to slice and filter and map and transform structured data with the same ease as sed, awk , grep.  echo 'yq() {\rdocker run --rm -i -v \u0026quot;${PWD}\u0026quot;:/workdir mikefarah/yq \u0026quot;$@\u0026quot;\r}' | tee -a ~/.bashrc \u0026amp;\u0026amp; source ~/.bashrc\rCheck the installed tools by running the command below.  for command in kubectl jq envsubst aws\rdo\rwhich $command \u0026amp;\u0026gt;/dev/null \u0026amp;\u0026amp; echo \u0026quot;$command in path\u0026quot; || echo \u0026quot;$command NOT FOUND\u0026quot;\rdone\rEnable autocomplete for the kubectl tool by running the command below:  kubectl completion bash \u0026gt;\u0026gt; ~/.bash_completion\r. /etc/profile.d/bash_completion.sh\r. ~/.bash_completion\rSet up version 2.2.0 using AWS Load Balancer Controller  echo 'export LBC_VERSION=\u0026quot;v2.2.0\u0026quot;' \u0026gt;\u0026gt; ~/.bash_profile\r. ~/.bash_profile\r"
+},
+{
+	"uri": "/2-prerequiste/2.4-configurerole/2.4.3-updateconfigureiam/",
+	"title": "Update Cloud9 Configuration",
+	"tags": [],
+	"description": "",
+	"content": "Update Cloud9 configuration Cloud9 will manage IAM credentials automatically. This default configuration is currently not compatible with EKS authentication via IAM, we will need to disable this feature and use the IAM Role.\n\r In the AWS Cloud9 interface   Select AWS Cloud9 Select Preferences  In AWS Cloud9 interface   Select AWS SETTINGS Uncheck AWS managed temporary credentials  To ensure that temporary credentials are not saved in Cloud9, we will delete all existing credentials with the command below.  rm -vf ${HOME}/.aws/credentials\rNext we will configure the aws cli to use the current Region.  export ACCOUNT_ID=$(aws sts get-caller-identity --output text --query Account)\rexport AWS_REGION=$(curl -s 169.254.169.254/latest/dynamic/instance-identity/document | jq -r '.region')\rexport AZS=($(aws ec2 describe-availability-zones --query 'AvailabilityZones[].ZoneName' --output text --region $AWS_REGION))\rCheck that AWS_REGION has been set to the correct current Region.  test -n \u0026quot;$AWS_REGION\u0026quot; \u0026amp;\u0026amp; echo AWS_REGION is \u0026quot;$AWS_REGION\u0026quot; || echo AWS_REGION is not set\rNext we will save the configuration information to bash_profile  echo \u0026quot;export ACCOUNT_ID=${ACCOUNT_ID}\u0026quot; | tee -a ~/.bash_profile\recho \u0026quot;export AWS_REGION=${AWS_REGION}\u0026quot; | tee -a ~/.bash_profile\recho \u0026quot;export AZS=(${AZS[@]})\u0026quot; | tee -a ~/.bash_profile\raws configure set default.region ${AWS_REGION}\raws configure get default.region\rCheck IAM Role   We will use the command to check if the Cloud9 IDE is using the IAM Role correctly.  aws sts get-caller-identity --query Arn | grep eksworkshop-admin -q \u0026amp;\u0026amp; echo \u0026quot;IAM role valid\u0026quot; || echo \u0026quot;IAM role NOT valid\u0026quot;\r"
+},
+{
+	"uri": "/2-prerequiste/2.4-configurerole/",
+	"title": "Configuring IAM role",
+	"tags": [],
+	"description": "",
+	"content": "Overview  In this step, we will create and assign IAM role to AWS Cloud9 so that our Cloud9 workspace has enough permissions to create EKS Cluster.  Content  Configure IAM role Assign Role Update Role Configuration  "
+},
+{
+	"uri": "/2-prerequiste/2.5-installeksctl/",
+	"title": "Installing eksctl",
+	"tags": [],
+	"description": "",
+	"content": "Install eksctl  In this section we will install the eksctl tool into Cloud9 Workspace.   Run the command to download the eksctl tool.  curl --silent --location \u0026quot;https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz\u0026quot; | tar xz -C /tmp\rsudo mv -v /tmp/eksctl /usr/local/bin\rCheck if eksctl works or not with the command below.  eksctl version\rEnable bash-completion of eksctl  eksctl completion bash \u0026gt;\u0026gt; ~/.bash_completion\r. /etc/profile.d/bash_completion.sh\r. ~/.bash_completion\r"
+},
+{
+	"uri": "/3-createekscluster/3.3-deploywebsite/",
 	"title": "",
 	"tags": [],
 	"description": "",

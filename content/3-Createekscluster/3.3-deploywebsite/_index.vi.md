@@ -11,10 +11,16 @@ pre : " <b> 3.3 </b> "
 1. Deploy một static Website vào EKS Cluster mình vừa tạo. Để deploy, đầu tiên chúng ta sẽ chạy command sau:
 
 ```
-kubectl create deployment mywebsite --image=minhtri2582/aws-guide-web
+kubectl create deployment fcj-workshop --image=awsfcj/000062
 ```
 
 ![Deploywebsite](/images/6-Deploywebsite/0001-deploywebsite.png)
+
+{{% notice info %}}
+**awsfcj/00062** là image được build sẵn để sử dụng trong bài lab này 
+ {{% /notice %}}
+
+![Deploywebsite](/images/6-Deploywebsite/0006-deploywebsite.png)
 
 2. Để có thể truy cập Website từ bên ngoài EKS cluster, chúng ta sẽ phải deploy một LoadBalancer Service vào cluster bằng command sau:
 
@@ -39,4 +45,4 @@ kubectl get svc
 
 5. Truy cập vào website
 
-![Deploywebsite](/images/6-Deploywebsite/0005-deploywebsite.png)
+![Deploywebsite](/images/6-Deploywebsite/0004-deploywebsite.png)
