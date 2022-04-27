@@ -17,7 +17,7 @@ pre : " <b> 5. </b> "
 
 #### Delete Repository
 
-1. Open the [Amazon ECR console] page (https://console.aws.amazon.com/ecr/repositories)
+1. Open the [Amazon ECR console](https://console.aws.amazon.com/ecr/repositories)
 
 2. On the navigation bar, select **Region** containing the repository to be deleted
 3. Select **Repository**

@@ -18,7 +18,7 @@ aws iam create-role --role-name eks-CodeBuildServiceRole --assume-role-policy-do
 wget https://raw.githubusercontent.com/minhtri2582/server-samples/master/aws-journey/cbPolicyDocument.json
 aws iam put-role-policy --role-name eks-CodeBuildServiceRole --policy-name codebuild-access --policy-document file://cbPolicyDocument.json
 ```
-
+![Create Code Build Service Role](/images/7-Createcicd/7.3-codebuildservicerole/0001-CodeBuildServiceRole.png)
 
 2. We check the created role, we do:
 

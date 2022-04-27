@@ -8,7 +8,8 @@ pre : " <b>4.7 </b> "
 
 #### Test CI/CD pipeline
 
-1. Go to your **GitHub** https://github.com/{GITHUB_ACCOUNT}/aws-guide-resume-template
+1. Go to your **GitHub** https://github.com/{GITHUB_ACCOUNT}/000062-websource
+
  
 - Select the fork repository
 - Open the file **index.htlm**, select the edit icon
@@ -36,5 +37,10 @@ pre : " <b>4.7 </b> "
 
 ![Check CICD](/images/10-Checkcicd/0003-checkcicd.png)
 
-- Go to the website URL to see the changes.
-- Now the title of the website has changed to **Test CodePipeline**
+4. Go to the website URL to see the changes.
+
+- At this time, the title of the website has changed to **AWS First Cloud Journey**
+
+![Check CICD](/images/10-Checkcicd/0004-checkcicd.png)
+
+Congratulations on completing the lab.

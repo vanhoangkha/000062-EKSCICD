@@ -8,7 +8,8 @@ pre : " <b> 4.7 </b> "
 
 #### Kiểm tra CI/CD pipeline
 
-1. Vào **GitHub** của bạn https://github.com/{GITHUB_ACCOUNT}/aws-guide-resume-template
+1. Vào **GitHub** của bạn https://github.com/{GITHUB_ACCOUNT}/000062-websource
+
  
 - Chọn repository đã fork 
 - Mở file **index.htlm**, chọn icon chỉnh sửa
@@ -36,6 +37,10 @@ pre : " <b> 4.7 </b> "
 
 ![Check CICD](/images/10-Checkcicd/0003-checkcicd.png)
 
-- Vào website URL xem thay đổi. 
-- Lúc này title của website đã chuyển thành **Test CodePipeline**
+4. Vào website URL xem thay đổi. 
 
+- Lúc này title của website đã chuyển thành **AWS First Cloud Journey**
+
+![Check CICD](/images/10-Checkcicd/0004-checkcicd.png)
+
+Chúc mừng bạn đã hoàn thành bài lab. 

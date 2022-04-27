@@ -19,3 +19,4 @@ aws iam create-role --role-name eks-CodePipelineServiceRole --assume-role-policy
 wget https://raw.githubusercontent.com/minhtri2582/server-samples/master/aws-journey/cpPolicyDocument.json
 aws iam put-role-policy --role-name eks-CodePipelineServiceRole --policy-name codepipeline-access --policy-document file://cpPolicyDocument.json
 ```
+![Create service role for CodePipelin service](/images/7-Createcicd/7.2-codepipelineservicerole/0001-createcodepipelineservicerole.png)

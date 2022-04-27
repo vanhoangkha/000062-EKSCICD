@@ -21,9 +21,9 @@ pre : " <b>4.6 </b> "
 - Find **CloudFormation**
 - Select **CloudFormation**
 
-![Create Code Pipeline](/images/9-Createcodepipeline/00010-Createcodepipeline.png)
+![Create Code Pipeline](/images/9-Createcodepipeline/00013-Createcodepipeline.png)
 
-3. In the **CloudFormation** interface
+1. In the **CloudFormation** interface
 
 - Select **Stacks**
 - Select **Create stack**
@@ -73,18 +73,22 @@ pre : " <b>4.6 </b> "
 ![Create Code Pipeline](/images/9-Createcodepipeline/0008-Createcodepipeline.png)
 
 
-10. In the [AWS Console] interface(https://aws.amazon.com/console/)
+10. In the [AWS Console](https://aws.amazon.com/console/)
 
 - Find **CodePipeline**
 - Select **CodePipeline**
 
-![Create Code Pipeline](/images/9-Createcodepipeline/00011-Createcodepipeline.png)
+![Create Code Pipeline](/images/9-Createcodepipeline/00012-Createcodepipeline.png)
 
 
-10. View CI/CD process and select **details** to view build details
+11. View CI/CD process and select **details** to view build details
 
 ![Create Code Pipeline](/images/9-Createcodepipeline/0009-Createcodepipeline.png)
 
-11. CI/CD process complete
+12. CI/CD process complete
  
-![Create Code Pipeline](/images/9-Createcodepipeline/0009-Createcodepipeline.png)
+![Create Code Pipeline](/images/9-Createcodepipeline/00010-Createcodepipeline.png)
+
+13. Review the details of the build process by selecting **details**
+
+![Create Code Pipeline](/images/9-Createcodepipeline/00011-Createcodepipeline.png)
