@@ -1,10 +1,17 @@
 [
 {
+	"uri": "/",
+	"title": "CI/CD on EKS",
+	"tags": [],
+	"description": "",
+	"content": "CI/CD on EKS with CodePipeline and GitHub   Amazon Elastic Kubernetes Service (Amazon EKS) is an AWS-managed container orchestration service that helps us to create, manage, launch, and scale Kubernetes applications in an AWS environment or on\u0026ndash; premise.\n  AWS CodePipeline is a continuous delivery service that helps you automate deployment pipelines to keep your application or infrastructure up to date with new versions in a consistent manner. CodePipeline automates the build, test, and deployment phases of your deployment each time there is a code change, based on the deployment model you define. You can integrate AWS CodePipeline with third-party services such as GitHub or with your own custom plugin. With AWS CodePipeline, you only pay for what you use. You don\u0026rsquo;t have to pay upfront or make a long-term commitment.\n  In this exercise, we will create an EKS Cluster and deploy a pipeline to automatically deploy to production every time there is a code change using the AWS CodePipeline service.\n"
+},
+{
 	"uri": "/3-createekscluster/3.1-createcluster/",
 	"title": "Create EKS Cluster",
 	"tags": [],
 	"description": "",
-	"content": "Create EKS Cluster  To create an EKS cluster, we will first have to generate an SSH key to be able to access the EC2 Node in the Cluster as needed:  aws ec2 create-key-pair --key-name k8s-demo --query 'KeyMaterial' --output text\u0026gt; k8s-demo.pem\rIn the AWS Console interface   Find EC2 Select EC2  In the EC2 interface   Select Key Pair See Key Pair just created  To create EKS Cluster and EC2 Nodes we use the following command:  eksctl create cluster --name k8s-demo --region ap-southeast-1 --nodegroup-name k8s-demo --nodes 2 --ssh-access --ssh-public-key k8s-demo --managed\r When you run this command, eksctl will use AWS CloudFormation to create the necessary infrastructure and setup the Master Node (Control Plane).  Interface after creating EKS Cluster  "
+	"content": "Create EKS Cluster  To create EKS cluster, we will first have to generate SSH key to be able to access EC2 Node in the Cluster as needed:  aws ec2 create-key-pair --key-name k8s-demo --query 'KeyMaterial' --output text\u0026gt; k8s-demo.pem\rIn the AWS Console interface   Find EC2 Select EC2  In EC2 interface   Select Key Pair View Key Pair just created  To create EKS Cluster and EC2 Nodes we use the following command:  eksctl create cluster --name k8s-demo --region ap-southeast-1 --nodegroup-name k8s-demo --nodes 2 --ssh-access --ssh-public-key k8s-demo --managed\r When you run this command, eksctl will use AWS CloudFormation to create the necessary infrastructure and setup Master Node (Control Plane).  Interface after creating EKS Cluster.  It takes about 15 minutes to complete the initialization of EKS Cluster\n\r"
 },
 {
 	"uri": "/2-prerequiste/2.4-configurerole/2.4.1-createiamrole/",
@@ -18,46 +25,46 @@
 	"title": "Create IAM User",
 	"tags": [],
 	"description": "",
-	"content": "Create IAM User  Go to the AWS Console page   Find IAM Select IAM  In the IAM interface   Select User Select Add users  In Add user step   Enter User name, enter aws-eks Select Access key - Programmatic access Select Password - AWS Management Console access Select Custom password Select Show password Uncheck User must create a new password at next sign-in Select Next:Permissions  In the next step of Add user   Select Attach existing policies directly Select AdministratorAccess Select Next:Tags  In Add tags step   Enter Key: Name Enter Value: Admin user  Check again and select Create user  After Add user is successful   View created user information Select Download.csv to download information about Access key ID and Secure access key Then select Close  View successful user creation information  "
+	"content": "Create IAM User  Go to the AWS Console   Find IAM Select IAM  In the IAM interface   Select User Select Add users  In Add user step   Enter User name, enter aws-eks Select Access key - Programmatic access Select Password - AWS Management Console access Select Custom password Select Show password Uncheck User must create a new password at next sign-in Select Next:Permissions  In the next step of Add user   Select Attach existing policies directly Select AdministratorAccess Select Next:Tags  In Add tags step   Enter Key: Name Enter Value: Admin user  Check again and select Create user  After Add user is successful   View created user information Select Download.csv to download information about Access key ID and Secure access key Then select Close  View successful user creation information  "
 },
 {
 	"uri": "/4-createcicd/4.1-creates3bucket/",
 	"title": "Create S3 bucket",
 	"tags": [],
 	"description": "",
-	"content": "Create S3 bucket  Create this Bucket for CodeBuild to save artifact (generate build.json file after each build). We use the following command:  ACCOUNT_ID=$(aws sts get-caller-identity | jq -r '.Account')\raws s3 mb s3://eks-${ACCOUNT_ID}-codepipeline-artifacts\rIn the [AWS Console] interface(https://aws.amazon.com/console/)   Find S3 Select S3  In the S3 interface   Select S3 Select Bucket View created bucket artifact  "
+	"content": "Create S3 bucket  Create this Bucket for CodeBuild to save artifact (generate build.json file after each build). We use the following command:  ACCOUNT_ID=$(aws sts get-caller-identity | jq -r '.Account')\raws s3 mb s3://eks-${ACCOUNT_ID}-codepipeline-artifacts\rIn the AWS Console   Find S3 Select S3  In the S3 interface   Select S3 Select Bucket View created bucket artifact  "
 },
 {
 	"uri": "/1-introduce/",
 	"title": "Introduction",
 	"tags": [],
 	"description": "",
-	"content": "Overview Kubernetes (K8s) is an open source, extensible platform for managing packaged applications and services, facilitating configuration and automating application deployment.\n In this lab, we will create a simple Kubernetes Cluster on AWS EKS (Elastic Kubernetes Service). Then, I will deploy the site on the cluster and use AWS CodePipeLine for automated deployment.  Content  Introduction Preparation steps Create EKS cluster Create Code Pipeline Resource Cleanup  "
-},
-{
-	"uri": "/",
-	"title": "Session Management",
-	"tags": [],
-	"description": "",
-	"content": ""
+	"content": "Overview Kubernetes (K8s) is an open source, extensible platform for managing packaged applications and services, facilitating configuration and automating application deployment.\n In this lab, we will create a simple Kubernetes Cluster on AWS EKS (Elastic Kubernetes Service). Then I will deploy the site on the cluster and use AWS CodePipeLine for automated deployment.  Content  Introduction Preparation steps Create EKS cluster Create Code Pipeline Resource Cleanup  "
 },
 {
 	"uri": "/2-prerequiste/2.4-configurerole/2.4.2-attachiamrole/",
 	"title": "Assign IAM role",
 	"tags": [],
 	"description": "",
-	"content": "Attach IAM role to Cloud9  In AWS Cloud9 interface   Select the R icon Select Manage EC2 Instance  In the EC2 interface   Select Instance Select aws-cloud9 instance  In the Instance interface   Select Actions Select Security Select Modify IAM role  Successful role attachment  "
+	"content": "Assign IAM role to Cloud9  In the AWS Cloud9 interface   Select the R icon Select Manage EC2 Instance  In EC2 interface   Select Instance Select aws-cloud9 instance  In the Instance interface   Select Actions Select Security Select Modify IAM role  In the Modify IAM role interface   Select eksworkshop-admin Select Save  Successful role assignment  "
 },
 {
 	"uri": "/2-prerequiste/2.2-createworkspace/",
 	"title": "Create Cloud9 Workspace",
 	"tags": [],
 	"description": "",
-	"content": "Create Cloud9 Workspace  Go to AWS Console   Find Cloud9 Select Cloud9  In the Cloud9 interface   Select Create environment  In Name environment step   Enter Name: eksworkshop Select Next step   In Configure settings step   Select Create a new EC2 instance for environment (direct access) Select Instance type, select t3.small (2 GiB RAM + 1 vCPU) Select Platform, select Amazon Linux 2 (recommended)  Select Next step  Check again and select Create environment  Star interface when creating environment  In the environment interface just initialized   Select Window Select new Terminal  Run the following script to increase Cloud9 Workspace capacity to 30 GB.   Copy the following command and paste it into the terminal interface on your workspace. After executing the commands, Cloud 9 Workspace will restart.  pip3 install --user --upgrade boto3\rexport instance_id=$(curl -s http://169.254.169.254/latest/meta-data/instance-id)\rpython -c \u0026quot;import boto3\rimport os\rfrom botocore.exceptions import ClientError\rec2 = boto3.client('ec2')\rvolume_info = ec2.describe_volumes(\rFilters=[\r{\r'Name': 'attachment.instance-id',\r'Values': [\ros.getenv('instance_id')\r]\r}\r]\r)\rvolume_id = volume_info['Volumes'][0]['VolumeId']\rtry:\rresize = ec2.modify_volume(\rVolumeId=volume_id,\rSize=30\r)\rprint(resize)\rexcept ClientError as e:\rif e.response['Error']['Code'] == 'InvalidParameterValue':\rprint('ERROR MESSAGE: {}'.format(e))\u0026quot;\rif [ $? -eq 0 ]; then\rsudo reboot\rfi\r Interface when running commands  Complete initialization Cloud9 Workspace  "
+	"content": "\rCloud9 environment initialization takes about 5 minutes\n\rCreate Cloud9 Workspace  Go to AWS Console   Find Cloud9 Select Cloud9  In the Cloud9 interface   Select Create environment  In Name environment step   Enter Name: eksworkshop Select Next step   In Configure settings step   Select Create a new EC2 instance for environment (direct access) Select Instance type, select t3.small (2 GiB RAM + 1 vCPU) Select Platform, select Amazon Linux 2 (recommended)  Select Next step  Check again and select Create environment  Interface after creating the environment  In the environment interface just initialized   Select Window Select New Terminal  Run the following script to increase Cloud9 Workspace capacity to 30 GB.   Copy the following command and paste it into the terminal interface on your workspace. After executing the commands, Cloud 9 Workspace will restart.  pip3 install --user --upgrade boto3\rexport instance_id=$(curl -s http://169.254.169.254/latest/meta-data/instance-id)\rpython -c \u0026quot;import boto3\rimport os\rfrom botocore.exceptions import ClientError\rec2 = boto3.client('ec2')\rvolume_info = ec2.describe_volumes(\rFilters=[\r{\r'Name': 'attachment.instance-id',\r'Values': [\ros.getenv('instance_id')\r]\r}\r]\r)\rvolume_id = volume_info['Volumes'][0]['VolumeId']\rtry:\rresize = ec2.modify_volume(\rVolumeId=volume_id,\rSize=30\r)\rprint(resize)\rexcept ClientError as e:\rif e.response['Error']['Code'] == 'InvalidParameterValue':\rprint('ERROR MESSAGE: {}'.format(e))\u0026quot;\rif [ $? -eq 0 ]; then\rsudo reboot\rfi\r Interface when running commands  The environment will be restarted when running the above command\n\rComplete initialization Cloud9 Workspace  "
+},
+{
+	"uri": "/4-createcicd/4.2-codepipelineservicerole/",
+	"title": "Create service role for CodePipeline service",
+	"tags": [],
+	"description": "",
+	"content": "Create service role for CodePipeline service   CodePileline requires IAM roles to build docker, push image and interact with EKS cluster using kubectl command.\n  Download the json policy files, create role eks-CodePipelineServiceRole and add inline policy from terminal as follows:\n  wget https://raw.githubusercontent.com/minhtri2582/server-samples/master/aws-journey/cpAssumeRolePolicyDocument.json\raws iam create-role --role-name eks-CodePipelineServiceRole --assume-role-policy-document file://cpAssumeRolePolicyDocument.json\rwget https://raw.githubusercontent.com/minhtri2582/server-samples/master/aws-journey/cpPolicyDocument.json\raws iam put-role-policy --role-name eks-CodePipelineServiceRole --policy-name codepipeline-access --policy-document file://cpPolicyDocument.json\r"
 },
 {
 	"uri": "/2-prerequiste/",
-	"title": "Preparation ",
+	"title": "Preparatory steps",
 	"tags": [],
 	"description": "",
 	"content": "Overview  To prepare for the lab, we will use AWS Cloud9 as a workspace and will need to install some tools for system administration on EKS including kubectl and eksctl .  Content  Create IAM User Create Workspace Install Kubernetes Tool Role Configuration Install eksctl Tool  "
@@ -67,28 +74,42 @@
 	"title": "Test EKS Cluster",
 	"tags": [],
 	"description": "",
-	"content": "Check EKS Cluster  In the [AWS Console] interface(https://aws.amazon.com/console/)   Find CloudFormation Select CloudFormation  In the CloudFormation interface   Select Stack View created stacks  Run the command to check the nodes created  kubectl get nodes\rIn the [AWS Console] interface(https://aws.amazon.com/console/)   Find EKS Select EKS  In the EKS interface   Select Cluster View the created cluster  In the [AWS Console] interface(https://aws.amazon.com/console/)   Find EC2 Select EC2  In the EC2 interface   Select Instances View created instances  "
+	"content": "Check EKS Cluster  In the AWS Console   Find CloudFormation Select CloudFormation  In the CloudFormation interface   Select Stack View created stacks  Run the command to check the nodes created  kubectl get nodes\rIn the [AWS Console] interface(https://aws.amazon.com/console/)   Find EKS Select EKS  In the EKS interface   Select Cluster View the created cluster  In the [AWS Console] interface(https://aws.amazon.com/console/)   Find EC2 Select EC2  In the EC2 interface   Select Instances View created instances  "
 },
 {
 	"uri": "/3-createekscluster/",
 	"title": "Create EKS cluster",
 	"tags": [],
 	"description": "",
-	"content": "Overview  In this section, we will create an EKS cluster and then deploy the basic web application to this cluster.  Content  Create IAM User Create Workspace Install Kubernetes Tool Role Configuration Install eksctl Tool  "
+	"content": "Overview  In this section, we will create an EKS cluster and then deploy the basic web application to this cluster.  Content  Create EKS Cluster Check EKS Cluster Deploy Application  "
+},
+{
+	"uri": "/4-createcicd/4.3-codebuildservicerole/",
+	"title": "Create service role for CodeBuild service",
+	"tags": [],
+	"description": "",
+	"content": "Create service role for CodeBuild service  CodeBuild requires IAM roles to build docker, push images, and interact with the EKS cluster using the kubectl command.   Let\u0026rsquo;s create role eks-CodePipelineServiceRole and add inline policy from terminal Cloud9  wget https://raw.githubusercontent.com/minhtri2582/server-samples/master/aws-journey/cbAssumeRolePolicyDocument.json\raws iam create-role --role-name eks-CodeBuildServiceRole --assume-role-policy-document file://cbAssumeRolePolicyDocument.json\rwget https://raw.githubusercontent.com/minhtri2582/server-samples/master/aws-journey/cbPolicyDocument.json\raws iam put-role-policy --role-name eks-CodeBuildServiceRole --policy-name codebuild-access --policy-document file://cbPolicyDocument.json\rWe check the created role, we do:    Go to the AWS Console\n  Find IAM\n  Select IAM\n  In the IAM interface   Select Role Find eks-Code View the 2 Roles just created  "
+},
+{
+	"uri": "/3-createekscluster/3.3-deploywebsite/",
+	"title": "Deploying the application",
+	"tags": [],
+	"description": "",
+	"content": "Deploy application to EKS cluster  Deploy a static Website to the EKS Cluster you just created. To deploy, we will first run the following command:  kubectl create deployment fcj-workshop --image=awsfcj/000062\rawsfcj/00062 is a pre-built image to use in this lab\n\rTo be able to access the Website from outside the EKS cluster, we will have to deploy a LoadBalancer Service to the cluster with the following command:  kubectl expose deployments/fcj-workshop --type=LoadBalancer --port=80\rTo view information about LoadBalancer above, I will run the following command:  kubectl get svc\rCopy the link in EXTERNAL-IP into the browser to access the website  Visit the website  "
 },
 {
 	"uri": "/2-prerequiste/2.3-kubernetestools/",
 	"title": "Installing Kubernetes Tool",
 	"tags": [],
 	"description": "",
-	"content": "Install Kubernetes Tool  Copy and Paste the command below into Terminal of Cloud9 Workspace to install kubectl.  sudo curl --silent --location -o /usr/local/bin/kubectl \\\rhttps://amazon-eks.s3.us-west-2.amazonaws.com/1.17.11/2020-09-18/bin/linux/amd64/kubectl\rsudo chmod +x /usr/local/bin/kubectl\rCopy and Paste the command below into Terminal of Cloud9 Workspace to update awscli.  sudo pip install --upgrade awscli \u0026amp;\u0026amp; hash -r\rCopy and Paste the command below into Terminal of Cloud9 Workspace to install tools that support text processing on the command line.  sudo yum -y install jq gettext bash-completion moreutils\rWe consider jq like sed for JSON data - you can use it to slice and filter and map and transform structured data with the same ease as sed, awk , grep.  echo 'yq() {\rdocker run --rm -i -v \u0026quot;${PWD}\u0026quot;:/workdir mikefarah/yq \u0026quot;$@\u0026quot;\r}' | tee -a ~/.bashrc \u0026amp;\u0026amp; source ~/.bashrc\rCheck the installed tools by running the command below.  for command in kubectl jq envsubst aws\rdo\rwhich $command \u0026amp;\u0026gt;/dev/null \u0026amp;\u0026amp; echo \u0026quot;$command in path\u0026quot; || echo \u0026quot;$command NOT FOUND\u0026quot;\rdone\rEnable autocomplete for the kubectl tool by running the command below:  kubectl completion bash \u0026gt;\u0026gt; ~/.bash_completion\r. /etc/profile.d/bash_completion.sh\r. ~/.bash_completion\rSet up version 2.2.0 using AWS Load Balancer Controller  echo 'export LBC_VERSION=\u0026quot;v2.2.0\u0026quot;' \u0026gt;\u0026gt; ~/.bash_profile\r. ~/.bash_profile\r"
+	"content": "Install Kubernetes Tool  Copy and Paste the command below into Terminal of Cloud9 Workspace to install kubectl.  sudo curl --silent --location -o /usr/local/bin/kubectl \\\rhttps://amazon-eks.s3.us-west-2.amazonaws.com/1.17.11/2020-09-18/bin/linux/amd64/kubectl\rsudo chmod +x /usr/local/bin/kubectl\rCopy and Paste the command below into Terminal of Cloud9 Workspace to update awscli.  sudo pip install --upgrade awscli \u0026amp;\u0026amp; hash -r\rCopy and Paste the command below into Terminal of Cloud9 Workspace to install tools to support text processing on the command line.  sudo yum -y install jq gettext bash-completion moreutils\rWe consider jq like sed for JSON data - you can use it to slice and filter and map and transform structured data with the same ease as sed, awk , grep.  echo 'yq() {\rdocker run --rm -i -v \u0026quot;${PWD}\u0026quot;:/workdir mikefarah/yq \u0026quot;$@\u0026quot;\r}' | tee -a ~/.bashrc \u0026amp;\u0026amp; source ~/.bashrc\rCheck the installed tools by running the command below.  for command in kubectl jq envsubst aws\rdo\rwhich $command \u0026amp;\u0026gt;/dev/null \u0026amp;\u0026amp; echo \u0026quot;$command in path\u0026quot; || echo \u0026quot;$command NOT FOUND\u0026quot;\rdone\rEnable autocomplete for the kubectl tool by running the command below:  kubectl completion bash \u0026gt;\u0026gt; ~/.bash_completion\r. /etc/profile.d/bash_completion.sh\r. ~/.bash_completion\rSet up version 2.2.0 using AWS Load Balancer Controller  echo 'export LBC_VERSION=\u0026quot;v2.2.0\u0026quot;' \u0026gt;\u0026gt; ~/.bash_profile\r. ~/.bash_profile\rInformation on installing Kubernetes Tool can be found at Kubernetes Tool\n\r"
 },
 {
 	"uri": "/2-prerequiste/2.4-configurerole/2.4.3-updateconfigureiam/",
 	"title": "Update Cloud9 Configuration",
 	"tags": [],
 	"description": "",
-	"content": "Update Cloud9 configuration Cloud9 will manage IAM credentials automatically. This default configuration is currently not compatible with EKS authentication via IAM, we will need to disable this feature and use the IAM Role.\n\r In the AWS Cloud9 interface   Select AWS Cloud9 Select Preferences  In AWS Cloud9 interface   Select AWS SETTINGS Uncheck AWS managed temporary credentials  To ensure that temporary credentials are not saved in Cloud9, we will delete all existing credentials with the command below.  rm -vf ${HOME}/.aws/credentials\rNext we will configure the aws cli to use the current Region.  export ACCOUNT_ID=$(aws sts get-caller-identity --output text --query Account)\rexport AWS_REGION=$(curl -s 169.254.169.254/latest/dynamic/instance-identity/document | jq -r '.region')\rexport AZS=($(aws ec2 describe-availability-zones --query 'AvailabilityZones[].ZoneName' --output text --region $AWS_REGION))\rCheck that AWS_REGION has been set to the correct current Region.  test -n \u0026quot;$AWS_REGION\u0026quot; \u0026amp;\u0026amp; echo AWS_REGION is \u0026quot;$AWS_REGION\u0026quot; || echo AWS_REGION is not set\rNext we will save the configuration information to bash_profile  echo \u0026quot;export ACCOUNT_ID=${ACCOUNT_ID}\u0026quot; | tee -a ~/.bash_profile\recho \u0026quot;export AWS_REGION=${AWS_REGION}\u0026quot; | tee -a ~/.bash_profile\recho \u0026quot;export AZS=(${AZS[@]})\u0026quot; | tee -a ~/.bash_profile\raws configure set default.region ${AWS_REGION}\raws configure get default.region\rCheck IAM Role   We will use the command to check if the Cloud9 IDE is using the IAM Role correctly.  aws sts get-caller-identity --query Arn | grep eksworkshop-admin -q \u0026amp;\u0026amp; echo \u0026quot;IAM role valid\u0026quot; || echo \u0026quot;IAM role NOT valid\u0026quot;\r"
+	"content": "Update Cloud9 configuration Cloud9 will manage IAM credentials automatically. This default configuration is currently not compatible with EKS authentication via IAM, we will need to disable this feature and use the IAM Role.\n\r In the AWS Cloud9 interface   Select AWS Cloud9 Select Preferences  In the AWS Cloud9 interface   Select AWS SETTINGS Uncheck AWS managed temporary credentials  To ensure that temporary credentials are not saved in Cloud9, we will delete all existing credentials with the command below.  rm -vf ${HOME}/.aws/credentials\rNext we will configure the aws cli to use the current Region.  export ACCOUNT_ID=$(aws sts get-caller-identity --output text --query Account)\rexport AWS_REGION=$(curl -s 169.254.169.254/latest/dynamic/instance-identity/document | jq -r '.region')\rexport AZS=($(aws ec2 describe-availability-zones --query 'AvailabilityZones[].ZoneName' --output text --region $AWS_REGION))\rCheck that AWS_REGION has been set to the correct current Region.  test -n \u0026quot;$AWS_REGION\u0026quot; \u0026amp;\u0026amp; echo AWS_REGION is \u0026quot;$AWS_REGION\u0026quot; || echo AWS_REGION is not set\rNext we will save the configuration information to bash_profile  echo \u0026quot;export ACCOUNT_ID=${ACCOUNT_ID}\u0026quot; | tee -a ~/.bash_profile\recho \u0026quot;export AWS_REGION=${AWS_REGION}\u0026quot; | tee -a ~/.bash_profile\recho \u0026quot;export AZS=(${AZS[@]})\u0026quot; | tee -a ~/.bash_profile\raws configure set default.region ${AWS_REGION}\raws configure get default.region\rCheck IAM Role   We will use the command to check if the Cloud9 IDE is using the IAM Role correctly.  aws sts get-caller-identity --query Arn | grep eksworkshop-admin -q \u0026amp;\u0026amp; echo \u0026quot;IAM role valid\u0026quot; || echo \u0026quot;IAM role NOT valid\u0026quot;\r"
 },
 {
 	"uri": "/2-prerequiste/2.4-configurerole/",
@@ -98,74 +119,53 @@
 	"content": "Overview  In this step, we will create and assign IAM role to AWS Cloud9 so that our Cloud9 workspace has enough permissions to create EKS Cluster.  Content  Configure IAM role Assign Role Update Role Configuration  "
 },
 {
+	"uri": "/4-createcicd/4.4-rbac/",
+	"title": "Configuring RBAC",
+	"tags": [],
+	"description": "",
+	"content": "Configure RBAC  In order for CodeBuild to interact with EKS, we will modify configMap aws-auth   From terminal Cloud9 to which you have connected EKS cluster, get a copy of configMap aws-auth with the command:  kubectl get configmaps aws-auth -n kube-system -o yaml \u0026gt; aws-auth.yaml\rOpen the file aws-auth.yaml just created above, which will have the following content:  apiVersion: v1\rdata:\rmapRoles: |\r- groups:\r- system:bootstrappers\r- system:nodes\rrolearn: arn:aws:iam::451085899692:role/eksctl-k8s-demo-nodegroup-k8s-dem-NodeInstanceRole-LYNRCIX49ZOU\rusername: system:node:{{EC2PrivateDNSName}}\rkind: ConfigMap\rmetadata:\rcreationTimestamp: \u0026quot;2022-04-26T10:21:52Z\u0026quot;\rmanagedFields:\r- apiVersion: v1\rfieldsType: FieldsV1\rfieldsV1:\rf:data:\r.: {}\rf:mapRoles: {}\rmanager: vpcLambda\roperation: Update\rtime: \u0026quot;2022-04-26T10:21:52Z\u0026quot;\rname: aws-auth\rnamespace: kube-system\rresourceVersion: \u0026quot;2691\u0026quot;\ruid: a2862e92-4697-4654-bb19-dc28b17dc21b\rEdit this aws-auth.yaml file, adding an item in the data.mapRoles array:  - groups:\r- system:masters\rrolearn: arn:aws:iam::{$AWS_ACCOUNT_ID}}:role/eks-CodeBuildServiceRole\rusername: codebuild-eks\rThe aws-auth.yaml file after adding the eks-CodeBuildServiceRole role has the following form:  Remove the lines metadata.creationTimestamp and metadata.resourceVersion\n\rapiVersion: v1\rdata:\rmapRoles: |\r- groups:\r- system:bootstrappers\r- system:nodes\rrolearn: arn:aws:iam::451085899692:role/eksctl-k8s-demo-nodegroup-k8s-dem-NodeInstanceRole-LYNRCIX49ZOU\rusername: system:node:{{EC2PrivateDNSName}}\r- groups:\r- system:masters\rrolearn: arn:aws:iam::{$AWS_ACCOUNT_ID}}:role/eks-CodeBuildServiceRole\rusername: codebuild-eks\rkind: ConfigMap\rmetadata:\rcreationTimestamp: \u0026quot;2022-04-26T10:21:52Z\u0026quot;\rmanagedFields:\r- apiVersion: v1\rfieldsType: FieldsV1\rfieldsV1:\rf:data:\r.: {}\rf:mapRoles: {}\rmanager: vpcLambda\roperation: Update\rtime: \u0026quot;2022-04-26T10:21:52Z\u0026quot;\rname: aws-auth\rnamespace: kube-system\rresourceVersion: \u0026quot;2691\u0026quot;\ruid: a2862e92-4697-4654-bb19-dc28b17dc21b\rApply the changed aws-auth.yaml file from the terminal:  kubectl apply -f aws-auth.yaml\r"
+},
+{
+	"uri": "/4-createcicd/",
+	"title": "Create CI/CD",
+	"tags": [],
+	"description": "",
+	"content": "Overview  In the next steps, we will create a Deployment Pipeline using AWS CodePipeline and integrate with the third party tool GitHub. When we change the code on GitHub, our Pipeline will be activated and deploy the new version of the application to the web application we already run on the EKS Cluster.  Content  Create S3 bucket Create CodePipeline Service Role Create Code Buid Service Role Allow role eks-CodeBuildServiceRole permissions in RBAC of EKS cluster Forke source code Generate CodePipeline CI/CD Check  "
+},
+{
+	"uri": "/5-cleanup/",
+	"title": "Clean up resources",
+	"tags": [],
+	"description": "",
+	"content": "Clear stack using AWS CloudFormation console   Open the AWS CloudFormation console\n  In the Stack page of AWS CloudFormation, select the Stack that you want to delete\n  Select Delete\n  Select Delete stack\n  Delete Repository   Open the [Amazon ECR console] page (https://console.aws.amazon.com/ecr/repositories)\n  On the navigation bar, select Region containing the repository to be deleted\n  Select Repository\n  In the Repository page, select Private\n  Select Repository to delete and select Delete\n  Verify delete Repository and select Delete\n  Delete EKSCluster   Open Amazon EKS console page\n  Select the cluster to delete and select Delete\n  Verify cluster deletion and select Delete\n  Delete an AWS Cloud9 environment using the AWS Cloud9 console  Select AWS Cloud9 and select Go TO Your Dashboard Select the environment to delete and select Delete Verify the deletion of the environment by entering Delete and selecting Delete. The environment will be deleted after a few minutes.  "
+},
+{
+	"uri": "/4-createcicd/4.5-forksourcecode/",
+	"title": "Fork Source Code",
+	"tags": [],
+	"description": "",
+	"content": "Implement Source Code fork  Go to Personal Github  Access the fork repository at First-Cloud-Journey/000062-websource  In the Repository interface   Select Fork  Take the steps to Create a new fork   Repository name, enter 000062-websource Select Create fork  Interface after fork source code  In the Repository interface   Select avatar of Github Select Settings  In the Settings interface   Select \u0026lt;\u0026gt;Developer settings  In the Developer settings interface   Select Personal access tokens Select Generate new token  In the New personal access token interface   Note, enter awsfcj/000062 Expiration, choose 30 days Section Select scopes select repo  Select Generate token  After creating the token, copy it to use the next steps  Complete the source fork process and generate personal access tokens  "
+},
+{
 	"uri": "/2-prerequiste/2.5-installeksctl/",
 	"title": "Installing eksctl",
 	"tags": [],
 	"description": "",
-	"content": "Install eksctl  In this section we will install the eksctl tool into Cloud9 Workspace.   Run the command to download the eksctl tool.  curl --silent --location \u0026quot;https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz\u0026quot; | tar xz -C /tmp\rsudo mv -v /tmp/eksctl /usr/local/bin\rCheck if eksctl works or not with the command below.  eksctl version\rEnable bash-completion of eksctl  eksctl completion bash \u0026gt;\u0026gt; ~/.bash_completion\r. /etc/profile.d/bash_completion.sh\r. ~/.bash_completion\r"
-},
-{
-	"uri": "/3-createekscluster/3.3-deploywebsite/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "/4-createcicd/4.2-codepipelineservicerole/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "/4-createcicd/4.3-codebuildservicerole/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "/4-createcicd/4.4-rbac/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "/4-createcicd/4.5-forksourcecode/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
+	"content": "Install eksctl  In this section we will install the eksctl tool into Cloud9 Workspace.   Run the command to download the eksctl tool.  curl --silent --location \u0026quot;https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz\u0026quot; | tar xz -C /tmp\rsudo mv -v /tmp/eksctl /usr/local/bin\rCheck if eksctl works or not with the command below.  eksctl version\rEnable bash-completion of eksctl  eksctl completion bash \u0026gt;\u0026gt; ~/.bash_completion\r. /etc/profile.d/bash_completion.sh\r. ~/.bash_completion\rInstallation information Eksctl see more at Eksctl\n\r"
 },
 {
 	"uri": "/4-createcicd/4.6-createcodepipeline/",
-	"title": "",
+	"title": "Create a pipeline",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "Create a CI/CD pipeline with CodePipeline  We will create a CodePipeline using the AWS CloudFormation engine.   Select Download CloudFormation template file  In the AWS Console   Find CloudFormation Select CloudFormation  In the CloudFormation interface   Select Stacks Select Create stack Select With new resources (standard)  In the Create stack interface   Select Template is ready Select Upload a template file Select Choose file Select the downloaded CloudFormation template file. Example code_pipeline_fcj.yml Select Next  In the Stack name section, enter Eks-stack  Next, fill in the following information:   User name, enter the name Github Account Enter Access token created Enter the name Repository Enter Branch Enter the name EksCluster Enter EksDeployment Enter EksNamespace Select Next  Scroll to the bottom of the page and select Next  Scroll to the bottom of the page and select Create stack  Complete stack creation  In the [AWS Console] interface(https://aws.amazon.com/console/)   Find CodePipeline Select CodePipeline  View CI/CD process and select details to view build details  CI/CD process complete  "
 },
 {
 	"uri": "/4-createcicd/4.7-checkcicd/",
-	"title": "",
+	"title": "Test CI/CD",
 	"tags": [],
 	"description": "",
-	"content": ""
-},
-{
-	"uri": "/4-createcicd/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "/5-cleanup/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
+	"content": "Test CI/CD pipeline  Go to your GitHub https://github.com/{GITHUB_ACCOUNT}/aws-guide-resume-template   Select the fork repository Open the file index.htlm, select the edit icon Editing the code Then, select Commit changes  After pushing the code, CodePipeline will be triggered to execute CodeBuild.   Go to the admin page CodePipeline and you will see the status of the pipeline is In Progress Pipele\u0026rsquo;s has 2 stages:  Source Pull source from GitHub Pack source for stage build Build Create Docker image from source Push the image to ECR repository Deploy application updates to EKS cluster    Deploy application updates to EKS cluster Wait about 5-10 minutes for the build process to complete and switch to Success state.   Go to the website URL to see the changes. Now the title of the website has changed to Test CodePipeline  "
 },
 {
 	"uri": "/categories/",

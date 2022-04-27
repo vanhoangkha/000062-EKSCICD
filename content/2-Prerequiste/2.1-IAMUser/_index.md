@@ -8,7 +8,7 @@ pre : " <b> 2.1 </b> "
 
 #### Create IAM User
 
-1. Go to the [AWS Console page](https://aws.amazon.com/console/)
+1. Go to the [AWS Console](https://aws.amazon.com/console/)
 
 - Find **IAM**
 - Select **IAM**

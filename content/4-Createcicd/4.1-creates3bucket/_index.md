@@ -17,7 +17,7 @@ aws s3 mb s3://eks-${ACCOUNT_ID}-codepipeline-artifacts
 
 ![Create S3 Bucket](/images/7-Createcicd/7.1-creates3bucket/0001-creates3bucket.png)
 
-2. In the [AWS Console] interface(https://aws.amazon.com/console/)
+2. In the [AWS Console](https://aws.amazon.com/console/)
 
 - Find **S3**
 - Select **S3**

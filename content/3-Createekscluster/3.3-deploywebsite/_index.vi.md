@@ -25,7 +25,7 @@ kubectl create deployment fcj-workshop --image=awsfcj/000062
 2. Để có thể truy cập Website từ bên ngoài EKS cluster, chúng ta sẽ phải deploy một LoadBalancer Service vào cluster bằng command sau:
 
 ```
-kubectl expose deployments/mywebsite --type=LoadBalancer --port=80
+kubectl expose deployments/fcj-workshop --type=LoadBalancer --port=80
 ```
 
 ![Deploywebsite](/images/6-Deploywebsite/0002-deploywebsite.png)

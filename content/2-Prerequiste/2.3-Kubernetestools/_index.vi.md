@@ -81,3 +81,7 @@ echo 'export LBC_VERSION="v2.2.0"' >>  ~/.bash_profile
 ```
 
 ![Install Kubernetes Tool](/images/2-Prerequiste/2.3-Kubernetestools/0007-kubernetestools.png)
+
+{{% notice info %}} 
+Thông tin về cài đặt **Kubernetes Tool** xem thêm tại [Kubernetes Tool](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)
+{{% /notice %}}

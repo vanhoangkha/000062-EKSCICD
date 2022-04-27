@@ -10,7 +10,7 @@ pre : " <b> 4.6 </b> "
 
 1. Chúng ta sẽ tạo CodePipeline sử dụng công cụ AWS CloudFormation.
 
-- Chọn Download [CloudFormation template file](https://raw.githubusercontent.com/minhtri2582/server-samples/3fd9f41672b171483db7ee495c834507991125ad/aws-journey/code_pipeline.yml)
+- Chọn Download [CloudFormation template file](https://raw.githubusercontent.com/First-Cloud-Journey/000062-EKSCICD/main/code_pipeline_fcj.yml)
 
 
 ![Create Code Pipeline](/images/9-Createcodepipeline/0001-Createcodepipeline.png)
@@ -36,7 +36,7 @@ pre : " <b> 4.6 </b> "
 - Chọn **Template is ready**
 - Chọn **Upload a template file**
 - Chọn **Choose file**
-- Chọn **CloudFormation template file** đã tải về
+- Chọn **CloudFormation template file** đã tải về. Ví dụ ```code_pipeline_fcj.yml```
 - Chọn **Next** 
 
 ![Create Code Pipeline](/images/9-Createcodepipeline/0003-Createcodepipeline.png)
@@ -68,8 +68,12 @@ pre : " <b> 4.6 </b> "
 
 ![Create Code Pipeline](/images/9-Createcodepipeline/0007-Createcodepipeline.png)
 
+9. Hoàn thành tạo stack
 
-9.  Trong giao diện [AWS Console](https://aws.amazon.com/console/)
+![Create Code Pipeline](/images/9-Createcodepipeline/0008-Createcodepipeline.png)
+
+
+10. Trong giao diện [AWS Console](https://aws.amazon.com/console/)
 
 - Tìm **CodePipeline**
 - Chọn **CodePipeline**
@@ -77,9 +81,9 @@ pre : " <b> 4.6 </b> "
 ![Create Code Pipeline](/images/9-Createcodepipeline/00011-Createcodepipeline.png)
 
 
-10. Xem quá trình CI/CD
+10. Xem quá trình CI/CD và chọn **details** để xem chi tiết quá trình build
 
-![Create Code Pipeline](/images/9-Createcodepipeline/0008-Createcodepipeline.png)
+![Create Code Pipeline](/images/9-Createcodepipeline/0009-Createcodepipeline.png)
 
 11. Quá trình CI/CD hoàn thành
  

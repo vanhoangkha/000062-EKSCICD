@@ -8,9 +8,9 @@ pre : " <b> 2.5 </b> "
 
 #### Cài đặt eksctl
 
-1. Trong phần này chúng ta sẽ thực hiện cài đặt công cụ eksctl vào Cloud9 Workspace.
+1. Trong phần này chúng ta sẽ thực hiện cài đặt công cụ **eksctl** vào **Cloud9 Workspace**.
 
-- Chạy câu lệnh để tải về công cụ eksctl.
+- Chạy câu lệnh để tải về công cụ **eksctl**.
 
 ```
 curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
@@ -38,3 +38,6 @@ eksctl completion bash >> ~/.bash_completion
 
 ![Create Eksctl](/images/3-Createeksctl/0003-installeksctl.png)
 
+{{% notice note %}}
+Thông tin cài đặt **Eksctl** xem thêm tại [Eksctl](https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html)
+{{% /notice %}}

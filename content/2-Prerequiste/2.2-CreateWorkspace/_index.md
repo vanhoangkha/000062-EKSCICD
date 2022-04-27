@@ -6,6 +6,10 @@ chapter : false
 pre : " <b> 2.2 </b> "
 ---
 
+{{% notice info %}}
+Cloud9 environment initialization takes about 5 minutes
+{{% /notice %}}
+
 #### Create Cloud9 Workspace
 
 1. Go to [AWS Console](https://aws.amazon.com/console/)
@@ -43,14 +47,14 @@ pre : " <b> 2.2 </b> "
 
 ![Create workspace](/images/2-Prerequiste/2.2-CreateWorkspace/0006-createworkspace.png)
 
-7. Star interface when creating environment
+7. Interface after creating the environment
 
 ![Create workspace](/images/2-Prerequiste/2.2-CreateWorkspace/0007-createworkspace.png)
 
 8. In the environment interface just initialized
 
 - Select **Window**
-- Select **new Terminal**
+- Select **New Terminal**
 
 ![Create workspace](/images/2-Prerequiste/2.2-CreateWorkspace/0008-createworkspace.png)
 
@@ -92,6 +96,10 @@ fi
 - Interface when running commands
 
 ![Create workspace](/images/2-Prerequiste/2.2-CreateWorkspace/0009-createworkspace.png)
+
+{{% notice note %}}
+The environment will be restarted when running the above command
+{{% /notice %}}
 
 10. Complete initialization **Cloud9 Workspace**
 

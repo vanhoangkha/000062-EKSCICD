@@ -29,7 +29,7 @@ sudo pip install --upgrade awscli && hash -r
 ![Install Kubernetes Tool](/images/2-Prerequiste/2.3-Kubernetestools/0002-kubernetestools.png)
 
 
-3. Copy and Paste the command below into **Terminal of Cloud9 Workspace** to install tools that support text processing on the command line.
+3. Copy and Paste the command below into **Terminal of Cloud9 Workspace** to install tools to support text processing on the command line.
 
 ```
 sudo yum -y install jq gettext bash-completion moreutils
@@ -37,7 +37,6 @@ sudo yum -y install jq gettext bash-completion moreutils
 ```
 
 ![Install Kubernetes Tool](/images/2-Prerequiste/2.3-Kubernetestools/0003-kubernetestools.png)
-
 
 4. We consider **jq** like sed for JSON data - you can use it to slice and filter and map and transform structured data with the same ease as sed, awk , grep.
 
@@ -81,3 +80,7 @@ echo 'export LBC_VERSION="v2.2.0"' >> ~/.bash_profile
 ```
 
 ![Install Kubernetes Tool](/images/2-Prerequiste/2.3-Kubernetestools/0007-kubernetestools.png)
+
+{{% notice info %}}
+Information on installing **Kubernetes Tool** can be found at [Kubernetes Tool](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)
+{{% /notice %}}

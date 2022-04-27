@@ -6,6 +6,10 @@ chapter : false
 pre : " <b> 2.2 </b> "
 ---
 
+{{% notice info %}}
+Quá trình khởi tạo môi trường trên Cloud9 mất khoảng thời gian 5 phút
+{{% /notice %}}
+
 #### Tạo Cloud9 Workspace
 
 1. Truy cập vào [AWS Console](https://aws.amazon.com/console/)
@@ -43,14 +47,14 @@ pre : " <b> 2.2 </b> "
 
 ![Create workspace](/images/2-Prerequiste/2.2-CreateWorkspace/0006-createworkspace.png)
 
-7. Giao diện sao khi tạo môi trường 
+7. Giao diện sau khi tạo môi trường 
 
 ![Create workspace](/images/2-Prerequiste/2.2-CreateWorkspace/0007-createworkspace.png)
 
 8. Trong giao diện môi trường vừa khởi tạo
 
 - Chọn **Window**
-- Chọn **new Terminal**
+- Chọn **New Terminal**
 
 ![Create workspace](/images/2-Prerequiste/2.2-CreateWorkspace/0008-createworkspace.png)
 
@@ -93,6 +97,10 @@ fi
 
 ![Create workspace](/images/2-Prerequiste/2.2-CreateWorkspace/0009-createworkspace.png)
 
-10. Hoàn thành khởi tạo **Cloud9 Workspace**
+{{% notice note %}}
+Môi trường sẽ được restart khi chạy lệnh trên
+{{% /notice %}}
+
+10.  Hoàn thành khởi tạo **Cloud9 Workspace**
 
 ![Create workspace](/images/2-Prerequiste/2.2-CreateWorkspace/00010-createworkspace.png)

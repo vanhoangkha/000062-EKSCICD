@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Cấu hình RBAC :: AWS System Manager</title>
+    <title>Cấu hình RBAC :: CI/CD on EKS with CodePipeline and Github</title>
 
     
-    <link href="/css/nucleus.css?1650935604" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1650935604" rel="stylesheet">
-    <link href="/css/hybrid.css?1650935604" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1650935604" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1650935604" rel="stylesheet">
-    <link href="/css/auto-complete.css?1650935604" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1650935604" rel="stylesheet">
-    <link href="/css/theme.css?1650935604" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1650935604" rel="stylesheet">
+    <link href="/css/nucleus.css?1651062116" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1651062116" rel="stylesheet">
+    <link href="/css/hybrid.css?1651062116" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1651062116" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1651062116" rel="stylesheet">
+    <link href="/css/auto-complete.css?1651062116" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1651062116" rel="stylesheet">
+    <link href="/css/theme.css?1651062116" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1651062116" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1650935604" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1651062116" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1650935604"></script>
+    <script src="/js/jquery-3.3.1.min.js?1651062116"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1650935604"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1650935604"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1651062116"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1651062116"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1650935604"></script>
+<script type="text/javascript" src="/js/search.js?1651062116"></script>
 
     
   </div>
@@ -958,27 +958,37 @@
 </ol>
 <pre tabindex="0"><code>apiVersion: v1
 data:
-mapRoles: |
-- groups:
-- system:bootstrappers
-- system:nodes
-rolearn: arn:aws:iam::435147975610:role/eksctl-k8s-demo-nodegroup-k8s-dem-NodeInstanceRole-189W51QXXFKU6
-username: system:node:{{EC2PrivateDNSName}}
+  mapRoles: |
+    - groups:
+      - system:bootstrappers
+      - system:nodes
+      rolearn: arn:aws:iam::451085899692:role/eksctl-k8s-demo-nodegroup-k8s-dem-NodeInstanceRole-LYNRCIX49ZOU
+      username: system:node:{{EC2PrivateDNSName}}
 kind: ConfigMap
 metadata:
-creationTimestamp: &quot;2022-03-13T12:28:45Z&quot;
-name: aws-auth
-namespace: kube-system
-resourceVersion: &quot;1416&quot;
-uid: 8e6402d2-383d-40f9-a0ba-8d6003ae5e4f
+  creationTimestamp: &quot;2022-04-26T10:21:52Z&quot;
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:mapRoles: {}
+    manager: vpcLambda
+    operation: Update
+    time: &quot;2022-04-26T10:21:52Z&quot;
+  name: aws-auth
+  namespace: kube-system
+  resourceVersion: &quot;2691&quot;
+  uid: a2862e92-4697-4654-bb19-dc28b17dc21b
 </code></pre><p><img src="/images/7-Createcicd/7.4-Rbac/0002-RBAC.png" alt="RBAC"></p>
 <ol start="3">
 <li>Sửa <strong>file aws-auth.yaml</strong> này, thêm một item trong mảng <strong>data.mapRoles</strong>:</li>
 </ol>
 <pre tabindex="0"><code>- groups:
-- system:masters
-rolearn: arn:aws:iam::{$AWS_ACCOUNT_ID}}:role/eks-CodeBuildServiceRole
-username: codebuild-eks
+  - system:masters
+  rolearn: arn:aws:iam::{$AWS_ACCOUNT_ID}}:role/eks-CodeBuildServiceRole
+  username: codebuild-eks
 </code></pre><ol start="4">
 <li>Tập tin aws-auth.yaml sau khi thêm role eks-CodeBuildServiceRole có dạng như sau:</li>
 </ol>
@@ -988,26 +998,39 @@ username: codebuild-eks
 
 <pre tabindex="0"><code>apiVersion: v1
 data:
-mapRoles: |
-- groups:
-- system:bootstrappers
-- system:nodes
-rolearn: arn:aws:iam::435147975610:role/eksctl-k8s-demo-nodegroup-k8s-dem-NodeInstanceRole-189W51QXXFKU6
-username: system:node:{{EC2PrivateDNSName}}
-- groups:
-- system:masters
-rolearn: arn:aws:iam::435147975610:role/eks-CodeBuildServiceRole
-username: codebuild-eks
+  mapRoles: |
+    - groups:
+      - system:bootstrappers
+      - system:nodes
+      rolearn: arn:aws:iam::451085899692:role/eksctl-k8s-demo-nodegroup-k8s-dem-NodeInstanceRole-LYNRCIX49ZOU
+      username: system:node:{{EC2PrivateDNSName}}
+    - groups:
+      - system:masters
+      rolearn: arn:aws:iam::{$AWS_ACCOUNT_ID}}:role/eks-CodeBuildServiceRole
+      username: codebuild-eks
 kind: ConfigMap
 metadata:
-name: aws-auth
-namespace: kube-system
-uid: 8e6402d2-383d-40f9-a0ba-8d6003ae5e4f
+  creationTimestamp: &quot;2022-04-26T10:21:52Z&quot;
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:mapRoles: {}
+    manager: vpcLambda
+    operation: Update
+    time: &quot;2022-04-26T10:21:52Z&quot;
+  name: aws-auth
+  namespace: kube-system
+  resourceVersion: &quot;2691&quot;
+  uid: a2862e92-4697-4654-bb19-dc28b17dc21b
 </code></pre><p><img src="/images/7-Createcicd/7.4-Rbac/0003-RBAC.png" alt="RBAC"></p>
 <ol start="5">
 <li>Apply tập tin <strong>aws-auth.yaml</strong> đã thay đổi từ terminal:</li>
 </ol>
-<p><img src="/images/7-Createcicd/7.4-Rbac/0004-RBAC.png" alt="RBAC"></p>
+<pre tabindex="0"><code>kubectl apply -f aws-auth.yaml
+</code></pre><p><img src="/images/7-Createcicd/7.4-Rbac/0004-RBAC.png" alt="RBAC"></p>
 
 
 
@@ -1452,19 +1475,19 @@ uid: 8e6402d2-383d-40f9-a0ba-8d6003ae5e4f
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1650935604"></script>
-    <script src="/js/perfect-scrollbar.min.js?1650935604"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1650935604"></script>
-    <script src="/js/jquery.sticky.js?1650935604"></script>
-    <script src="/js/featherlight.min.js?1650935604"></script>
-    <script src="/js/highlight.pack.js?1650935604"></script>
+    <script src="/js/clipboard.min.js?1651062116"></script>
+    <script src="/js/perfect-scrollbar.min.js?1651062116"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1651062116"></script>
+    <script src="/js/jquery.sticky.js?1651062116"></script>
+    <script src="/js/featherlight.min.js?1651062116"></script>
+    <script src="/js/highlight.pack.js?1651062116"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1650935604"></script>
-    <script src="/js/learn.js?1650935604"></script>
-    <script src="/js/hugo-learn.js?1650935604"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1651062116"></script>
+    <script src="/js/learn.js?1651062116"></script>
+    <script src="/js/hugo-learn.js?1651062116"></script>
 
-    <link href="/mermaid/mermaid.css?1650935604" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1650935604"></script>
+    <link href="/mermaid/mermaid.css?1651062116" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1651062116"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -12,7 +12,7 @@ pre : " <b> 4.5 </b> "
 
 ![Fork Source Code](/images/8-Forksourcecode/0001-forksourcecode.png)
 
-2. Truy cập vào repository cần fork tại [First-Cloud-Journey/000062-EKSCICD](https://github.com/First-Cloud-Journey/000062-EKSCICD)
+2. Truy cập vào repository cần fork tại [First-Cloud-Journey/000062-websource](https://github.com/First-Cloud-Journey/000062-websource)
 
 ![Fork Source Code](/images/8-Forksourcecode/0002-forksourcecode.png)
 
@@ -24,7 +24,7 @@ pre : " <b> 4.5 </b> "
 
 4. Thực hiện các bước để **Create a new fork**
 
-- **Repository name**, nhập ```000062-EKSCICD```
+- **Repository name**, nhập ```000062-websource```
 - Chọn **Create fork**
 
 ![Fork Source Code](/images/8-Forksourcecode/0004-forksourcecode.png)

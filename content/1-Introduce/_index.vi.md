@@ -8,9 +8,9 @@ pre : " <b> 1. </b> "
 
 ### Tổng quan
 
-- Kubernetes (K8s) là một nền tảng nguồn mở, có thể mở rộng để quản lý các ứng dụng được đóng gói và các service, giúp thuận lợi trong việc cấu hình và tự động hoá việc triển khai ứng dụng
+- **Kubernetes (K8s)** là một nền tảng nguồn mở, có thể mở rộng để quản lý các ứng dụng được đóng gói và các service, giúp thuận lợi trong việc cấu hình và tự động hoá việc triển khai ứng dụng
 
-- Trong bài lab này, chúng ta sẽ tạo một Kubernetes Cluster đơn giản trên AWS EKS (Elastic Kubernetes Service). Sau đó, mình sẽ triển khai trang web trên cluster và sử dụng AWS CodePipeLine để triển khai tự động.
+- Trong bài lab này, chúng ta sẽ tạo một **Kubernetes Cluster** đơn giản trên **AWS EKS (Elastic Kubernetes Service)**. Sau đó, mình sẽ triển khai trang web trên cluster và sử dụng **AWS CodePipeLine** để triển khai tự động.
 
 ![Elastic Kubernetes Service](/images/1-Introduce/CI_CDwithAWSCodePipeline.png)
 

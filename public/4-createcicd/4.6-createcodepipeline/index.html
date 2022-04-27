@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title> :: AWS System Manager</title>
+    <title>Create a pipeline :: CI/CD on EKS with CodePipeline and Github</title>
 
     
-    <link href="/css/nucleus.css?1650935604" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1650935604" rel="stylesheet">
-    <link href="/css/hybrid.css?1650935604" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1650935604" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1650935604" rel="stylesheet">
-    <link href="/css/auto-complete.css?1650935604" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1650935604" rel="stylesheet">
-    <link href="/css/theme.css?1650935604" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1650935604" rel="stylesheet">
+    <link href="/css/nucleus.css?1651062116" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1651062116" rel="stylesheet">
+    <link href="/css/hybrid.css?1651062116" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1651062116" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1651062116" rel="stylesheet">
+    <link href="/css/auto-complete.css?1651062116" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1651062116" rel="stylesheet">
+    <link href="/css/theme.css?1651062116" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1651062116" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1650935604" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1651062116" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1650935604"></script>
+    <script src="/js/jquery-3.3.1.min.js?1651062116"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1650935604"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1650935604"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1651062116"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1651062116"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1650935604"></script>
+<script type="text/javascript" src="/js/search.js?1651062116"></script>
 
     
   </div>
@@ -108,13 +108,13 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/" title="Preparation " class="dd-item 
+    <li data-nav-id="/2-prerequiste/" title="Preparatory steps" class="dd-item 
         
         
         
         ">
       <a href="/2-prerequiste/">
-           <b> 2. </b> Preparation 
+           <b> 2. </b> Preparatory steps
           
             <i class="fas fa-check read-icon"></i>
           
@@ -469,13 +469,13 @@
  
   
     
-    <li data-nav-id="/3-createekscluster/3.3-deploywebsite/" title="" class="dd-item 
+    <li data-nav-id="/3-createekscluster/3.3-deploywebsite/" title="Deploying the application" class="dd-item 
         
         
         
         ">
       <a href="/3-createekscluster/3.3-deploywebsite/">
-          
+           <b> 3.3 </b> Deploying the application
           
             <i class="fas fa-check read-icon"></i>
           
@@ -504,13 +504,13 @@
  
   
     
-    <li data-nav-id="/4-createcicd/" title="" class="dd-item 
+    <li data-nav-id="/4-createcicd/" title="Create CI/CD" class="dd-item 
         parent
         
         
         ">
       <a href="/4-createcicd/">
-          
+           <b> 4. </b> Create CI/CD
           
             <i class="fas fa-check read-icon"></i>
           
@@ -563,13 +563,13 @@
  
   
     
-    <li data-nav-id="/4-createcicd/4.2-codepipelineservicerole/" title="" class="dd-item 
+    <li data-nav-id="/4-createcicd/4.2-codepipelineservicerole/" title="Create service role for CodePipeline service" class="dd-item 
         
         
         
         ">
       <a href="/4-createcicd/4.2-codepipelineservicerole/">
-          
+           <b> 4.2 </b> Create service role for CodePipeline service
           
             <i class="fas fa-check read-icon"></i>
           
@@ -591,13 +591,13 @@
  
   
     
-    <li data-nav-id="/4-createcicd/4.3-codebuildservicerole/" title="" class="dd-item 
+    <li data-nav-id="/4-createcicd/4.3-codebuildservicerole/" title="Create service role for CodeBuild service" class="dd-item 
         
         
         
         ">
       <a href="/4-createcicd/4.3-codebuildservicerole/">
-          
+           <b> 4.3 </b> Create service role for CodeBuild service
           
             <i class="fas fa-check read-icon"></i>
           
@@ -619,13 +619,13 @@
  
   
     
-    <li data-nav-id="/4-createcicd/4.4-rbac/" title="" class="dd-item 
+    <li data-nav-id="/4-createcicd/4.4-rbac/" title="Configuring RBAC" class="dd-item 
         
         
         
         ">
       <a href="/4-createcicd/4.4-rbac/">
-          
+           <b> 4.4 </b> Configuring RBAC
           
             <i class="fas fa-check read-icon"></i>
           
@@ -647,13 +647,13 @@
  
   
     
-    <li data-nav-id="/4-createcicd/4.5-forksourcecode/" title="" class="dd-item 
+    <li data-nav-id="/4-createcicd/4.5-forksourcecode/" title="Fork Source Code" class="dd-item 
         
         
         
         ">
       <a href="/4-createcicd/4.5-forksourcecode/">
-          
+           <b> 4.5 </b> Fork Source Code
           
             <i class="fas fa-check read-icon"></i>
           
@@ -675,13 +675,13 @@
  
   
     
-    <li data-nav-id="/4-createcicd/4.6-createcodepipeline/" title="" class="dd-item 
+    <li data-nav-id="/4-createcicd/4.6-createcodepipeline/" title="Create a pipeline" class="dd-item 
         parent
         active
         
         ">
       <a href="/4-createcicd/4.6-createcodepipeline/">
-          
+           <b>4.6 </b> Create a pipeline
           
             <i class="fas fa-check read-icon"></i>
           
@@ -703,13 +703,13 @@
  
   
     
-    <li data-nav-id="/4-createcicd/4.7-checkcicd/" title="" class="dd-item 
+    <li data-nav-id="/4-createcicd/4.7-checkcicd/" title="Test CI/CD" class="dd-item 
         
         
         
         ">
       <a href="/4-createcicd/4.7-checkcicd/">
-          
+           <b>4.7 </b> Test CI/CD
           
             <i class="fas fa-check read-icon"></i>
           
@@ -738,13 +738,13 @@
  
   
     
-    <li data-nav-id="/5-cleanup/" title="" class="dd-item 
+    <li data-nav-id="/5-cleanup/" title="Clean up resources" class="dd-item 
         
         
         
         ">
       <a href="/5-cleanup/">
-          
+           <b> 5. </b> Clean up resources
           
             <i class="fas fa-check read-icon"></i>
           
@@ -899,7 +899,7 @@
             
           
           
-            <a href='/'>Session Management</a> > <a href='/4-createcicd/'></a> > 
+            <a href='/'>CI/CD on EKS</a> > <a href='/4-createcicd/'>Create CI/CD</a> > Create a pipeline
           
         
           
@@ -912,7 +912,15 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -928,7 +936,7 @@
           
             <h1>
               
-              
+              Create a pipeline
             </h1>
           
 
@@ -936,7 +944,89 @@
 
 
 
-	
+	<h4 id="create-a-cicd-pipeline-with-codepipeline">Create a CI/CD pipeline with CodePipeline</h4>
+<ol>
+<li>We will create a CodePipeline using the AWS CloudFormation engine.</li>
+</ol>
+<ul>
+<li>Select Download <a href="https://raw.githubusercontent.com/First-Cloud-Journey/000062-EKSCICD/main/code_pipeline_fcj.yml">CloudFormation template file</a></li>
+</ul>
+<p><img src="/images/9-Createcodepipeline/0001-Createcodepipeline.png" alt="Create Code Pipeline"></p>
+<ol start="2">
+<li>In the <a href="https://aws.amazon.com/console/">AWS Console</a></li>
+</ol>
+<ul>
+<li>Find <strong>CloudFormation</strong></li>
+<li>Select <strong>CloudFormation</strong></li>
+</ul>
+<p><img src="/images/9-Createcodepipeline/00010-Createcodepipeline.png" alt="Create Code Pipeline"></p>
+<ol start="3">
+<li>In the <strong>CloudFormation</strong> interface</li>
+</ol>
+<ul>
+<li>Select <strong>Stacks</strong></li>
+<li>Select <strong>Create stack</strong></li>
+<li>Select <strong>With new resources (standard)</strong></li>
+</ul>
+<p><img src="/images/9-Createcodepipeline/0002-Createcodepipeline.png" alt="Create Code Pipeline"></p>
+<ol start="4">
+<li>In the <strong>Create stack</strong> interface</li>
+</ol>
+<ul>
+<li>Select <strong>Template is ready</strong></li>
+<li>Select <strong>Upload a template file</strong></li>
+<li>Select <strong>Choose file</strong></li>
+<li>Select the downloaded <strong>CloudFormation template file</strong>. Example <code>code_pipeline_fcj.yml</code></li>
+<li>Select <strong>Next</strong></li>
+</ul>
+<p><img src="/images/9-Createcodepipeline/0003-Createcodepipeline.png" alt="Create Code Pipeline"></p>
+<ol start="5">
+<li>In the <strong>Stack name</strong> section, enter <code>Eks-stack</code></li>
+</ol>
+<p><img src="/images/9-Createcodepipeline/0004-Createcodepipeline.png" alt="Create Code Pipeline"></p>
+<ol start="6">
+<li>Next, fill in the following information:</li>
+</ol>
+<ul>
+<li><strong>User name</strong>, enter the name <strong>Github Account</strong></li>
+<li>Enter <strong>Access token</strong> created</li>
+<li>Enter the name <strong>Repository</strong></li>
+<li>Enter <strong>Branch</strong></li>
+<li>Enter the name <strong>EksCluster</strong></li>
+<li>Enter <strong>EksDeployment</strong></li>
+<li>Enter <strong>EksNamespace</strong></li>
+<li>Select <strong>Next</strong></li>
+</ul>
+<p><img src="/images/9-Createcodepipeline/0005-Createcodepipeline.png" alt="Create Code Pipeline"></p>
+<ol start="7">
+<li>Scroll to the bottom of the page and select <strong>Next</strong></li>
+</ol>
+<p><img src="/images/9-Createcodepipeline/0006-Createcodepipeline.png" alt="Create Code Pipeline"></p>
+<ol start="8">
+<li>Scroll to the bottom of the page and select <strong>Create stack</strong></li>
+</ol>
+<p><img src="/images/9-Createcodepipeline/0007-Createcodepipeline.png" alt="Create Code Pipeline"></p>
+<ol start="9">
+<li>Complete stack creation</li>
+</ol>
+<p><img src="/images/9-Createcodepipeline/0008-Createcodepipeline.png" alt="Create Code Pipeline"></p>
+<ol start="10">
+<li>In the [AWS Console] interface(<a href="https://aws.amazon.com/console/">https://aws.amazon.com/console/</a>)</li>
+</ol>
+<ul>
+<li>Find <strong>CodePipeline</strong></li>
+<li>Select <strong>CodePipeline</strong></li>
+</ul>
+<p><img src="/images/9-Createcodepipeline/00011-Createcodepipeline.png" alt="Create Code Pipeline"></p>
+<ol start="10">
+<li>View CI/CD process and select <strong>details</strong> to view build details</li>
+</ol>
+<p><img src="/images/9-Createcodepipeline/0009-Createcodepipeline.png" alt="Create Code Pipeline"></p>
+<ol start="11">
+<li>CI/CD process complete</li>
+</ol>
+<p><img src="/images/9-Createcodepipeline/0009-Createcodepipeline.png" alt="Create Code Pipeline"></p>
+
 
 
 
@@ -1367,10 +1457,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/4-createcicd/4.5-forksourcecode/" title=""> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/4-createcicd/4.5-forksourcecode/" title="Fork Source Code"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/4-createcicd/4.7-checkcicd/" title="" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/4-createcicd/4.7-checkcicd/" title="Test CI/CD" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1380,19 +1470,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1650935604"></script>
-    <script src="/js/perfect-scrollbar.min.js?1650935604"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1650935604"></script>
-    <script src="/js/jquery.sticky.js?1650935604"></script>
-    <script src="/js/featherlight.min.js?1650935604"></script>
-    <script src="/js/highlight.pack.js?1650935604"></script>
+    <script src="/js/clipboard.min.js?1651062116"></script>
+    <script src="/js/perfect-scrollbar.min.js?1651062116"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1651062116"></script>
+    <script src="/js/jquery.sticky.js?1651062116"></script>
+    <script src="/js/featherlight.min.js?1651062116"></script>
+    <script src="/js/highlight.pack.js?1651062116"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1650935604"></script>
-    <script src="/js/learn.js?1650935604"></script>
-    <script src="/js/hugo-learn.js?1650935604"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1651062116"></script>
+    <script src="/js/learn.js?1651062116"></script>
+    <script src="/js/hugo-learn.js?1651062116"></script>
 
-    <link href="/mermaid/mermaid.css?1650935604" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1650935604"></script>
+    <link href="/mermaid/mermaid.css?1651062116" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1651062116"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

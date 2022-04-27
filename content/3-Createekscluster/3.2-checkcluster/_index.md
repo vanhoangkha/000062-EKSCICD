@@ -8,7 +8,7 @@ pre : " <b> 3.2 </b> "
 
 #### Check EKS Cluster
 
-1. In the [AWS Console] interface(https://aws.amazon.com/console/)
+1. In the [AWS Console](https://aws.amazon.com/console/)
 
 - Find **CloudFormation**
 - Select **CloudFormation**

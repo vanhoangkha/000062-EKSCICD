@@ -1,0 +1,21 @@
+---
+title : "Create service role for CodePipeline service"
+date : "`r Sys.Date()`"
+weight : 2
+chapter : false
+pre : " <b> 4.2 </b> "
+---
+
+#### Create service role for CodePipeline service
+
+1. **CodePileline** requires IAM roles to **build docker**, **push image** and interact with **EKS cluster** using **kubectl** command.
+
+2. Download the json policy files, create **role eks-CodePipelineServiceRole** and add inline policy from terminal
+as follows:
+
+```
+wget https://raw.githubusercontent.com/minhtri2582/server-samples/master/aws-journey/cpAssumeRolePolicyDocument.json
+aws iam create-role --role-name eks-CodePipelineServiceRole --assume-role-policy-document file://cpAssumeRolePolicyDocument.json
+wget https://raw.githubusercontent.com/minhtri2582/server-samples/master/aws-journey/cpPolicyDocument.json
+aws iam put-role-policy --role-name eks-CodePipelineServiceRole --policy-name codepipeline-access --policy-document file://cpPolicyDocument.json
+```

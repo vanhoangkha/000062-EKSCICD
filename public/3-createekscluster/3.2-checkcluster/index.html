@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Test EKS Cluster :: AWS System Manager</title>
+    <title>Test EKS Cluster :: CI/CD on EKS with CodePipeline and Github</title>
 
     
-    <link href="/css/nucleus.css?1650935604" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1650935604" rel="stylesheet">
-    <link href="/css/hybrid.css?1650935604" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1650935604" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1650935604" rel="stylesheet">
-    <link href="/css/auto-complete.css?1650935604" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1650935604" rel="stylesheet">
-    <link href="/css/theme.css?1650935604" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1650935604" rel="stylesheet">
+    <link href="/css/nucleus.css?1651062116" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1651062116" rel="stylesheet">
+    <link href="/css/hybrid.css?1651062116" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1651062116" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1651062116" rel="stylesheet">
+    <link href="/css/auto-complete.css?1651062116" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1651062116" rel="stylesheet">
+    <link href="/css/theme.css?1651062116" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1651062116" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1650935604" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1651062116" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1650935604"></script>
+    <script src="/js/jquery-3.3.1.min.js?1651062116"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1650935604"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1650935604"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1651062116"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1651062116"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1650935604"></script>
+<script type="text/javascript" src="/js/search.js?1651062116"></script>
 
     
   </div>
@@ -108,13 +108,13 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/" title="Preparation " class="dd-item 
+    <li data-nav-id="/2-prerequiste/" title="Preparatory steps" class="dd-item 
         
         
         
         ">
       <a href="/2-prerequiste/">
-           <b> 2. </b> Preparation 
+           <b> 2. </b> Preparatory steps
           
             <i class="fas fa-check read-icon"></i>
           
@@ -469,13 +469,13 @@
  
   
     
-    <li data-nav-id="/3-createekscluster/3.3-deploywebsite/" title="" class="dd-item 
+    <li data-nav-id="/3-createekscluster/3.3-deploywebsite/" title="Deploying the application" class="dd-item 
         
         
         
         ">
       <a href="/3-createekscluster/3.3-deploywebsite/">
-          
+           <b> 3.3 </b> Deploying the application
           
             <i class="fas fa-check read-icon"></i>
           
@@ -504,13 +504,13 @@
  
   
     
-    <li data-nav-id="/4-createcicd/" title="" class="dd-item 
+    <li data-nav-id="/4-createcicd/" title="Create CI/CD" class="dd-item 
         
         
         
         ">
       <a href="/4-createcicd/">
-          
+           <b> 4. </b> Create CI/CD
           
             <i class="fas fa-check read-icon"></i>
           
@@ -563,13 +563,13 @@
  
   
     
-    <li data-nav-id="/4-createcicd/4.2-codepipelineservicerole/" title="" class="dd-item 
+    <li data-nav-id="/4-createcicd/4.2-codepipelineservicerole/" title="Create service role for CodePipeline service" class="dd-item 
         
         
         
         ">
       <a href="/4-createcicd/4.2-codepipelineservicerole/">
-          
+           <b> 4.2 </b> Create service role for CodePipeline service
           
             <i class="fas fa-check read-icon"></i>
           
@@ -591,13 +591,13 @@
  
   
     
-    <li data-nav-id="/4-createcicd/4.3-codebuildservicerole/" title="" class="dd-item 
+    <li data-nav-id="/4-createcicd/4.3-codebuildservicerole/" title="Create service role for CodeBuild service" class="dd-item 
         
         
         
         ">
       <a href="/4-createcicd/4.3-codebuildservicerole/">
-          
+           <b> 4.3 </b> Create service role for CodeBuild service
           
             <i class="fas fa-check read-icon"></i>
           
@@ -619,13 +619,13 @@
  
   
     
-    <li data-nav-id="/4-createcicd/4.4-rbac/" title="" class="dd-item 
+    <li data-nav-id="/4-createcicd/4.4-rbac/" title="Configuring RBAC" class="dd-item 
         
         
         
         ">
       <a href="/4-createcicd/4.4-rbac/">
-          
+           <b> 4.4 </b> Configuring RBAC
           
             <i class="fas fa-check read-icon"></i>
           
@@ -647,13 +647,13 @@
  
   
     
-    <li data-nav-id="/4-createcicd/4.5-forksourcecode/" title="" class="dd-item 
+    <li data-nav-id="/4-createcicd/4.5-forksourcecode/" title="Fork Source Code" class="dd-item 
         
         
         
         ">
       <a href="/4-createcicd/4.5-forksourcecode/">
-          
+           <b> 4.5 </b> Fork Source Code
           
             <i class="fas fa-check read-icon"></i>
           
@@ -675,13 +675,13 @@
  
   
     
-    <li data-nav-id="/4-createcicd/4.6-createcodepipeline/" title="" class="dd-item 
+    <li data-nav-id="/4-createcicd/4.6-createcodepipeline/" title="Create a pipeline" class="dd-item 
         
         
         
         ">
       <a href="/4-createcicd/4.6-createcodepipeline/">
-          
+           <b>4.6 </b> Create a pipeline
           
             <i class="fas fa-check read-icon"></i>
           
@@ -703,13 +703,13 @@
  
   
     
-    <li data-nav-id="/4-createcicd/4.7-checkcicd/" title="" class="dd-item 
+    <li data-nav-id="/4-createcicd/4.7-checkcicd/" title="Test CI/CD" class="dd-item 
         
         
         
         ">
       <a href="/4-createcicd/4.7-checkcicd/">
-          
+           <b>4.7 </b> Test CI/CD
           
             <i class="fas fa-check read-icon"></i>
           
@@ -738,13 +738,13 @@
  
   
     
-    <li data-nav-id="/5-cleanup/" title="" class="dd-item 
+    <li data-nav-id="/5-cleanup/" title="Clean up resources" class="dd-item 
         
         
         
         ">
       <a href="/5-cleanup/">
-          
+           <b> 5. </b> Clean up resources
           
             <i class="fas fa-check read-icon"></i>
           
@@ -899,7 +899,7 @@
             
           
           
-            <a href='/'>Session Management</a> > <a href='/3-createekscluster/'>Create EKS cluster</a> > Test EKS Cluster
+            <a href='/'>CI/CD on EKS</a> > <a href='/3-createekscluster/'>Create EKS cluster</a> > Test EKS Cluster
           
         
           
@@ -946,7 +946,7 @@
 
 	<h4 id="check-eks-cluster">Check EKS Cluster</h4>
 <ol>
-<li>In the [AWS Console] interface(<a href="https://aws.amazon.com/console/">https://aws.amazon.com/console/</a>)</li>
+<li>In the <a href="https://aws.amazon.com/console/">AWS Console</a></li>
 </ol>
 <ul>
 <li>Find <strong>CloudFormation</strong></li>
@@ -1432,7 +1432,7 @@
 			<a class="nav nav-prev" href="/3-createekscluster/3.1-createcluster/" title="Create EKS Cluster"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/3-createekscluster/3.3-deploywebsite/" title="" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/3-createekscluster/3.3-deploywebsite/" title="Deploying the application" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1442,19 +1442,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1650935604"></script>
-    <script src="/js/perfect-scrollbar.min.js?1650935604"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1650935604"></script>
-    <script src="/js/jquery.sticky.js?1650935604"></script>
-    <script src="/js/featherlight.min.js?1650935604"></script>
-    <script src="/js/highlight.pack.js?1650935604"></script>
+    <script src="/js/clipboard.min.js?1651062116"></script>
+    <script src="/js/perfect-scrollbar.min.js?1651062116"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1651062116"></script>
+    <script src="/js/jquery.sticky.js?1651062116"></script>
+    <script src="/js/featherlight.min.js?1651062116"></script>
+    <script src="/js/highlight.pack.js?1651062116"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1650935604"></script>
-    <script src="/js/learn.js?1650935604"></script>
-    <script src="/js/hugo-learn.js?1650935604"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1651062116"></script>
+    <script src="/js/learn.js?1651062116"></script>
+    <script src="/js/hugo-learn.js?1651062116"></script>
 
-    <link href="/mermaid/mermaid.css?1650935604" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1650935604"></script>
+    <link href="/mermaid/mermaid.css?1651062116" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1651062116"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -12,8 +12,6 @@ pre : " <b> 3. </b> "
 
 ### Nội dung
 
-1. [Tạo IAM User](2.1-iamuser/)
-2. [Tạo Workspace](2.2-createworkspace/)
-3. [Cài đặt Kubernetes Tool](2.3-kubernetestools/)
-4. [Cấu hình Role](2.4-configurerole/)
-5. [Cài đặt eksctl Tool](2.5-installeksctl/)
+1. [Tạo EKS Cluster](3.1-createcluster/)
+2. [Kiểm tra EKS Cluster](3.2-checkcluster/)
+3. [Triển khai ứng dụng](3.3-deploywebsite/)

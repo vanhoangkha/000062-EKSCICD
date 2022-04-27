@@ -2,6 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/"
+                />
+  </url><url>
     <loc>/3-createekscluster/3.1-createcluster/</loc>
     <xhtml:link
                 rel="alternate"
@@ -62,18 +74,6 @@
                 href="/1-introduce/"
                 />
   </url><url>
-    <loc>/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="/vi/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/"
-                />
-  </url><url>
     <loc>/2-prerequiste/2.4-configurerole/2.4.2-attachiamrole/</loc>
     <xhtml:link
                 rel="alternate"
@@ -96,6 +96,18 @@
                 rel="alternate"
                 hreflang="en"
                 href="/2-prerequiste/2.2-createworkspace/"
+                />
+  </url><url>
+    <loc>/4-createcicd/4.2-codepipelineservicerole/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/4-createcicd/4.2-codepipelineservicerole/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/4-createcicd/4.2-codepipelineservicerole/"
                 />
   </url><url>
     <loc>/2-prerequiste/</loc>
@@ -134,6 +146,30 @@
                 href="/3-createekscluster/"
                 />
   </url><url>
+    <loc>/4-createcicd/4.3-codebuildservicerole/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/4-createcicd/4.3-codebuildservicerole/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/4-createcicd/4.3-codebuildservicerole/"
+                />
+  </url><url>
+    <loc>/3-createekscluster/3.3-deploywebsite/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/3-createekscluster/3.3-deploywebsite/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/3-createekscluster/3.3-deploywebsite/"
+                />
+  </url><url>
     <loc>/2-prerequiste/2.3-kubernetestools/</loc>
     <xhtml:link
                 rel="alternate"
@@ -170,58 +206,7 @@
                 href="/2-prerequiste/2.4-configurerole/"
                 />
   </url><url>
-    <loc>/2-prerequiste/2.5-installeksctl/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="/vi/2-prerequiste/2.5-installeksctl/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/2-prerequiste/2.5-installeksctl/"
-                />
-  </url><url>
-    <loc>/3-createekscluster/3.3-deploywebsite/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="/vi/3-createekscluster/3.3-deploywebsite/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/3-createekscluster/3.3-deploywebsite/"
-                />
-  </url><url>
-    <loc>/4-createcicd/4.2-codepipelineservicerole/</loc>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="/vi/4-createcicd/4.2-codepipelineservicerole/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/4-createcicd/4.2-codepipelineservicerole/"
-                />
-  </url><url>
-    <loc>/4-createcicd/4.3-codebuildservicerole/</loc>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="/vi/4-createcicd/4.3-codebuildservicerole/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/4-createcicd/4.3-codebuildservicerole/"
-                />
-  </url><url>
     <loc>/4-createcicd/4.4-rbac/</loc>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -233,47 +218,7 @@
                 href="/4-createcicd/4.4-rbac/"
                 />
   </url><url>
-    <loc>/4-createcicd/4.5-forksourcecode/</loc>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="/vi/4-createcicd/4.5-forksourcecode/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/4-createcicd/4.5-forksourcecode/"
-                />
-  </url><url>
-    <loc>/4-createcicd/4.6-createcodepipeline/</loc>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="/vi/4-createcicd/4.6-createcodepipeline/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/4-createcicd/4.6-createcodepipeline/"
-                />
-  </url><url>
-    <loc>/4-createcicd/4.7-checkcicd/</loc>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="/vi/4-createcicd/4.7-checkcicd/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/4-createcicd/4.7-checkcicd/"
-                />
-  </url><url>
     <loc>/4-createcicd/</loc>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -286,7 +231,6 @@
                 />
   </url><url>
     <loc>/5-cleanup/</loc>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -296,6 +240,54 @@
                 rel="alternate"
                 hreflang="en"
                 href="/5-cleanup/"
+                />
+  </url><url>
+    <loc>/4-createcicd/4.5-forksourcecode/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/4-createcicd/4.5-forksourcecode/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/4-createcicd/4.5-forksourcecode/"
+                />
+  </url><url>
+    <loc>/2-prerequiste/2.5-installeksctl/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/2-prerequiste/2.5-installeksctl/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/2-prerequiste/2.5-installeksctl/"
+                />
+  </url><url>
+    <loc>/4-createcicd/4.6-createcodepipeline/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/4-createcicd/4.6-createcodepipeline/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/4-createcicd/4.6-createcodepipeline/"
+                />
+  </url><url>
+    <loc>/4-createcicd/4.7-checkcicd/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/4-createcicd/4.7-checkcicd/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/4-createcicd/4.7-checkcicd/"
                 />
   </url><url>
     <loc>/categories/</loc>

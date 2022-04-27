@@ -13,6 +13,8 @@ Cloud9 will manage IAM credentials automatically. This default configuration is 
 {{%/notice%}}
 
 
+
+
 1. In the **AWS Cloud9** interface
 
 - Select **AWS Cloud9**
@@ -20,7 +22,7 @@ Cloud9 will manage IAM credentials automatically. This default configuration is 
 
 ![Update configure role](/images/2-Prerequiste/2.4-Configurerole/2.4.3-Updateconfigureiam/0001-updateconfigureiam.png)
 
-2. In **AWS Cloud9** interface
+2. In the **AWS Cloud9** interface
 
 - Select **AWS SETTINGS**
 - Uncheck **AWS managed temporary credentials**

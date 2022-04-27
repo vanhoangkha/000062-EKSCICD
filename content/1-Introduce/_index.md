@@ -8,9 +8,9 @@ pre : " <b> 1. </b> "
 
 ### Overview
 
-Kubernetes (K8s) is an open source, extensible platform for managing packaged applications and services, facilitating configuration and automating application deployment.
+**Kubernetes (K8s)** is an open source, extensible platform for managing packaged applications and services, facilitating configuration and automating application deployment.
 
-- In this lab, we will create a simple Kubernetes Cluster on AWS EKS (Elastic Kubernetes Service). Then, I will deploy the site on the cluster and use AWS CodePipeLine for automated deployment.
+- In this lab, we will create a simple **Kubernetes Cluster** on **AWS EKS (Elastic Kubernetes Service)**. Then I will deploy the site on the cluster and use **AWS CodePipeLine** for automated deployment.
 
 ![Elastic Kubernetes Service](/images/1-Introduce/CI_CDwithAWSCodePipeline.png)
 

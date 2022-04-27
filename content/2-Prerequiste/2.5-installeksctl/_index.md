@@ -8,9 +8,9 @@ pre : " <b> 2.5 </b> "
 
 #### Install eksctl
 
-1. In this section we will install the eksctl tool into Cloud9 Workspace.
+1. In this section we will install the **eksctl** tool into **Cloud9 Workspace**.
 
-- Run the command to download the eksctl tool.
+- Run the command to download the **eksctl** tool.
 
 ```
 curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
@@ -37,3 +37,7 @@ eksctl completion bash >> ~/.bash_completion
 ```
 
 ![Create Eksctl](/images/3-Createeksctl/0003-installeksctl.png)
+
+{{% notice note %}}
+Installation information **Eksctl** see more at [Eksctl](https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html)
+{{% /notice %}}

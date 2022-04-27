@@ -23,19 +23,29 @@ kubectl get configmaps aws-auth -n kube-system -o yaml > aws-auth.yaml
 ```
 apiVersion: v1
 data:
-mapRoles: |
-- groups:
-- system:bootstrappers
-- system:nodes
-rolearn: arn:aws:iam::435147975610:role/eksctl-k8s-demo-nodegroup-k8s-dem-NodeInstanceRole-189W51QXXFKU6
-username: system:node:{{EC2PrivateDNSName}}
+  mapRoles: |
+    - groups:
+      - system:bootstrappers
+      - system:nodes
+      rolearn: arn:aws:iam::451085899692:role/eksctl-k8s-demo-nodegroup-k8s-dem-NodeInstanceRole-LYNRCIX49ZOU
+      username: system:node:{{EC2PrivateDNSName}}
 kind: ConfigMap
 metadata:
-creationTimestamp: "2022-03-13T12:28:45Z"
-name: aws-auth
-namespace: kube-system
-resourceVersion: "1416"
-uid: 8e6402d2-383d-40f9-a0ba-8d6003ae5e4f
+  creationTimestamp: "2022-04-26T10:21:52Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:mapRoles: {}
+    manager: vpcLambda
+    operation: Update
+    time: "2022-04-26T10:21:52Z"
+  name: aws-auth
+  namespace: kube-system
+  resourceVersion: "2691"
+  uid: a2862e92-4697-4654-bb19-dc28b17dc21b
 ```
 
 
@@ -45,9 +55,9 @@ uid: 8e6402d2-383d-40f9-a0ba-8d6003ae5e4f
 
 ```
 - groups:
-- system:masters
-rolearn: arn:aws:iam::{$AWS_ACCOUNT_ID}}:role/eks-CodeBuildServiceRole
-username: codebuild-eks
+  - system:masters
+  rolearn: arn:aws:iam::{$AWS_ACCOUNT_ID}}:role/eks-CodeBuildServiceRole
+  username: codebuild-eks
 ```
 
 4. Tập tin aws-auth.yaml sau khi thêm role eks-CodeBuildServiceRole có dạng như sau:
@@ -60,26 +70,41 @@ Xóa dòng metadata.creationTimestamp và metadata.resourceVersion
 ```
 apiVersion: v1
 data:
-mapRoles: |
-- groups:
-- system:bootstrappers
-- system:nodes
-rolearn: arn:aws:iam::435147975610:role/eksctl-k8s-demo-nodegroup-k8s-dem-NodeInstanceRole-189W51QXXFKU6
-username: system:node:{{EC2PrivateDNSName}}
-- groups:
-- system:masters
-rolearn: arn:aws:iam::435147975610:role/eks-CodeBuildServiceRole
-username: codebuild-eks
+  mapRoles: |
+    - groups:
+      - system:bootstrappers
+      - system:nodes
+      rolearn: arn:aws:iam::451085899692:role/eksctl-k8s-demo-nodegroup-k8s-dem-NodeInstanceRole-LYNRCIX49ZOU
+      username: system:node:{{EC2PrivateDNSName}}
+    - groups:
+      - system:masters
+      rolearn: arn:aws:iam::{$AWS_ACCOUNT_ID}}:role/eks-CodeBuildServiceRole
+      username: codebuild-eks
 kind: ConfigMap
 metadata:
-name: aws-auth
-namespace: kube-system
-uid: 8e6402d2-383d-40f9-a0ba-8d6003ae5e4f
+  creationTimestamp: "2022-04-26T10:21:52Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:mapRoles: {}
+    manager: vpcLambda
+    operation: Update
+    time: "2022-04-26T10:21:52Z"
+  name: aws-auth
+  namespace: kube-system
+  resourceVersion: "2691"
+  uid: a2862e92-4697-4654-bb19-dc28b17dc21b
 ```
 
 ![RBAC](/images/7-Createcicd/7.4-Rbac/0003-RBAC.png)
 
 5. Apply tập tin **aws-auth.yaml** đã thay đổi từ terminal:
- 
+
+```
+kubectl apply -f aws-auth.yaml
+```
 
 ![RBAC](/images/7-Createcicd/7.4-Rbac/0004-RBAC.png)

@@ -29,6 +29,13 @@ pre : " <b> 2.4.2 </b> "
 
 ![Attach role](/images/2-Prerequiste/2.4-Configurerole/2.4.2-Attachiamrole/0003-attachiamrole.png)
 
-4. Gán role thành công
+4. Trong giao diện **Modify IAM role**
+
+- Chọn ```eksworkshop-admin```
+- Chọn **Save**
 
 ![Attach role](/images/2-Prerequiste/2.4-Configurerole/2.4.2-Attachiamrole/0004-attachiamrole.png)
+
+5. Gán role thành công
+
+![Attach role](/images/2-Prerequiste/2.4-Configurerole/2.4.2-Attachiamrole/0005-attachiamrole.png)

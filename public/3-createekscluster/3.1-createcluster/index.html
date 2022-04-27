@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Create EKS Cluster :: AWS System Manager</title>
+    <title>Create EKS Cluster :: CI/CD on EKS with CodePipeline and Github</title>
 
     
-    <link href="/css/nucleus.css?1650935604" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1650935604" rel="stylesheet">
-    <link href="/css/hybrid.css?1650935604" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1650935604" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1650935604" rel="stylesheet">
-    <link href="/css/auto-complete.css?1650935604" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1650935604" rel="stylesheet">
-    <link href="/css/theme.css?1650935604" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1650935604" rel="stylesheet">
+    <link href="/css/nucleus.css?1651062116" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1651062116" rel="stylesheet">
+    <link href="/css/hybrid.css?1651062116" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1651062116" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1651062116" rel="stylesheet">
+    <link href="/css/auto-complete.css?1651062116" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1651062116" rel="stylesheet">
+    <link href="/css/theme.css?1651062116" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1651062116" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1650935604" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1651062116" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1650935604"></script>
+    <script src="/js/jquery-3.3.1.min.js?1651062116"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1650935604"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1650935604"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1651062116"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1651062116"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1650935604"></script>
+<script type="text/javascript" src="/js/search.js?1651062116"></script>
 
     
   </div>
@@ -108,13 +108,13 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/" title="Preparation " class="dd-item 
+    <li data-nav-id="/2-prerequiste/" title="Preparatory steps" class="dd-item 
         
         
         
         ">
       <a href="/2-prerequiste/">
-           <b> 2. </b> Preparation 
+           <b> 2. </b> Preparatory steps
           
             <i class="fas fa-check read-icon"></i>
           
@@ -469,13 +469,13 @@
  
   
     
-    <li data-nav-id="/3-createekscluster/3.3-deploywebsite/" title="" class="dd-item 
+    <li data-nav-id="/3-createekscluster/3.3-deploywebsite/" title="Deploying the application" class="dd-item 
         
         
         
         ">
       <a href="/3-createekscluster/3.3-deploywebsite/">
-          
+           <b> 3.3 </b> Deploying the application
           
             <i class="fas fa-check read-icon"></i>
           
@@ -504,13 +504,13 @@
  
   
     
-    <li data-nav-id="/4-createcicd/" title="" class="dd-item 
+    <li data-nav-id="/4-createcicd/" title="Create CI/CD" class="dd-item 
         
         
         
         ">
       <a href="/4-createcicd/">
-          
+           <b> 4. </b> Create CI/CD
           
             <i class="fas fa-check read-icon"></i>
           
@@ -563,13 +563,13 @@
  
   
     
-    <li data-nav-id="/4-createcicd/4.2-codepipelineservicerole/" title="" class="dd-item 
+    <li data-nav-id="/4-createcicd/4.2-codepipelineservicerole/" title="Create service role for CodePipeline service" class="dd-item 
         
         
         
         ">
       <a href="/4-createcicd/4.2-codepipelineservicerole/">
-          
+           <b> 4.2 </b> Create service role for CodePipeline service
           
             <i class="fas fa-check read-icon"></i>
           
@@ -591,13 +591,13 @@
  
   
     
-    <li data-nav-id="/4-createcicd/4.3-codebuildservicerole/" title="" class="dd-item 
+    <li data-nav-id="/4-createcicd/4.3-codebuildservicerole/" title="Create service role for CodeBuild service" class="dd-item 
         
         
         
         ">
       <a href="/4-createcicd/4.3-codebuildservicerole/">
-          
+           <b> 4.3 </b> Create service role for CodeBuild service
           
             <i class="fas fa-check read-icon"></i>
           
@@ -619,13 +619,13 @@
  
   
     
-    <li data-nav-id="/4-createcicd/4.4-rbac/" title="" class="dd-item 
+    <li data-nav-id="/4-createcicd/4.4-rbac/" title="Configuring RBAC" class="dd-item 
         
         
         
         ">
       <a href="/4-createcicd/4.4-rbac/">
-          
+           <b> 4.4 </b> Configuring RBAC
           
             <i class="fas fa-check read-icon"></i>
           
@@ -647,13 +647,13 @@
  
   
     
-    <li data-nav-id="/4-createcicd/4.5-forksourcecode/" title="" class="dd-item 
+    <li data-nav-id="/4-createcicd/4.5-forksourcecode/" title="Fork Source Code" class="dd-item 
         
         
         
         ">
       <a href="/4-createcicd/4.5-forksourcecode/">
-          
+           <b> 4.5 </b> Fork Source Code
           
             <i class="fas fa-check read-icon"></i>
           
@@ -675,13 +675,13 @@
  
   
     
-    <li data-nav-id="/4-createcicd/4.6-createcodepipeline/" title="" class="dd-item 
+    <li data-nav-id="/4-createcicd/4.6-createcodepipeline/" title="Create a pipeline" class="dd-item 
         
         
         
         ">
       <a href="/4-createcicd/4.6-createcodepipeline/">
-          
+           <b>4.6 </b> Create a pipeline
           
             <i class="fas fa-check read-icon"></i>
           
@@ -703,13 +703,13 @@
  
   
     
-    <li data-nav-id="/4-createcicd/4.7-checkcicd/" title="" class="dd-item 
+    <li data-nav-id="/4-createcicd/4.7-checkcicd/" title="Test CI/CD" class="dd-item 
         
         
         
         ">
       <a href="/4-createcicd/4.7-checkcicd/">
-          
+           <b>4.7 </b> Test CI/CD
           
             <i class="fas fa-check read-icon"></i>
           
@@ -738,13 +738,13 @@
  
   
     
-    <li data-nav-id="/5-cleanup/" title="" class="dd-item 
+    <li data-nav-id="/5-cleanup/" title="Clean up resources" class="dd-item 
         
         
         
         ">
       <a href="/5-cleanup/">
-          
+           <b> 5. </b> Clean up resources
           
             <i class="fas fa-check read-icon"></i>
           
@@ -899,7 +899,7 @@
             
           
           
-            <a href='/'>Session Management</a> > <a href='/3-createekscluster/'>Create EKS cluster</a> > Create EKS Cluster
+            <a href='/'>CI/CD on EKS</a> > <a href='/3-createekscluster/'>Create EKS cluster</a> > Create EKS Cluster
           
         
           
@@ -946,7 +946,7 @@
 
 	<h4 id="create-eks-cluster">Create EKS Cluster</h4>
 <ol>
-<li>To create an EKS cluster, we will first have to generate an SSH key to be able to access the EC2 Node in the Cluster as needed:</li>
+<li>To create <strong>EKS cluster</strong>, we will first have to generate <strong>SSH key</strong> to be able to access <strong>EC2 Node</strong> in the Cluster as needed:</li>
 </ol>
 <pre tabindex="0"><code>aws ec2 create-key-pair --key-name k8s-demo --query 'KeyMaterial' --output text&gt; k8s-demo.pem
 </code></pre><p><img src="/images/4-Createekscluster/0001-createekscluster.png" alt="Create EKS Cluster"></p>
@@ -959,25 +959,29 @@
 </ul>
 <p><img src="/images/4-Createekscluster/0002-createekscluster.png" alt="Create EKS Cluster"></p>
 <ol start="3">
-<li>In the <strong>EC2</strong> interface</li>
+<li>In <strong>EC2</strong> interface</li>
 </ol>
 <ul>
 <li>Select <strong>Key Pair</strong></li>
-<li>See <strong>Key Pair</strong> just created</li>
+<li>View <strong>Key Pair</strong> just created</li>
 </ul>
 <p><img src="/images/4-Createekscluster/0003-createekscluster.png" alt="Create EKS Cluster"></p>
 <ol start="4">
-<li>To create EKS Cluster and EC2 Nodes we use the following command:</li>
+<li>To create <strong>EKS Cluster</strong> and <strong>EC2 Nodes</strong> we use the following command:</li>
 </ol>
 <pre tabindex="0"><code>eksctl create cluster --name k8s-demo --region ap-southeast-1 --nodegroup-name k8s-demo --nodes 2 --ssh-access --ssh-public-key k8s-demo --managed
 </code></pre><ul>
-<li>When you run this command, eksctl will use AWS CloudFormation to create the necessary infrastructure and setup the Master Node (Control Plane).</li>
+<li>When you run this command, <strong>eksctl</strong> will use <strong>AWS CloudFormation</strong> to create the necessary <strong>infrastructure</strong> and <strong>setup Master Node (Control Plane)</strong>.</li>
 </ul>
 <p><img src="/images/4-Createekscluster/0004-createekscluster.png" alt="Create EKS Cluster"></p>
 <ol start="5">
-<li>Interface after creating EKS Cluster</li>
+<li>Interface after creating <strong>EKS Cluster</strong>.</li>
 </ol>
-<p><img src="/images/4-Createekscluster/0005-createekscluster.png" alt="Create EKS Cluster"></p>
+<p><img src="/images/4-Createekscluster/0004-createekscluster.png" alt="Create EKS Cluster"></p>
+
+<div class="notices note" ><p>It takes about 15 minutes to complete the initialization of <strong>EKS Cluster</strong></p>
+</div>
+
 
 
 
@@ -1419,19 +1423,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1650935604"></script>
-    <script src="/js/perfect-scrollbar.min.js?1650935604"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1650935604"></script>
-    <script src="/js/jquery.sticky.js?1650935604"></script>
-    <script src="/js/featherlight.min.js?1650935604"></script>
-    <script src="/js/highlight.pack.js?1650935604"></script>
+    <script src="/js/clipboard.min.js?1651062116"></script>
+    <script src="/js/perfect-scrollbar.min.js?1651062116"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1651062116"></script>
+    <script src="/js/jquery.sticky.js?1651062116"></script>
+    <script src="/js/featherlight.min.js?1651062116"></script>
+    <script src="/js/highlight.pack.js?1651062116"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1650935604"></script>
-    <script src="/js/learn.js?1650935604"></script>
-    <script src="/js/hugo-learn.js?1650935604"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1651062116"></script>
+    <script src="/js/learn.js?1651062116"></script>
+    <script src="/js/hugo-learn.js?1651062116"></script>
 
-    <link href="/mermaid/mermaid.css?1650935604" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1650935604"></script>
+    <link href="/mermaid/mermaid.css?1651062116" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1651062116"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Tạo service role cho dịch vụ CodeBuild :: AWS System Manager</title>
+    <title>Tạo service role cho dịch vụ CodeBuild :: CI/CD on EKS with CodePipeline and Github</title>
 
     
-    <link href="/css/nucleus.css?1650935604" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1650935604" rel="stylesheet">
-    <link href="/css/hybrid.css?1650935604" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1650935604" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1650935604" rel="stylesheet">
-    <link href="/css/auto-complete.css?1650935604" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1650935604" rel="stylesheet">
-    <link href="/css/theme.css?1650935604" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1650935604" rel="stylesheet">
+    <link href="/css/nucleus.css?1651062116" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1651062116" rel="stylesheet">
+    <link href="/css/hybrid.css?1651062116" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1651062116" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1651062116" rel="stylesheet">
+    <link href="/css/auto-complete.css?1651062116" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1651062116" rel="stylesheet">
+    <link href="/css/theme.css?1651062116" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1651062116" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1650935604" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1651062116" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1650935604"></script>
+    <script src="/js/jquery-3.3.1.min.js?1651062116"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1650935604"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1650935604"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1651062116"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1651062116"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1650935604"></script>
+<script type="text/javascript" src="/js/search.js?1651062116"></script>
 
     
   </div>
@@ -949,7 +949,7 @@
 <li>CodeBuild cần phải có IAM roles để build docker, push image và tương tác với EKS cluster bằng command kubectl.</li>
 </ol>
 <ul>
-<li>Hãy tải các <strong>file policy json</strong>, tạo các <strong>role eks-CodePipelineServiceRole</strong> và thêm <strong>inline policy</strong> từ <strong>terminal Cloud9</strong> như sau:</li>
+<li>Hãy tạo các <strong>role eks-CodePipelineServiceRole</strong> và thêm <strong>inline policy</strong> từ <strong>terminal Cloud9</strong></li>
 </ul>
 <pre tabindex="0"><code>wget https://raw.githubusercontent.com/minhtri2582/server-samples/master/aws-journey/cbAssumeRolePolicyDocument.json
 aws iam create-role --role-name eks-CodeBuildServiceRole --assume-role-policy-document file://cbAssumeRolePolicyDocument.json
@@ -970,7 +970,7 @@ aws iam put-role-policy --role-name eks-CodeBuildServiceRole --policy-name codeb
 <p>Chọn <strong>IAM</strong></p>
 </li>
 </ul>
-<p><img src="/images/7-Createcicd/7.3-codebuildservicerole/0002-CodeBuildServiceRole.png" alt="Create Code Build Service Role"></p>
+<p><img src="/images/7-Createcicd/7.3-codebuildservicerole/0004-CodeBuildServiceRole.png" alt="Create Code Build Service Role"></p>
 <ol start="3">
 <li>Trong giao diện <strong>IAM</strong></li>
 </ol>
@@ -979,7 +979,7 @@ aws iam put-role-policy --role-name eks-CodeBuildServiceRole --policy-name codeb
 <li>Tìm <code>eks-Code</code></li>
 <li>Xem 2 Role vừa tạo</li>
 </ul>
-<p><img src="/images/7-Createcicd/7.3-codebuildservicerole/0003-CodeBuildServiceRole.png" alt="Create Code Build Service Role"></p>
+<p><img src="/images/7-Createcicd/7.3-codebuildservicerole/0005-CodeBuildServiceRole.png" alt="Create Code Build Service Role"></p>
 
 
 
@@ -1424,19 +1424,19 @@ aws iam put-role-policy --role-name eks-CodeBuildServiceRole --policy-name codeb
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1650935604"></script>
-    <script src="/js/perfect-scrollbar.min.js?1650935604"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1650935604"></script>
-    <script src="/js/jquery.sticky.js?1650935604"></script>
-    <script src="/js/featherlight.min.js?1650935604"></script>
-    <script src="/js/highlight.pack.js?1650935604"></script>
+    <script src="/js/clipboard.min.js?1651062116"></script>
+    <script src="/js/perfect-scrollbar.min.js?1651062116"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1651062116"></script>
+    <script src="/js/jquery.sticky.js?1651062116"></script>
+    <script src="/js/featherlight.min.js?1651062116"></script>
+    <script src="/js/highlight.pack.js?1651062116"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1650935604"></script>
-    <script src="/js/learn.js?1650935604"></script>
-    <script src="/js/hugo-learn.js?1650935604"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1651062116"></script>
+    <script src="/js/learn.js?1651062116"></script>
+    <script src="/js/hugo-learn.js?1651062116"></script>
 
-    <link href="/mermaid/mermaid.css?1650935604" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1650935604"></script>
+    <link href="/mermaid/mermaid.css?1651062116" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1651062116"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
