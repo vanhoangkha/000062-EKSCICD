@@ -12,21 +12,21 @@
     <title>CI/CD trên EKS :: CI/CD on EKS with CodePipeline and Github</title>
 
     
-    <link href="/css/nucleus.css?1651070831" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1651070831" rel="stylesheet">
-    <link href="/css/hybrid.css?1651070831" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1651070831" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1651070831" rel="stylesheet">
-    <link href="/css/auto-complete.css?1651070831" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1651070831" rel="stylesheet">
-    <link href="/css/theme.css?1651070831" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1651070831" rel="stylesheet">
+    <link href="/css/nucleus.css?1651085473" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1651085473" rel="stylesheet">
+    <link href="/css/hybrid.css?1651085473" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1651085473" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1651085473" rel="stylesheet">
+    <link href="/css/auto-complete.css?1651085473" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1651085473" rel="stylesheet">
+    <link href="/css/theme.css?1651085473" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1651085473" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1651070831" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1651085473" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1651070831"></script>
+    <script src="/js/jquery-3.3.1.min.js?1651085473"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1651070831"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1651070831"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1651085473"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1651085473"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1651070831"></script>
+<script type="text/javascript" src="/js/search.js?1651085473"></script>
 
     
   </div>
@@ -889,13 +889,13 @@
 <h1 id="cicd-trên-eks-với-codepipeline-và-github">CI/CD trên EKS với CodePipeline và GitHub</h1>
 <ul>
 <li>
-<p>Amazon Elastic Kubernetes Service (Amazon EKS) là một dịch vụ container orchestration được quản lý bởi AWS giúp chúng ta để tạo, quản lý, khởi chạy và thay đổi quy mô các ứng dụng Kubernetes trong môi trường AWS hoặc cả môi trường on-premise.</p>
+<p><strong>Amazon Elastic Kubernetes Service (Amazon EKS)</strong> là một dịch vụ container orchestration được quản lý bởi AWS giúp chúng ta để tạo, quản lý, khởi chạy và thay đổi quy mô các ứng dụng Kubernetes trong môi trường AWS hoặc cả môi trường on-premise.</p>
 </li>
 <li>
-<p>AWS CodePipeline là dịch vụ phân phối liên tục giúp bạn tự động hóa các deployment pipeline giúp cho việc cập nhật phiên bản mới của ứng dụng hoặc hạ tầng một cách ổn định. CodePipeline tự động hóa việc xây dựng, thử nghiệm và triển khai các giai đoạn của quá trình deploy của bạn mỗi khi có sự thay đổi mã, dựa trên mô hình deploy mà bạn xác định. Bạn có thể tích hợp AWS CodePipeline với các dịch vụ của bên thứ ba như <strong>GitHub</strong> hoặc với plugin tùy chỉnh của riêng bạn. Với AWS CodePipeline, bạn chỉ phải trả tiền cho những gì bạn sử dụng. Bạn không phải trả tiền trước hay thực hiện cam kết dài hạn.</p>
+<p>AWS CodePipeline là dịch vụ phân phối liên tục giúp bạn tự động hóa các deployment pipeline giúp cho việc cập nhật phiên bản mới của ứng dụng hoặc hạ tầng một cách ổn định. CodePipeline tự động hóa việc xây dựng, thử nghiệm và triển khai các giai đoạn của quá trình deploy của bạn mỗi khi có sự thay đổi mã, dựa trên mô hình deploy mà bạn xác định. Bạn có thể tích hợp <strong>AWS CodePipeline</strong> với các dịch vụ của bên thứ ba như <strong>GitHub</strong> hoặc với plugin tùy chỉnh của riêng bạn. Với AWS CodePipeline, bạn chỉ phải trả tiền cho những gì bạn sử dụng. Bạn không phải trả tiền trước hay thực hiện cam kết dài hạn.</p>
 </li>
 <li>
-<p>Trong bài thực hành này, chúng ta sẽ tạo một EKS Cluster và tiến hành triển khai một pipeline để tự động deploy lên môi trường production mỗi khi có thay đổi về code bằng dịch vụ AWS CodePipeline.</p>
+<p>Trong bài thực hành này, chúng ta sẽ tạo một <strong>EKS Cluster</strong> và tiến hành triển khai một pipeline để tự động deploy lên môi trường production mỗi khi có thay đổi về code bằng dịch vụ <strong>AWS CodePipeline</strong>.</p>
 </li>
 </ul>
 	
@@ -1325,19 +1325,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1651070832"></script>
-    <script src="/js/perfect-scrollbar.min.js?1651070832"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1651070832"></script>
-    <script src="/js/jquery.sticky.js?1651070832"></script>
-    <script src="/js/featherlight.min.js?1651070832"></script>
-    <script src="/js/highlight.pack.js?1651070832"></script>
+    <script src="/js/clipboard.min.js?1651085473"></script>
+    <script src="/js/perfect-scrollbar.min.js?1651085473"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1651085473"></script>
+    <script src="/js/jquery.sticky.js?1651085473"></script>
+    <script src="/js/featherlight.min.js?1651085473"></script>
+    <script src="/js/highlight.pack.js?1651085473"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1651070832"></script>
-    <script src="/js/learn.js?1651070832"></script>
-    <script src="/js/hugo-learn.js?1651070832"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1651085473"></script>
+    <script src="/js/learn.js?1651085473"></script>
+    <script src="/js/hugo-learn.js?1651085473"></script>
 
-    <link href="/mermaid/mermaid.css?1651070832" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1651070832"></script>
+    <link href="/mermaid/mermaid.css?1651085473" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1651085473"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

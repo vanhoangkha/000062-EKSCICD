@@ -37,4 +37,4 @@ pre : " <b> 5. </b> "
 
 1. Chọn **AWS Cloud9** và chọn **Go TO Your Dashboard**
 2. Chọn môi trường cần xóa và chọn **Delete**
-3. Xác thực xóa môi trường bằng cách điền ``Delete`` và chọn **Delete**. Môi trường sẽ được xóa sau vài phútphút.
+3. Xác thực xóa môi trường bằng cách điền ``Delete`` và chọn **Delete**. Môi trường sẽ được xóa sau vài phút.

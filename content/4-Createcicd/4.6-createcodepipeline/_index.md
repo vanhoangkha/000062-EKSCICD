@@ -16,14 +16,14 @@ pre : " <b>4.6 </b> "
 ![Create Code Pipeline](/images/9-Createcodepipeline/0001-Createcodepipeline.png)
 
 
-2. In the [AWS Console](https://aws.amazon.com/console/)
+2. In the [AWS Console] interface(https://aws.amazon.com/console/)
 
 - Find **CloudFormation**
 - Select **CloudFormation**
 
 ![Create Code Pipeline](/images/9-Createcodepipeline/00013-Createcodepipeline.png)
 
-1. In the **CloudFormation** interface
+3. In the **CloudFormation** interface
 
 - Select **Stacks**
 - Select **Create stack**
@@ -81,14 +81,10 @@ pre : " <b>4.6 </b> "
 ![Create Code Pipeline](/images/9-Createcodepipeline/00012-Createcodepipeline.png)
 
 
-11. View CI/CD process and select **details** to view build details
-
-![Create Code Pipeline](/images/9-Createcodepipeline/0009-Createcodepipeline.png)
-
-12. CI/CD process complete
+11. CI/CD . Process
  
 ![Create Code Pipeline](/images/9-Createcodepipeline/00010-Createcodepipeline.png)
 
-13. Review the details of the build process by selecting **details**
+12. CI/CD process completes when entering **Succeeded** state
 
 ![Create Code Pipeline](/images/9-Createcodepipeline/00011-Createcodepipeline.png)

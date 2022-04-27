@@ -14,7 +14,7 @@ pre : " <b> 4.7 </b> "
 - Chọn repository đã fork 
 - Mở file **index.htlm**, chọn icon chỉnh sửa
 - Chỉnh sửa code
-- Sau đó, chọn Commit changes
+- Sau đó, chọn **Commit changes**
 
 ![Check CICD](/images/10-Checkcicd/0002-checkcicd.png)
 
@@ -33,14 +33,14 @@ pre : " <b> 4.7 </b> "
 ![Check CICD](/images/10-Checkcicd/0003-checkcicd.png)
 
 
-3. Triển khai cập nhật ứng dụng lên EKS cluster Chờ khoảng 5-10 phút để quá trình build hoàn thành và chuyển sang trạng thái **Success**. 
+3. Triển khai cập nhật ứng dụng lên EKS cluster Chờ khoảng 5-10 phút để quá trình build hoàn thành và chuyển sang trạng thái **Succeeded**. 
 
-![Check CICD](/images/10-Checkcicd/0003-checkcicd.png)
+![Check CICD](/images/10-Checkcicd/0004-checkcicd.png)
 
 4. Vào website URL xem thay đổi. 
 
 - Lúc này title của website đã chuyển thành **AWS First Cloud Journey**
 
-![Check CICD](/images/10-Checkcicd/0004-checkcicd.png)
+![Check CICD](/images/10-Checkcicd/0005-checkcicd.png)
 
 Chúc mừng bạn đã hoàn thành bài lab. 

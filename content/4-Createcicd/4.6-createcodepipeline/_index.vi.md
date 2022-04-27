@@ -81,14 +81,10 @@ pre : " <b> 4.6 </b> "
 ![Create Code Pipeline](/images/9-Createcodepipeline/00012-Createcodepipeline.png)
 
 
-10. Xem quá trình CI/CD và chọn **details** để xem chi tiết quá trình build
-
-![Create Code Pipeline](/images/9-Createcodepipeline/0009-Createcodepipeline.png)
-
-11. Quá trình CI/CD hoàn thành
+11.   Quá trình CI/CD
  
 ![Create Code Pipeline](/images/9-Createcodepipeline/00010-Createcodepipeline.png)
 
-12. Xem lại chi tiết quá trình build bằng cách chọn **details**
+12.  Quá trình CI/CD hoàn thành khi chuyển sang trang thái **Succeeded**
 
 ![Create Code Pipeline](/images/9-Createcodepipeline/00011-Createcodepipeline.png)

@@ -55,9 +55,9 @@ metadata:
 
 ```
 - groups:
-- system:masters
-rolearn: arn:aws:iam::{$AWS_ACCOUNT_ID}}:role/eks-CodeBuildServiceRole
-username: codebuild-eks
+  - system:masters
+  rolearn: arn:aws:iam::{$AWS_ACCOUNT_ID}}:role/eks-CodeBuildServiceRole
+  username: codebuild-eks
 ```
 
 4. The aws-auth.yaml file after adding the eks-CodeBuildServiceRole role has the following form:
