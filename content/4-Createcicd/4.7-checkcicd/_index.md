@@ -1,46 +1,46 @@
 ---
-title : "Kiểm tra CI/CD"
-date :  "`r Sys.Date()`" 
+title : "Test CI/CD"
+date : "`r Sys.Date()`"
 weight : 7
 chapter : false
-pre : " <b> 4.7 </b> "
+pre : " <b>4.7 </b> "
 ---
 
-#### Kiểm tra CI/CD pipeline
+#### Test CI/CD pipeline
 
-1. Vào **GitHub** của bạn https://github.com/{GITHUB_ACCOUNT}/000062-websource
+1. Go to your **GitHub** https://github.com/{GITHUB_ACCOUNT}/000062-websource
 
  
-- Chọn repository đã fork 
-- Mở file **index.htlm**, chọn icon chỉnh sửa
-- Chỉnh sửa code
-- Sau đó, chọn **Commit changes**
+- Select the fork repository
+- Open the file **index.html**, select the edit icon
+- Edit the code in the file **index.html**. In this article, change the code of the title **(line 48)** from **John Doe** to **AWS First Cloud Journey**
+- Then select **Commit changes**
 
 ![Check CICD](/images/10-Checkcicd/0002-checkcicd.png)
 
-2. Sau khi push code, **CodePipeline** sẽ được trigger để thực thi **CodeBuild**. 
+1. After pushing the code, **CodePipeline** will be triggered to execute **CodeBuild**.
 
-- Vào trang quản trị **CodePipeline** sẽ thấy trạng thái của pipeline là **In Progress**
-- Pipele của có 2 stage:
+- Go to the admin page **CodePipeline** and you will see the status of the pipeline is **In Progress**
+- Pipele's has 2 stages:
   - **Source**
-  - Pull source từ GitHub 
-  - Đóng gói source cho stage build
+  - Pull source from GitHub
+  - Pack source for stage build
   - **Build**
-  - Tạo **Docker image** từ **source** 
-  - Đẩy image lên **ECR repository**
-  - Triển khai cập nhật ứng dụng lên **EKS cluster**
+  - Create **Docker image** from **source**
+  - Push the image to **ECR repository**
+  - Deploy application updates to **EKS cluster**
 
 ![Check CICD](/images/10-Checkcicd/0003-checkcicd.png)
 
 
-3. Triển khai cập nhật ứng dụng lên EKS cluster Chờ khoảng 5-10 phút để quá trình build hoàn thành và chuyển sang trạng thái **Succeeded**. 
+3. Deploy application updates to EKS cluster Wait about 5-10 minutes for the build process to complete and go to **Succeeded** state.
 
 ![Check CICD](/images/10-Checkcicd/0004-checkcicd.png)
 
-4. Vào website URL xem thay đổi. 
+4. Go to the website URL to see the changes.
 
-- Lúc này title của website đã chuyển thành **AWS First Cloud Journey**
+- At this time, the title of the website has changed to **AWS First Cloud Journey**
 
 ![Check CICD](/images/10-Checkcicd/0005-checkcicd.png)
 
-Chúc mừng bạn đã hoàn thành bài lab. 
+Congratulations on completing the lab.

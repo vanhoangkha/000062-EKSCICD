@@ -4,7 +4,7 @@
 	"title": "CI/CD on EKS",
 	"tags": [],
 	"description": "",
-	"content": "CI/CD on EKS with CodePipeline and GitHub   Amazon Elastic Kubernetes Service (Amazon EKS) is an AWS-managed container orchestration service that helps us to create, manage, launch, and scale Kubernetes applications in an AWS environment or on\u0026ndash; premise.\n  AWS CodePipeline is a continuous delivery service that helps you automate deployment pipelines to keep your application or infrastructure up to date with new versions in a consistent manner. CodePipeline automates the build, test, and deployment phases of your deployment each time there is a code change, based on the deployment model you define. You can integrate AWS CodePipeline with third-party services such as GitHub or with your own custom plugin. With AWS CodePipeline, you only pay for what you use. You don\u0026rsquo;t have to pay upfront or make a long-term commitment.\n  In this exercise, we will create an EKS Cluster and deploy a pipeline to automatically deploy to production every time there is a code change using the AWS CodePipeline service.\n"
+	"content": "CI/CD on EKS with CodePipeline and GitHub   Amazon Elastic Kubernetes Service (Amazon EKS) is an AWS-managed container orchestration service that helps us to create, manage, launch, and scale Kubernetes applications in an AWS environment or on\u0026ndash; premise.\n  AWS CodePipeline is a continuous delivery service that helps you automate deployment pipelines to keep your application or infrastructure up to date with new versions in a consistent manner. CodePipeline automates the build, test, and deployment phases of your deployment each time there is a code change, based on the deployment model you define. You can integrate AWS CodePipeline with third-party services such as GitHub or with your own custom plugin. With AWS CodePipeline, you only pay for what you use. You don\u0026rsquo;t have to pay upfront or make a long-term commitment.\n  In this exercise, we will create an EKS Cluster and deploy a pipeline to automatically deploy to production every time there is a code change using the AWS CodePipeline service.\n  "
 },
 {
 	"uri": "/3-createekscluster/3.1-createcluster/",
@@ -162,10 +162,10 @@
 },
 {
 	"uri": "/4-createcicd/4.7-checkcicd/",
-	"title": "Kiểm tra CI/CD",
+	"title": "Test CI/CD",
 	"tags": [],
 	"description": "",
-	"content": "Kiểm tra CI/CD pipeline  Vào GitHub của bạn https://github.com/{GITHUB_ACCOUNT}/000062-websource   Chọn repository đã fork Mở file index.htlm, chọn icon chỉnh sửa Chỉnh sửa code Sau đó, chọn Commit changes  Sau khi push code, CodePipeline sẽ được trigger để thực thi CodeBuild.   Vào trang quản trị CodePipeline sẽ thấy trạng thái của pipeline là In Progress Pipele của có 2 stage:  Source Pull source từ GitHub Đóng gói source cho stage build Build Tạo Docker image từ source Đẩy image lên ECR repository Triển khai cập nhật ứng dụng lên EKS cluster    Triển khai cập nhật ứng dụng lên EKS cluster Chờ khoảng 5-10 phút để quá trình build hoàn thành và chuyển sang trạng thái Succeeded.  Vào website URL xem thay đổi.   Lúc này title của website đã chuyển thành AWS First Cloud Journey  Chúc mừng bạn đã hoàn thành bài lab.\n"
+	"content": "Test CI/CD pipeline  Go to your GitHub https://github.com/{GITHUB_ACCOUNT}/000062-websource   Select the fork repository Open the file index.html, select the edit icon Edit the code in the file index.html. In this article, change the code of the title (line 48) from John Doe to AWS First Cloud Journey Then select Commit changes   After pushing the code, CodePipeline will be triggered to execute CodeBuild.   Go to the admin page CodePipeline and you will see the status of the pipeline is In Progress Pipele\u0026rsquo;s has 2 stages:  Source Pull source from GitHub Pack source for stage build Build Create Docker image from source Push the image to ECR repository Deploy application updates to EKS cluster    Deploy application updates to EKS cluster Wait about 5-10 minutes for the build process to complete and go to Succeeded state.  Go to the website URL to see the changes.   At this time, the title of the website has changed to AWS First Cloud Journey  Congratulations on completing the lab.\n"
 },
 {
 	"uri": "/categories/",

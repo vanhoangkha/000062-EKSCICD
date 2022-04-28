@@ -12,8 +12,8 @@ pre : " <b> 4.7 </b> "
 
  
 - Chọn repository đã fork 
-- Mở file **index.htlm**, chọn icon chỉnh sửa
-- Chỉnh sửa code
+- Mở file **index.html**, chọn icon chỉnh sửa
+- Chỉnh sửa code trong file **index.html**. Trong bài này chỉnh code phần title **(dòng 48)**chuyển từ **John Doe** thành **AWS First Cloud Journey** 
 - Sau đó, chọn **Commit changes**
 
 ![Check CICD](/images/10-Checkcicd/0002-checkcicd.png)

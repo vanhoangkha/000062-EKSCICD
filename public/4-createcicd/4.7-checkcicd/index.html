@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Kiểm tra CI/CD :: CI/CD on EKS with CodePipeline and Github</title>
+    <title>Test CI/CD :: CI/CD on EKS with CodePipeline and Github</title>
 
     
-    <link href="/css/nucleus.css?1651145787" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1651145787" rel="stylesheet">
-    <link href="/css/hybrid.css?1651145787" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1651145787" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1651145787" rel="stylesheet">
-    <link href="/css/auto-complete.css?1651145787" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1651145787" rel="stylesheet">
-    <link href="/css/theme.css?1651145787" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1651145787" rel="stylesheet">
+    <link href="/css/nucleus.css?1651164321" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1651164321" rel="stylesheet">
+    <link href="/css/hybrid.css?1651164321" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1651164321" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1651164321" rel="stylesheet">
+    <link href="/css/auto-complete.css?1651164321" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1651164321" rel="stylesheet">
+    <link href="/css/theme.css?1651164321" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1651164321" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1651145787" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1651164321" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1651145787"></script>
+    <script src="/js/jquery-3.3.1.min.js?1651164321"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1651145787"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1651145787"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1651164321"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1651164321"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1651145787"></script>
+<script type="text/javascript" src="/js/search.js?1651164321"></script>
 
     
   </div>
@@ -703,13 +703,13 @@
  
   
     
-    <li data-nav-id="/4-createcicd/4.7-checkcicd/" title="Kiểm tra CI/CD" class="dd-item 
+    <li data-nav-id="/4-createcicd/4.7-checkcicd/" title="Test CI/CD" class="dd-item 
         parent
         active
         
         ">
       <a href="/4-createcicd/4.7-checkcicd/">
-           <b> 4.7 </b> Kiểm tra CI/CD
+           <b>4.7 </b> Test CI/CD
           
             <i class="fas fa-check read-icon"></i>
           
@@ -899,7 +899,7 @@
             
           
           
-            <a href='/'>CI/CD on EKS</a> > <a href='/4-createcicd/'>Create CI/CD</a> > Kiểm tra CI/CD
+            <a href='/'>CI/CD on EKS</a> > <a href='/4-createcicd/'>Create CI/CD</a> > Test CI/CD
           
         
           
@@ -936,7 +936,7 @@
           
             <h1>
               
-              Kiểm tra CI/CD
+              Test CI/CD
             </h1>
           
 
@@ -944,47 +944,47 @@
 
 
 
-	<h4 id="kiểm-tra-cicd-pipeline">Kiểm tra CI/CD pipeline</h4>
+	<h4 id="test-cicd-pipeline">Test CI/CD pipeline</h4>
 <ol>
-<li>Vào <strong>GitHub</strong> của bạn <a href="https://github.com/%7BGITHUB_ACCOUNT%7D/000062-websource">https://github.com/{GITHUB_ACCOUNT}/000062-websource</a></li>
+<li>Go to your <strong>GitHub</strong> <a href="https://github.com/%7BGITHUB_ACCOUNT%7D/000062-websource">https://github.com/{GITHUB_ACCOUNT}/000062-websource</a></li>
 </ol>
 <ul>
-<li>Chọn repository đã fork</li>
-<li>Mở file <strong>index.htlm</strong>, chọn icon chỉnh sửa</li>
-<li>Chỉnh sửa code</li>
-<li>Sau đó, chọn <strong>Commit changes</strong></li>
+<li>Select the fork repository</li>
+<li>Open the file <strong>index.html</strong>, select the edit icon</li>
+<li>Edit the code in the file <strong>index.html</strong>. In this article, change the code of the title <strong>(line 48)</strong> from <strong>John Doe</strong> to <strong>AWS First Cloud Journey</strong></li>
+<li>Then select <strong>Commit changes</strong></li>
 </ul>
 <p><img src="/images/10-Checkcicd/0002-checkcicd.png" alt="Check CICD"></p>
-<ol start="2">
-<li>Sau khi push code, <strong>CodePipeline</strong> sẽ được trigger để thực thi <strong>CodeBuild</strong>.</li>
+<ol>
+<li>After pushing the code, <strong>CodePipeline</strong> will be triggered to execute <strong>CodeBuild</strong>.</li>
 </ol>
 <ul>
-<li>Vào trang quản trị <strong>CodePipeline</strong> sẽ thấy trạng thái của pipeline là <strong>In Progress</strong></li>
-<li>Pipele của có 2 stage:
+<li>Go to the admin page <strong>CodePipeline</strong> and you will see the status of the pipeline is <strong>In Progress</strong></li>
+<li>Pipele&rsquo;s has 2 stages:
 <ul>
 <li><strong>Source</strong></li>
-<li>Pull source từ GitHub</li>
-<li>Đóng gói source cho stage build</li>
+<li>Pull source from GitHub</li>
+<li>Pack source for stage build</li>
 <li><strong>Build</strong></li>
-<li>Tạo <strong>Docker image</strong> từ <strong>source</strong></li>
-<li>Đẩy image lên <strong>ECR repository</strong></li>
-<li>Triển khai cập nhật ứng dụng lên <strong>EKS cluster</strong></li>
+<li>Create <strong>Docker image</strong> from <strong>source</strong></li>
+<li>Push the image to <strong>ECR repository</strong></li>
+<li>Deploy application updates to <strong>EKS cluster</strong></li>
 </ul>
 </li>
 </ul>
 <p><img src="/images/10-Checkcicd/0003-checkcicd.png" alt="Check CICD"></p>
 <ol start="3">
-<li>Triển khai cập nhật ứng dụng lên EKS cluster Chờ khoảng 5-10 phút để quá trình build hoàn thành và chuyển sang trạng thái <strong>Succeeded</strong>.</li>
+<li>Deploy application updates to EKS cluster Wait about 5-10 minutes for the build process to complete and go to <strong>Succeeded</strong> state.</li>
 </ol>
 <p><img src="/images/10-Checkcicd/0004-checkcicd.png" alt="Check CICD"></p>
 <ol start="4">
-<li>Vào website URL xem thay đổi.</li>
+<li>Go to the website URL to see the changes.</li>
 </ol>
 <ul>
-<li>Lúc này title của website đã chuyển thành <strong>AWS First Cloud Journey</strong></li>
+<li>At this time, the title of the website has changed to <strong>AWS First Cloud Journey</strong></li>
 </ul>
 <p><img src="/images/10-Checkcicd/0005-checkcicd.png" alt="Check CICD"></p>
-<p>Chúc mừng bạn đã hoàn thành bài lab.</p>
+<p>Congratulations on completing the lab.</p>
 
 
 
@@ -1429,19 +1429,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1651145787"></script>
-    <script src="/js/perfect-scrollbar.min.js?1651145787"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1651145787"></script>
-    <script src="/js/jquery.sticky.js?1651145787"></script>
-    <script src="/js/featherlight.min.js?1651145787"></script>
-    <script src="/js/highlight.pack.js?1651145787"></script>
+    <script src="/js/clipboard.min.js?1651164321"></script>
+    <script src="/js/perfect-scrollbar.min.js?1651164321"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1651164321"></script>
+    <script src="/js/jquery.sticky.js?1651164321"></script>
+    <script src="/js/featherlight.min.js?1651164321"></script>
+    <script src="/js/highlight.pack.js?1651164321"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1651145787"></script>
-    <script src="/js/learn.js?1651145787"></script>
-    <script src="/js/hugo-learn.js?1651145787"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1651164321"></script>
+    <script src="/js/learn.js?1651164321"></script>
+    <script src="/js/hugo-learn.js?1651164321"></script>
 
-    <link href="/mermaid/mermaid.css?1651145787" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1651145787"></script>
+    <link href="/mermaid/mermaid.css?1651164321" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1651164321"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -13,3 +13,4 @@ chapter : false
 
 - Trong bài thực hành này, chúng ta sẽ tạo một **EKS Cluster** và tiến hành triển khai một pipeline để tự động deploy lên môi trường production mỗi khi có thay đổi về code bằng dịch vụ **AWS CodePipeline**.
 
+![CI/CD on EKS with CodePipeline and GitHub](/images/architecture.png)
