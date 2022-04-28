@@ -13,9 +13,9 @@ pre : " <b> 4.3 </b> "
 - Hãy tạo các **role eks-CodePipelineServiceRole** và thêm **inline policy** từ **terminal Cloud9**
 
 ```
-wget https://raw.githubusercontent.com/minhtri2582/server-samples/master/aws-journey/cbAssumeRolePolicyDocument.json
+wget https://raw.githubusercontent.com/First-Cloud-Journey/000062-EKSCICD/main/codebuild/cbAssumeRolePolicyDocument.json
 aws iam create-role --role-name eks-CodeBuildServiceRole --assume-role-policy-document file://cbAssumeRolePolicyDocument.json
-wget https://raw.githubusercontent.com/minhtri2582/server-samples/master/aws-journey/cbPolicyDocument.json
+wget https://raw.githubusercontent.com/First-Cloud-Journey/000062-EKSCICD/main/codebuild/cbPolicyDocument.json
 aws iam put-role-policy --role-name eks-CodeBuildServiceRole --policy-name codebuild-access --policy-document file://cbPolicyDocument.json
 ```
 ![Create Code Build Service Role](/images/7-Createcicd/7.3-codebuildservicerole/0001-CodeBuildServiceRole.png)

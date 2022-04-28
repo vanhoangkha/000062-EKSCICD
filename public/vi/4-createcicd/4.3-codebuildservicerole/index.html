@@ -12,21 +12,21 @@
     <title>Tạo service role cho dịch vụ CodeBuild :: CI/CD on EKS with CodePipeline and Github</title>
 
     
-    <link href="/css/nucleus.css?1651164321" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1651164321" rel="stylesheet">
-    <link href="/css/hybrid.css?1651164321" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1651164321" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1651164321" rel="stylesheet">
-    <link href="/css/auto-complete.css?1651164321" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1651164321" rel="stylesheet">
-    <link href="/css/theme.css?1651164321" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1651164321" rel="stylesheet">
+    <link href="/css/nucleus.css?1651176000" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1651176000" rel="stylesheet">
+    <link href="/css/hybrid.css?1651176000" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1651176000" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1651176000" rel="stylesheet">
+    <link href="/css/auto-complete.css?1651176000" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1651176000" rel="stylesheet">
+    <link href="/css/theme.css?1651176000" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1651176000" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1651164321" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1651176000" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1651164321"></script>
+    <script src="/js/jquery-3.3.1.min.js?1651176000"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1651164321"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1651164321"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1651176000"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1651176000"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1651164321"></script>
+<script type="text/javascript" src="/js/search.js?1651176000"></script>
 
     
   </div>
@@ -951,9 +951,9 @@
 <ul>
 <li>Hãy tạo các <strong>role eks-CodePipelineServiceRole</strong> và thêm <strong>inline policy</strong> từ <strong>terminal Cloud9</strong></li>
 </ul>
-<pre tabindex="0"><code>wget https://raw.githubusercontent.com/minhtri2582/server-samples/master/aws-journey/cbAssumeRolePolicyDocument.json
+<pre tabindex="0"><code>wget https://raw.githubusercontent.com/First-Cloud-Journey/000062-EKSCICD/main/codebuild/cbAssumeRolePolicyDocument.json
 aws iam create-role --role-name eks-CodeBuildServiceRole --assume-role-policy-document file://cbAssumeRolePolicyDocument.json
-wget https://raw.githubusercontent.com/minhtri2582/server-samples/master/aws-journey/cbPolicyDocument.json
+wget https://raw.githubusercontent.com/First-Cloud-Journey/000062-EKSCICD/main/codebuild/cbPolicyDocument.json
 aws iam put-role-policy --role-name eks-CodeBuildServiceRole --policy-name codebuild-access --policy-document file://cbPolicyDocument.json
 </code></pre><p><img src="/images/7-Createcicd/7.3-codebuildservicerole/0001-CodeBuildServiceRole.png" alt="Create Code Build Service Role"></p>
 <ol start="2">
@@ -1424,19 +1424,19 @@ aws iam put-role-policy --role-name eks-CodeBuildServiceRole --policy-name codeb
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1651164321"></script>
-    <script src="/js/perfect-scrollbar.min.js?1651164321"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1651164321"></script>
-    <script src="/js/jquery.sticky.js?1651164321"></script>
-    <script src="/js/featherlight.min.js?1651164321"></script>
-    <script src="/js/highlight.pack.js?1651164321"></script>
+    <script src="/js/clipboard.min.js?1651176000"></script>
+    <script src="/js/perfect-scrollbar.min.js?1651176000"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1651176000"></script>
+    <script src="/js/jquery.sticky.js?1651176000"></script>
+    <script src="/js/featherlight.min.js?1651176000"></script>
+    <script src="/js/highlight.pack.js?1651176000"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1651164321"></script>
-    <script src="/js/learn.js?1651164321"></script>
-    <script src="/js/hugo-learn.js?1651164321"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1651176000"></script>
+    <script src="/js/learn.js?1651176000"></script>
+    <script src="/js/hugo-learn.js?1651176000"></script>
 
-    <link href="/mermaid/mermaid.css?1651164321" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1651164321"></script>
+    <link href="/mermaid/mermaid.css?1651176000" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1651176000"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
