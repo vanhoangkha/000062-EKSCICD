@@ -74,7 +74,7 @@
 	"title": "Test EKS Cluster",
 	"tags": [],
 	"description": "",
-	"content": "Check EKS Cluster  In the AWS Console   Find CloudFormation Select CloudFormation  In the CloudFormation interface   Select Stack View created stacks  Run the command to check the nodes created  kubectl get nodes\rIn the [AWS Console] interface(https://aws.amazon.com/console/)   Find EKS Select EKS  In the EKS interface   Select Cluster View the created cluster  In the [AWS Console] interface(https://aws.amazon.com/console/)   Find EC2 Select EC2  In the EC2 interface   Select Instances View created instances  "
+	"content": "Check EKS Cluster  In the AWS Console   Find CloudFormation Select CloudFormation  In the CloudFormation interface   Select Stack View created stacks  Run the command to check the nodes created  kubectl get nodes\rIn the AWS Console   Find EKS Select EKS  In the EKS interface   Select Cluster View the created cluster  In the [AWS Console] interface(https://aws.amazon.com/console/)   Find EC2 Select EC2  In the EC2 interface   Select Instances View created instances  "
 },
 {
 	"uri": "/3-createekscluster/",

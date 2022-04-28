@@ -31,7 +31,7 @@ kubectl get nodes
 
 ![Create EKS Cluster](/images/5-Checkekscluster/0007-createekscluster.png)
 
-4. In the [AWS Console] interface(https://aws.amazon.com/console/)
+4. In the [AWS Console](https://aws.amazon.com/console/)
 
 - Find **EKS**
 - Select **EKS**
