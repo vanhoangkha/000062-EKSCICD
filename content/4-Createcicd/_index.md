@@ -10,6 +10,8 @@ pre : " <b> 4. </b> "
 
 - In the next steps, we will create a Deployment Pipeline using AWS CodePipeline and integrate with the third party tool GitHub. When we change the code on GitHub, our Pipeline will be activated and deploy the new version of the application to the web application we already run on the EKS Cluster.
 
+![CI/CD on EKS with CodePipeline and GitHub](/images/architecture.png)
+
 
 ### Content
 
