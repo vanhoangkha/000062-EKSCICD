@@ -18,7 +18,7 @@ pre : " <b>4.7 </b> "
 
 ![Check CICD](/images/10-Checkcicd/0002-checkcicd.png)
 
-1. After pushing the code, **CodePipeline** will be triggered to execute **CodeBuild**.
+2. After pushing the code, **CodePipeline** will be triggered to execute **CodeBuild**.
 
 - Go to the admin page **CodePipeline** and you will see the status of the pipeline is **In Progress**
 - Pipele's has 2 stages:

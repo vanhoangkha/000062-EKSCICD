@@ -16,8 +16,8 @@ pre : " <b> 1. </b> "
 
 ### Nội dung
 
-1. [Giới thiệu](../1-introduce/)
-2. [Các bước chuẩn bị](../2-Prerequiste/)
-3. [Tạo EKS cluster](../3-Createekscluster/)
-4. [Tạo Code Pipeline](../4-Createcicd/)
+1. [Giới thiệu]()
+2. [Các bước chuẩn bị](../2-prerequiste/)
+3. [Tạo EKS cluster](../3-createekscluster/)
+4. [Tạo Code Pipeline](../4-createcicd/)
 5. [Dọn dẹp tài nguyên](../5-cleanup/)

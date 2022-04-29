@@ -17,8 +17,8 @@ pre : " <b> 1. </b> "
 
 ### Content
 
-1. [Introduction](../1-introduce/)
-2. [Preparation steps](../2-Prerequiste/)
-3. [Create EKS cluster](../3-Createekscluster/)
-4. [Create Code Pipeline](../4-Createcicd/)
+1. [Introduction]()
+2. [Preparation steps](../2-prerequiste/)
+3. [Create EKS cluster](../3-createekscluster/)
+4. [Generate Code Pipeline](../4-createcicd/)
 5. [Resource Cleanup](../5-cleanup/)

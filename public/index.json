@@ -39,7 +39,7 @@
 	"title": "Introduction",
 	"tags": [],
 	"description": "",
-	"content": "Overview Kubernetes (K8s) is an open source, extensible platform for managing packaged applications and services, facilitating configuration and automating application deployment.\n In this lab, we will create a simple Kubernetes Cluster on AWS EKS (Elastic Kubernetes Service). Then I will deploy the site on the cluster and use AWS CodePipeLine for automated deployment.  Content  Introduction Preparation steps Create EKS cluster Create Code Pipeline Resource Cleanup  "
+	"content": "Overview Kubernetes (K8s) is an open source, extensible platform for managing packaged applications and services, facilitating configuration and automating application deployment.\n In this lab, we will create a simple Kubernetes Cluster on AWS EKS (Elastic Kubernetes Service). Then I will deploy the site on the cluster and use AWS CodePipeLine for automated deployment.  Content  Introduction Preparation steps Create EKS cluster Generate Code Pipeline Resource Cleanup  "
 },
 {
 	"uri": "/2-prerequiste/2.4-configurerole/2.4.2-attachiamrole/",
@@ -165,7 +165,7 @@
 	"title": "Test CI/CD",
 	"tags": [],
 	"description": "",
-	"content": "Test CI/CD pipeline  Go to your GitHub https://github.com/{GITHUB_ACCOUNT}/000062-websource   Select the fork repository Open the file index.html, select the edit icon Edit the code in the file index.html. In this article, change the code of the title (line 48) from John Doe to AWS First Cloud Journey Then select Commit changes   After pushing the code, CodePipeline will be triggered to execute CodeBuild.   Go to the admin page CodePipeline and you will see the status of the pipeline is In Progress Pipele\u0026rsquo;s has 2 stages:  Source Pull source from GitHub Pack source for stage build Build Create Docker image from source Push the image to ECR repository Deploy application updates to EKS cluster    Deploy application updates to EKS cluster Wait about 5-10 minutes for the build process to complete and go to Succeeded state.  Go to the website URL to see the changes.   At this time, the title of the website has changed to AWS First Cloud Journey  Congratulations on completing the lab.\n"
+	"content": "Test CI/CD pipeline  Go to your GitHub https://github.com/{GITHUB_ACCOUNT}/000062-websource   Select the fork repository Open the file index.html, select the edit icon Edit the code in the file index.html. In this article, change the code of the title (line 48) from John Doe to AWS First Cloud Journey Then select Commit changes  After pushing the code, CodePipeline will be triggered to execute CodeBuild.   Go to the admin page CodePipeline and you will see the status of the pipeline is In Progress Pipele\u0026rsquo;s has 2 stages:  Source Pull source from GitHub Pack source for stage build Build Create Docker image from source Push the image to ECR repository Deploy application updates to EKS cluster    Deploy application updates to EKS cluster Wait about 5-10 minutes for the build process to complete and go to Succeeded state.  Go to the website URL to see the changes.   At this time, the title of the website has changed to AWS First Cloud Journey  Congratulations on completing the lab.\n"
 },
 {
 	"uri": "/categories/",
