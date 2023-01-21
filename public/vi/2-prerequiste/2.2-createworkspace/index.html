@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.99.1" />
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Tạo Cloud9 Workspace :: CI/CD on EKS with CodePipeline and Github</title>
 
     
-    <link href="/css/nucleus.css?1651206100" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1651206100" rel="stylesheet">
-    <link href="/css/hybrid.css?1651206100" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1651206100" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1651206100" rel="stylesheet">
-    <link href="/css/auto-complete.css?1651206100" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1651206100" rel="stylesheet">
-    <link href="/css/theme.css?1651206100" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1651206100" rel="stylesheet">
+    <link href="/css/nucleus.css?1674300182" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1674300182" rel="stylesheet">
+    <link href="/css/hybrid.css?1674300182" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1674300182" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1674300182" rel="stylesheet">
+    <link href="/css/auto-complete.css?1674300182" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1674300182" rel="stylesheet">
+    <link href="/css/theme.css?1674300182" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1674300182" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1651206100" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1674300182" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1651206100"></script>
+    <script src="/js/jquery-3.3.1.min.js?1674300182"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1651206100"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1651206100"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1674300182"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1674300182"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1651206100"></script>
+<script type="text/javascript" src="/js/search.js?1674300182"></script>
 
     
   </div>
@@ -843,7 +843,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>25-04-2022</font></i>
+        <i><font color=orange>21-01-2023</font></i>
     </left>
     <left>
         <br>
@@ -1010,21 +1010,21 @@
 </ul>
 <pre tabindex="0"><code>pip3 install --user --upgrade boto3
 export instance_id=$(curl -s http://169.254.169.254/latest/meta-data/instance-id)
-python -c &quot;import boto3
+python -c &#34;import boto3
 import os
 from botocore.exceptions import ClientError 
-ec2 = boto3.client('ec2')
+ec2 = boto3.client(&#39;ec2&#39;)
 volume_info = ec2.describe_volumes(
     Filters=[
         {
-            'Name': 'attachment.instance-id',
-            'Values': [
-                os.getenv('instance_id')
+            &#39;Name&#39;: &#39;attachment.instance-id&#39;,
+            &#39;Values&#39;: [
+                os.getenv(&#39;instance_id&#39;)
             ]
         }
     ]
 )
-volume_id = volume_info['Volumes'][0]['VolumeId']
+volume_id = volume_info[&#39;Volumes&#39;][0][&#39;VolumeId&#39;]
 try:
     resize = ec2.modify_volume(    
             VolumeId=volume_id,    
@@ -1032,8 +1032,8 @@ try:
     )
     print(resize)
 except ClientError as e:
-    if e.response['Error']['Code'] == 'InvalidParameterValue':
-        print('ERROR MESSAGE: {}'.format(e))&quot;
+    if e.response[&#39;Error&#39;][&#39;Code&#39;] == &#39;InvalidParameterValue&#39;:
+        print(&#39;ERROR MESSAGE: {}&#39;.format(e))&#34;
 if [ $? -eq 0 ]; then
     sudo reboot
 fi
@@ -1493,19 +1493,19 @@ fi
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1651206100"></script>
-    <script src="/js/perfect-scrollbar.min.js?1651206100"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1651206100"></script>
-    <script src="/js/jquery.sticky.js?1651206100"></script>
-    <script src="/js/featherlight.min.js?1651206100"></script>
-    <script src="/js/highlight.pack.js?1651206100"></script>
+    <script src="/js/clipboard.min.js?1674300182"></script>
+    <script src="/js/perfect-scrollbar.min.js?1674300182"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1674300182"></script>
+    <script src="/js/jquery.sticky.js?1674300182"></script>
+    <script src="/js/featherlight.min.js?1674300182"></script>
+    <script src="/js/highlight.pack.js?1674300182"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1651206100"></script>
-    <script src="/js/learn.js?1651206100"></script>
-    <script src="/js/hugo-learn.js?1651206100"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1674300182"></script>
+    <script src="/js/learn.js?1674300182"></script>
+    <script src="/js/hugo-learn.js?1674300182"></script>
 
-    <link href="/mermaid/mermaid.css?1651206100" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1651206100"></script>
+    <link href="/mermaid/mermaid.css?1674300182" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1674300182"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

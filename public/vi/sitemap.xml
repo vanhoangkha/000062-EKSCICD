@@ -158,18 +158,6 @@
                 href="/vi/2-prerequiste/2.4-configurerole/2.4.3-updateconfigureiam/"
                 />
   </url><url>
-    <loc>/vi/3-createekscluster/3.3-deploywebsite/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/3-createekscluster/3.3-deploywebsite/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="/vi/3-createekscluster/3.3-deploywebsite/"
-                />
-  </url><url>
     <loc>/vi/3-createekscluster/</loc>
     <xhtml:link
                 rel="alternate"
@@ -192,6 +180,18 @@
                 rel="alternate"
                 hreflang="vi"
                 href="/vi/4-createcicd/4.3-codebuildservicerole/"
+                />
+  </url><url>
+    <loc>/vi/3-createekscluster/3.3-deploywebsite/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/3-createekscluster/3.3-deploywebsite/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/3-createekscluster/3.3-deploywebsite/"
                 />
   </url><url>
     <loc>/vi/2-prerequiste/2.4-configurerole/</loc>
