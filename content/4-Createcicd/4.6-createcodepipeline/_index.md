@@ -16,7 +16,7 @@ pre : " <b>4.6 </b> "
 ![Create Code Pipeline](/images/9-Createcodepipeline/0001-Createcodepipeline.png)
 
 
-2. In the [AWS Console] interface(https://aws.amazon.com/console/)
+2. In the [AWS Console](https://aws.amazon.com/console/)
 
 - Find **CloudFormation**
 - Select **CloudFormation**
