@@ -1,6 +1,6 @@
 ---
 title : "Cập nhật cấu hình Cloud9"
-date :  "`r Sys.Date()`" 
+date: 2024-01-01
 weight : 3
 chapter : false
 pre : " <b> 2.4.3 </b> "
