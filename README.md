@@ -1,4 +1,4 @@
-# ☸️ EKS CI/CD
+# EKS CI/CD
 
 CI/CD pipeline for Amazon EKS deployments.
 
@@ -8,7 +8,7 @@ This is a hands-on workshop from the **AWS First Cloud Journey** series, designe
 
 ## Workshop
 
-📖 **[Start the workshop](https://vanhoangkha.github.io/000062-EKSCICD/)**
+**[Start the workshop](https://vanhoangkha.github.io/000062-EKSCICD/)**
 
 ## Prerequisites
 
